@@ -1,0 +1,464 @@
+Day,Start Time,End Time,Program,Course code,Course title,Class nbr,Section,Room,Instructor,Actual Class Duration
+T,10:00,11:15,SDP,ANT 101,Intro to Cultural Anthropology,1311,S1,FF-W242,Basharat Issa,75
+Th,10:00,11:15,SDP,ANT 101,Intro to Cultural Anthropology,1311,S1,FF-W242,Basharat Issa,75
+F,8:30,9:45,SDP,ANT 423,The Ethnographic Eye/I,1003,S1,GF-E101,Aaron Mulvany,75
+W,8:30,9:45,SDP,ANT 423,The Ethnographic Eye/I,1003,S1,GF-E101,Aaron Mulvany,75
+T,11:30,12:45,CH,ANT/MUS 203,Musicking: Anthropology of Mus,1004,S1,SFCL,Daniyal Ahmed,75
+Th,11:30,12:45,CH,ANT/MUS 203,Musicking: Anthropology of Mus,1004,S1,SFCL,Daniyal Ahmed,75
+T,17:15,18:30,ISCIM,BIO 102,The Secret World of Microbes,1005,L1,E-012,Javeria Samad,75
+Th,17:15,18:30,ISCIM,BIO 102,The Secret World of Microbes,1005,L1,E-012,Javeria Samad,75
+W,11:30,14:20,ISCIM,BIO 102L,The Secret World of Microbes,1006,T1,W-121,Humaira Qureshi,170
+T,17:15,18:30,ISCIM,BIO 115,Introduction to Bioinformatics,1007,L1,FF-E220,Arshan Nasir,75
+Th,17:15,18:30,ISCIM,BIO 115,Introduction to Bioinformatics,1007,L1,FF-E220,Arshan Nasir,75
+F,14:30,15:45,ISCIM,BIO 121,Introduction to Biochemistry,1008,L1,GF-E121,Humaira Jamshed,75
+W,14:30,15:45,ISCIM,BIO 121,Introduction to Biochemistry,1008,L1,GF-E121,Humaira Jamshed,75
+W,8:30,11:20,ISCIM,BIO 121L,Biochemistry Lab,1009,T1,W-121,Amber Talat,170
+T,15:30,16:45,ISCIM,BIO 201,Understanding the Human Body,1010,L1,GF-E101,Humaira Jamshed,75
+Th,15:30,16:45,ISCIM,BIO 201,Understanding the Human Body,1010,L1,FF-W243,Humaira Jamshed,75
+T,10:00,11:15,ISCIM,BIO 201,Understanding the Human Body,1330,L2,W-234,Humaira Jamshed,75
+Th,10:00,11:15,ISCIM,BIO 201,Understanding the Human Body,1330,L2,W-234,Humaira Jamshed,75
+M,8:30,11:20,ISCIM,BIO 201L,Understanding the Human Lab,1011,T1,W-121,Humaira Jamshed,170
+M,15:30,18:20,ISCIM,BIO 201L,Understanding the Human Lab,1339,T2,W-121,Humaira Jamshed,170
+T,13:15,14:30,ECE,CE 325,Digital System Design,1012,L1,E-010,Muhammad Farhan,75
+Th,13:15,14:30,ECE,CE 325,Digital System Design,1012,L1,E-010,Muhammad Farhan,75
+T,17:15,18:30,ECE,CE/CS 321/330,Computer Architecture,1026,L3,C-015,Sorath Hansrajani,75
+Th,17:15,18:30,ECE,CE/CS 321/330,Computer Architecture,1026,L3,C-015,Sorath Hansrajani,75
+T,13:15,14:30,ECE,CE/CS 321/330,Computer Architecture,1027,L4,FF-E220,Munzir Zafar,75
+Th,13:15,14:30,ECE,CE/CS 321/330,Computer Architecture,1027,L4,FF-E220,Munzir Zafar,75
+M,17:15,18:30,ECE,CE/CS 321/330,Computer Architecture,1028,L5,GF-E101,Sorath Hansrajani,75
+W,17:15,18:30,ECE,CE/CS 321/330,Computer Architecture,1028,L5,GF-E101,Sorath Hansrajani,75
+M,10:00,11:15,ECE,CE/CS 321/330,Computer Architecture,1029,L6,GF-C109,Tariq Kamal,75
+W,10:00,11:15,ECE,CE/CS 321/330,Computer Architecture,1029,L6,GF-C109,Tariq Kamal,75
+T,10:00,11:15,ECE,CE/CS 321/330,Computer Architecture,1030,L7,E-010,Farhan Khan,75
+Th,10:00,11:15,ECE,CE/CS 321/330,Computer Architecture,1030,L7,E-010,Farhan Khan,75
+T,11:30,14:20,ECE,CE/CS 321L/330L,Computer Architecture Lab,1031,T1,W-110,Tariq Kamal,170
+M,10:30,13:20,ECE,CE/CS 321L/330L,Computer Architecture Lab,1032,T2,W-110,Farhan Khan,170
+F,10:30,13:20,ECE,CE/CS 321L/330L,Computer Architecture Lab,1033,T3,W-110,Farhan Khan,170
+W,11:30,14:20,ECE,CE/CS 321L/330L,Computer Architecture Lab,1034,T4,W-110,Saima Shaheen,170
+T,15:30,18:20,ECE,CE/CS 321L/330L,Computer Architecture Lab,1035,T5,W-110,Ahmad Usman,170
+W,14:30,17:20,ECE,CE/CS 321L/330L,Computer Architecture Lab,1036,T6,W-110,Haseeb Khan,170
+W,8:30,11:20,ECE,CE/CS 321L/330L,Computer Architecture Lab,1037,T7,W-110,Haseeb Khan,170
+M,15:30,18:00,CND,CND 103,Intro to Design and Media,1040,D1,E-100,Rakhshaan Qazi,150
+W,15:30,18:00,CND,CND 103,Intro to Design and Media,1040,D1,E-100,Rakhshaan Qazi,150
+F,10:30,13:00,CND,CND 103,Intro to Design and Media,1041,D2,FF-C200,Momin Zafar,150
+W,10:30,13:00,CND,CND 103,Intro to Design and Media,1041,D2,FF-C200,Momin Zafar,150
+T,10:30,13:00,CND,CND 103,Intro to Design and Media,1042,D3,E-100,Rohama Malik,150
+Th,10:30,13:00,CND,CND 103,Intro to Design and Media,1042,D3,E-100,Rohama Malik,150
+T,15:30,18:20,CND,CND 103L,Intro to Design and Media LAB,1325,T1,FF-W244,Luluwa Murtaza,170
+W,8:30,11:20,CND,CND 103L,Intro to Design and Media LAB,1326,T2,FF-W244,Barira Yousuf,170
+Th,15:30,18:20,CND,CND 103L,Intro to Design and Media LAB,1327,T3,FF-W244,Luluwa Murtaza,170
+M,14:30,18:15,CND,CND 104,Performing Narrative,1322,D1,E-012,Muneera Batool,225
+F,14:30,18:15,CND,CND 104,Performing Narrative,1323,D2,FF-E220,Nighat Sultana Chaudhry,225
+W,11:30,15:15,CND,CND 104,Performing Narrative,1324,D3,W-234,Muneera Batool,225
+M,8:40,10:20,CND,CND 106,Forms of Inquiry,1052,S1,W-234,Mehwish Abid,100
+T,9:50,11:30,CND,CND 106,Forms of Inquiry,1053,S2,GF-E121,Mehwish Abid,100
+M,12:40,14:20,CND,CND 106,Forms of Inquiry,1054,S3,FF-W242,Mehwish Abid,100
+M,8:30,11:50,CND,CND 429,Design Research II,1055,L1,C-015,Mariam Aziz,200
+F,8:30,11:50,CND,CND 429,Design Research II,1056,L2,E-012,Muneera Batool,200
+W,8:30,11:50,CND,CND 429,Design Research II,1057,L3,CPE HALL,Christie Lauder,200
+T,10:00,13:20,CND,COM 203,Production Fundamentals II,1013,D1,LG09,Syed Ali,200
+W,11:30,14:20,CND,COM 203L,Production Fundamentals II Lab,1014,T1,LG09,Mariam Aziz,170
+F,17:15,18:30,CND,COM 204,Elements of Aesthetics 1,1015,S1,GF-E121,Sheikh Taha Ahmed Munir,75
+W,17:15,18:30,CND,COM 204,Elements of Aesthetics 1,1015,S1,GF-E121,Sheikh Taha Ahmed Munir,75
+M,14:30,17:20,CND,COM 213,Cinematography in Pak Cinema,1016,D1,LG09,Syed Ali,170
+F,15:50,17:05,CND,COM 231,Bollywood Masculinity,1017,S1,E-012,Sheikh Taha Ahmed Munir,75
+W,15:50,17:05,CND,COM 231,Bollywood Masculinity,1017,S1,E-012,Sheikh Taha Ahmed Munir,75
+T,15:30,18:00,CND,COM 237,Creative Writing,1329,S1,FF-W243,Anum Asi,150
+Th,10:00,13:20,CND,COM 303,Post Production,1019,D1,LG09,Syed Ali,200
+F,10:30,13:20,CND,COM 303L,Post Production (Lab),1020,T1,LG09,Syed Ali,170
+W,12:50,14:30,CND,COM 304,Contexualising Media,1021,S1,FF-W243,Abdul Rafay Mahmood,100
+T,13:15,14:30,CND,COM 323,After Digital: The Creative In,1022,S1,FF-N219,Abdul Rafay Mahmood,75
+Th,13:15,14:30,CND,COM 323,After Digital: The Creative In,1022,S1,FF-N219,Abdul Rafay Mahmood,75
+T,16:50,18:30,CND,COM 341,Let's Get Talking,1023,J1,W-321,Haya Fatima Iqbal,100
+Th,16:50,18:30,CND,COM 341,Let's Get Talking,1023,J1,W-321,Haya Fatima Iqbal,100
+M,13:00,14:15,CND,COM/DES 332/313,Interactive Storytelling,1058,S1,FF-C200,Christie Lauder,75
+W,13:00,14:15,CND,COM/DES 332/313,Interactive Storytelling,1058,S1,FF-C200,Christie Lauder,75
+T,8:30,9:45,CND,COM/LIT 221/235,"Journalism, History, Novel",1059,S1,W-234,Zuha Asif Siddiqui,75
+Th,8:30,9:45,CND,COM/LIT 221/235,"Journalism, History, Novel",1059,S1,W-234,Zuha Asif Siddiqui,75
+M,14:30,17:00,CND,COM/LIT 333,Assembly of the Weird,1060,S1,FF-W243,Zain Saeed,150
+M,11:30,12:20,CH,CORE 102,What is Modernity?,1254,L1,E-215,"Nauman Naqvi
+Mahso Gichki
+Nimra Farooq
+Nahrain Al-Mousawi
+Haniya Habib
+Muzammil Patel
+Marcelo Alves de Paula Lima
+Abdullah Mirza
+Aqdas Afzal",50
+T,13:15,14:30,CH,CORE 102,What is Modernity?,1255,S1,GF-E101,Nauman Naqvi,75
+Th,13:15,14:30,CH,CORE 102,What is Modernity?,1255,S1,GF-E101,Nauman Naqvi,75
+T,8:30,9:45,CH,CORE 102,What is Modernity?,1264,S10,FF-W243,Nimra Farooq,75
+Th,8:30,9:45,CH,CORE 102,What is Modernity?,1264,S10,FF-W243,Nimra Farooq,75
+F,8:30,9:45,CH,CORE 102,What is Modernity?,1265,S11,FF-C200,Mahso Gichki,75
+W,8:30,9:45,CH,CORE 102,What is Modernity?,1265,S11,FF-C200,Mahso Gichki,75
+T,8:30,9:45,CH,CORE 102,What is Modernity?,1266,S12,FF-W242,Nahrain Al-Mousawi,75
+Th,8:30,9:45,CH,CORE 102,What is Modernity?,1266,S12,FF-W242,Nahrain Al-Mousawi,75
+T,13:15,14:30,CH,CORE 102,What is Modernity?,1256,S2,E-100,Nimra Farooq,75
+Th,13:15,14:30,CH,CORE 102,What is Modernity?,1256,S2,E-100,Nimra Farooq,75
+T,8:30,9:45,CH,CORE 102,What is Modernity?,1257,S3,GF-E121,Marcelo Alves de Paula Lima,75
+Th,8:30,9:45,CH,CORE 102,What is Modernity?,1257,S3,GF-E121,Marcelo Alves de Paula Lima,75
+T,13:15,14:30,CH,CORE 102,What is Modernity?,1258,S4,FF-C200,Haniya Habib,75
+Th,13:15,14:30,CH,CORE 102,What is Modernity?,1258,S4,FF-C200,Haniya Habib,75
+F,15:50,17:05,CH,CORE 102,What is Modernity?,1259,S5,E-011,Muzammil Patel,75
+W,15:50,17:05,CH,CORE 102,What is Modernity?,1259,S5,E-011,Muzammil Patel,75
+F,15:50,17:05,CH,CORE 102,What is Modernity?,1260,S6,GF-E121,Marcelo Alves de Paula Lima,75
+W,15:50,17:05,CH,CORE 102,What is Modernity?,1260,S6,GF-E121,Marcelo Alves de Paula Lima,75
+F,15:50,17:05,CH,CORE 102,What is Modernity?,1261,S7,GF-C109,Abdullah Mirza,75
+W,15:50,17:05,CH,CORE 102,What is Modernity?,1261,S7,GF-C109,Abdullah Mirza,75
+T,13:15,14:30,CH,CORE 102,What is Modernity?,1262,S8,W-321,Aqdas Afzal,75
+Th,13:15,14:30,CH,CORE 102,What is Modernity?,1262,S8,W-321,Aqdas Afzal,75
+F,11:30,12:45,CH,CORE 102,What is Modernity?,1263,S9,E-100,Muhammad Salman,75
+W,11:30,12:45,CH,CORE 102,What is Modernity?,1263,S9,E-100,Muhammad Salman,75
+M,13:30,14:20,CH,CORE 121,Jehan-e-Urdu,1062,L1,FF-E220,"Inam Ullah
+Tanveer Anjum
+Syed Afzal Ahmed",50
+T,8:30,9:45,CH,CORE 121,Jehan-e-Urdu,1063,S1,E-012,Tanveer Anjum,75
+Th,8:30,9:45,CH,CORE 121,Jehan-e-Urdu,1063,S1,E-012,Tanveer Anjum,75
+F,15:50,17:05,CH,CORE 121,Jehan-e-Urdu,1064,S2,FF-C200,Inam Ullah,75
+W,15:50,17:05,CH,CORE 121,Jehan-e-Urdu,1064,S2,FF-C200,Inam Ullah,75
+T,13:15,14:30,CH,CORE 121,Jehan-e-Urdu,1065,S3,E-012,Syed Afzal Ahmed,75
+Th,13:15,14:30,CH,CORE 121,Jehan-e-Urdu,1065,S3,E-012,Syed Afzal Ahmed,75
+T,13:15,14:30,CH,CORE 121,Jehan-e-Urdu,1066,S4,SFCL,Inam Ullah,75
+Th,13:15,14:30,CH,CORE 121,Jehan-e-Urdu,1066,S4,SFCL,Inam Ullah,75
+F,8:30,9:45,CH,CORE 121,Jehan-e-Urdu,1067,S5,W-321,Tanveer Anjum,75
+W,8:30,9:45,CH,CORE 121,Jehan-e-Urdu,1067,S5,W-321,Tanveer Anjum,75
+T,17:15,18:30,ISCIM,CORE 200,Scientific Methods,1068,L1,GF-E101,Huma abid,75
+Th,17:15,18:30,ISCIM,CORE 200,Scientific Methods,1068,L1,GF-E101,Huma abid,75
+T,15:30,16:45,ISCIM,CORE 200,Scientific Methods,1069,L2,GF-E121,Huma abid,75
+Th,15:30,16:45,ISCIM,CORE 200,Scientific Methods,1069,L2,GF-E121,Huma abid,75
+M,11:30,12:45,ISCIM,CORE 200,Scientific Methods,1070,L3,FF-C200,Sameena Shahzaman,75
+Th,11:30,12:45,ISCIM,CORE 200,Scientific Methods,1070,L3,FF-C200,Sameena Shahzaman,75
+F,8:30,9:45,ISCIM,CORE 200,Scientific Methods,1071,L4,W-234,Hassaan Furqan Khan,75
+W,8:30,9:45,ISCIM,CORE 200,Scientific Methods,1071,L4,W-234,Hassaan Furqan Khan,75
+T,15:30,16:45,ISCIM,CORE 200,Scientific Methods,1072,L5,E-011,Sameena Shahzaman,75
+Th,15:30,16:45,ISCIM,CORE 200,Scientific Methods,1072,L5,E-011,Sameena Shahzaman,75
+F,10:00,11:15,ISCIM,CORE 200,Scientific Methods,1073,L6,W-234,Hassaan Furqan Khan,75
+W,10:00,11:15,ISCIM,CORE 200,Scientific Methods,1073,L6,W-234,Hassaan Furqan Khan,75
+M,13:30,14:20,CH,CORE 202,Hikma I,1267,L1,E-215,"Nauman Naqvi
+Hamza Bin Sajjad
+Basharat Issa
+Noman Baig
+Abdullah Mirza
+Muzammil Patel
+Zainab Saleem",50
+F,8:30,9:45,CH,CORE 202,Hikma I,1268,S1,C-015,Nauman Naqvi,75
+W,8:30,9:45,CH,CORE 202,Hikma I,1268,S1,C-015,Nauman Naqvi,75
+T,17:15,18:30,CH,CORE 202,Hikma I,1278,S11,FF-C200,Hamza Bin Sajjad,75
+Th,17:15,18:30,CH,CORE 202,Hikma I,1278,S11,FF-C200,Hamza Bin Sajjad,75
+T,13:15,14:30,CH,CORE 202,Hikma I,1279,S12,FF-N220,Basharat Issa,75
+Th,13:15,14:30,CH,CORE 202,Hikma I,1279,S12,FF-N220,Basharat Issa,75
+T,15:30,16:45,CH,CORE 202,Hikma I,1270,S3,GF-C109,Nauman Naqvi,75
+Th,15:30,16:45,CH,CORE 202,Hikma I,1270,S3,GF-C109,Nauman Naqvi,75
+T,15:30,16:45,CH,CORE 202,Hikma I,1271,S4,FF-N220,Noman Baig,75
+Th,15:30,16:45,CH,CORE 202,Hikma I,1271,S4,FF-N220,Noman Baig,75
+T,8:30,9:45,CH,CORE 202,Hikma I,1272,S5,GF-E101,Abdullah Mirza,75
+Th,8:30,9:45,CH,CORE 202,Hikma I,1272,S5,GF-E101,Abdullah Mirza,75
+T,8:30,9:45,CH,CORE 202,Hikma I,1273,S6,E-011,Muzammil Patel,75
+Th,8:30,9:45,CH,CORE 202,Hikma I,1273,S6,E-011,Muzammil Patel,75
+F,15:50,17:05,CH,CORE 202,Hikma I,1274,S7,FF-N220,Hamza Bin Sajjad,75
+W,15:50,17:05,CH,CORE 202,Hikma I,1274,S7,FF-N220,Hamza Bin Sajjad,75
+T,10:00,11:15,CH,CORE 202,Hikma I,1275,S8,W-321,Zainab Saleem,75
+Th,10:00,11:15,CH,CORE 202,Hikma I,1275,S8,W-321,Zainab Saleem,75
+T,13:15,14:30,CH,CORE 202,Hikma I,1276,S9,GF-E121,Zainab Saleem,75
+Th,13:15,14:30,CH,CORE 202,Hikma I,1276,S9,GF-E121,Zainab Saleem,75
+T,15:30,16:20,CS,CS 101,Programming Fundamentals,1075,L1,E-010,Adeel Soomro,50
+Th,15:30,16:20,CS,CS 101,Programming Fundamentals,1075,L1,E-010,Adeel Soomro,50
+Th,11:30,14:20,CS,CS 101L,Programming Fundamentals Lab,1076,T1,W-110,Adeel Soomro,170
+M,8:30,9:45,CS,CS 201,Data Structures II,1077,L1,E-012,Syeda Saleha Raza,75
+W,8:30,9:45,CS,CS 201,Data Structures II,1077,L1,E-012,Syeda Saleha Raza,75
+F,17:15,18:30,CS,CS 201,Data Structures II,1078,L2,FF-C200,Muhammad Qasim Pasta,75
+W,17:15,18:30,CS,CS 201,Data Structures II,1078,L2,FF-C200,Muhammad Qasim Pasta,75
+T,11:30,12:45,CS,CS 201,Data Structures II,1080,L4,FF-N219,Fahad Javed,75
+Th,11:30,12:45,CS,CS 201,Data Structures II,1080,L4,FF-N219,Fahad Javed,75
+M,15:50,17:05,CS,CS 201,Data Structures II,1081,L5,GF-E101,Muhammad Qasim Pasta,75
+Th,15:50,17:05,CS,CS 201,Data Structures II,1081,L5,GF-E101,Muhammad Qasim Pasta,75
+F,8:30,9:45,CS,CS 352,Introduction to Reinforcement,1312,L1,FF-N220,Mohammad Shaikh,75
+W,8:30,9:45,CS,CS 352,Introduction to Reinforcement,1312,L1,FF-N220,Mohammad Shaikh,75
+T,8:30,9:45,CS,CS 370,Web and Mobile Development,1118,L1,E-003,Muhammad Qasim Pasta,75
+Th,8:30,9:45,CS,CS 370,Web and Mobile Development,1118,L1,E-003,Muhammad Qasim Pasta,75
+T,10:00,11:15,CS,CS 371,Software Security,1119,L1,GF-E101,Muhammad Nadeem,75
+Th,10:00,11:15,CS,CS 371,Software Security,1119,L1,GF-E101,Muhammad Nadeem,75
+M,11:30,12:45,CS,CS 412,Algorithms: Design & Analysis,1120,L1,E-003,Waqar Saleem,75
+Th,11:30,12:45,CS,CS 412,Algorithms: Design & Analysis,1120,L1,E-003,Waqar Saleem,75
+M,14:25,15:40,CS,CS 412,Algorithms: Design & Analysis,1122,L2,FF-C200,Faisal Alvi,75
+W,14:25,15:40,CS,CS 412,Algorithms: Design & Analysis,1122,L2,FF-C200,Faisal Alvi,75
+M,8:30,9:45,CS,CS 412,Algorithms: Design & Analysis,1124,L3,GF-E121,Faisal Alvi,75
+W,8:30,9:45,CS,CS 412,Algorithms: Design & Analysis,1124,L3,GF-E121,Faisal Alvi,75
+T,15:30,16:45,CS,CS 412,Algorithms: Design & Analysis,1126,L4,FF-C200,Waqar Saleem,75
+Th,15:30,16:45,CS,CS 412,Algorithms: Design & Analysis,1126,L4,FF-C200,Waqar Saleem,75
+F,10:30,11:20,CS,CS 412,Algorithms: Design & Analysis,1121,R1,E-011,TBD .,50
+F,14:30,15:20,CS,CS 412,Algorithms: Design & Analysis,1123,R2,E-010,TBD .,50
+T,11:30,12:20,CS,CS 412,Algorithms: Design & Analysis,1125,R3,E-003,TBD .,50
+W,13:30,14:20,CS,CS 412,Algorithms: Design & Analysis,1127,R4,FF-W242,TBD .,50
+F,11:30,12:45,CS,CS 432,GPU Accelerated Computing,1128,L1,FF-W242,Muhammad Mobeen Movania,75
+W,11:30,12:45,CS,CS 432,GPU Accelerated Computing,1128,L1,FF-W242,Muhammad Mobeen Movania,75
+M,14:25,15:40,CS,CS 451,Computational Intelligence,1129,L1,FF-W242,Syeda Saleha Raza,75
+W,14:25,15:40,CS,CS 451,Computational Intelligence,1129,L1,FF-W242,Syeda Saleha Raza,75
+T,8:30,9:45,CS,CS 457,Data Science,1130,L1,C-015,Zeehasham Rasheed,75
+Th,8:30,9:45,CS,CS 457,Data Science,1130,L1,C-015,Zeehasham Rasheed,75
+T,8:30,9:45,CS,CS 458,Natural Language Processing,1131,L1,SFCL,Faisal Alvi,75
+Th,8:30,9:45,CS,CS 458,Natural Language Processing,1131,L1,SFCL,Faisal Alvi,75
+F,10:00,11:15,CS,CS 491,Capstone (Kaavish) I,1348,C1,GF-E121,Waqar Saleem,75
+F,10:00,11:15,CS,CS 492,Capstone (Kaavish) II,1132,C1,FF-E220,Syeda Saleha Raza,75
+F,10:00,11:15,CS,CS 492,Capstone (Kaavish) II,1133,C2,E-100,Nadia Nasir,75
+F,10:00,11:15,CS,CS 492,Capstone (Kaavish) II,1134,C3,GF-E101,Abdul Samad,75
+F,10:00,11:15,CS,CS 492,Capstone (Kaavish) II,1135,C4,GF-E121,Waqar Saleem,75
+F,10:00,11:15,CS,CS 492,Capstone (Kaavish) II,1136,C5,FF-W242,Muhammad Mobeen Movania,75
+F,8:30,9:45,CS,CS/CE 102/171,Data Structures & Algorithms,1301,L1,FF-N219,Muhammad Mobeen Movania,75
+W,8:30,9:45,CS,CS/CE 102/171,Data Structures & Algorithms,1301,L1,FF-N219,Muhammad Mobeen Movania,75
+T,11:30,12:45,CS,CS/CE 102/171,Data Structures & Algorithms,1302,L2,GF-C109,Nadia Nasir,75
+Th,11:30,12:45,CS,CS/CE 102/171,Data Structures & Algorithms,1302,L2,GF-C109,Nadia Nasir,75
+M,13:00,14:15,CS,CS/CE 102/171,Data Structures & Algorithms,1303,L3,C-015,Faiza Azhar,75
+W,13:00,14:15,CS,CS/CE 102/171,Data Structures & Algorithms,1303,L3,C-015,Faiza Azhar,75
+T,11:30,12:45,CS,CS/CE 102/171,Data Structures & Algorithms,1304,L4,FF-W242,Mohammad Salman,75
+Th,11:30,12:45,CS,CS/CE 102/171,Data Structures & Algorithms,1304,L4,FF-W242,Mohammad Salman,75
+T,8:30,9:45,CS,CS/CE 102/171,Data Structures & Algorithms,1305,L5,GF-C109,Maria Samad,75
+Th,8:30,9:45,CS,CS/CE 102/171,Data Structures & Algorithms,1305,L5,GF-C109,Maria Samad,75
+T,13:15,14:30,CS,CS/CE 102/171,Data Structures & Algorithms,1306,L6,E-003,Maria Samad,75
+Th,13:15,14:30,CS,CS/CE 102/171,Data Structures & Algorithms,1306,L6,E-003,Maria Samad,75
+T,15:30,16:45,CS,CS/CE 102/171,Data Structures & Algorithms,1307,L7,FF-W242,Saba Saeed,75
+Th,15:30,16:45,CS,CS/CE 102/171,Data Structures & Algorithms,1307,L7,FF-W242,Saba Saeed,75
+M,8:30,11:20,CS,CS/CE 102L/171L,Data Structures & Algo Lab,1083,T1,SFCL,Muhammad Mobeen Movania,170
+M,12:30,15:20,CS,CS/CE 102L/171L,Data Structures & Algo Lab,1084,T2,SFCL,Nadia Nasir,170
+M,15:30,18:20,CS,CS/CE 102L/171L,Data Structures & Algo Lab,1085,T3,SFCL,Faiza Azhar,170
+F,10:30,13:20,CS,CS/CE 102L/171L,Data Structures & Algo Lab,1086,T4,E-003,Mohammad Salman,170
+F,14:30,17:20,CS,CS/CE 102L/171L,Data Structures & Algo Lab,1087,T5,W-110,Maria Samad,170
+W,8:30,11:20,CS,CS/CE 102L/171L,Data Structures & Algo Lab,1088,T6,E-003,Maria Samad,170
+W,11:30,14:20,CS,CS/CE 102L/171L,Data Structures & Algo Lab,1089,T7,E-010,Saba Saeed,170
+F,15:50,17:05,CS,CS/CE 224/272,OOP & Design Methodologies,1090,L1,FF-W243,Nadia Nasir,75
+W,15:50,17:05,CS,CS/CE 224/272,OOP & Design Methodologies,1090,L1,FF-W243,Nadia Nasir,75
+W,11:30,14:20,CS,CS/CE 224L/272L,OOP & Design Methodologies Lab,1091,T1,E-003,Nadia Nasir,170
+T,17:15,18:30,CS,CS/CE 353/374,Software Engineering,1298,L1,GF-E121,Mohsin Nagaria,75
+Th,17:15,18:30,CS,CS/CE 353/374,Software Engineering,1298,L1,GF-E121,Mohsin Nagaria,75
+F,15:30,16:45,CS,CS/CE 353/374,Software Engineering,1299,L2,FF-N219,Abbas Akhtar,75
+T,15:30,16:45,CS,CS/CE 353/374,Software Engineering,1299,L2,FF-N219,Abbas Akhtar,75
+M,10:00,11:15,CS,CS/CE 353/374,Software Engineering,1300,L3,E-100,Ahsan Jawed,75
+W,10:00,11:15,CS,CS/CE 353/374,Software Engineering,1300,L3,E-100,Ahsan Jawed,75
+T,13:15,14:30,CS,CS/DES 333/327,Intro to HCI,1082,L1,E-011,Neelma Bhatti,75
+Th,13:15,14:30,CS,CS/DES 333/327,Intro to HCI,1082,L1,E-011,Neelma Bhatti,75
+T,17:15,18:30,CS,CS/MATH 113,Discrete Mathematics,1092,L1,E-003,Waqar Saleem,75
+Th,17:15,18:30,CS,CS/MATH 113,Discrete Mathematics,1092,L1,E-003,Waqar Saleem,75
+T,10:00,11:15,CS,CS/MATH 113,Discrete Mathematics,1094,L2,E-012,Muhammad Zafar,75
+Th,10:00,11:15,CS,CS/MATH 113,Discrete Mathematics,1094,L2,E-012,Muhammad Zafar,75
+T,11:30,12:45,CS,CS/MATH 113,Discrete Mathematics,1096,L3,E-011,Muhammad Zafar,75
+Th,11:30,12:45,CS,CS/MATH 113,Discrete Mathematics,1096,L3,E-011,Muhammad Zafar,75
+F,14:30,15:45,CS,CS/MATH 113,Discrete Mathematics,1098,L4,FF-N220,Rameez Ragheb,75
+W,14:30,15:45,CS,CS/MATH 113,Discrete Mathematics,1098,L4,FF-N220,Rameez Ragheb,75
+F,17:15,18:30,CS,CS/MATH 113,Discrete Mathematics,1100,L5,FF-N220,Rameez Ragheb,75
+W,17:15,18:30,CS,CS/MATH 113,Discrete Mathematics,1100,L5,FF-N220,Rameez Ragheb,75
+T,13:15,14:30,CS,CS/MATH 113,Discrete Mathematics,1104,L7,FF-W242,Huma abid,75
+Th,13:15,14:30,CS,CS/MATH 113,Discrete Mathematics,1104,L7,FF-W242,Huma abid,75
+M,13:00,14:15,ISCIM,CS/MATH 113,Discrete Mathematics,1340,L8,FF-W243,Rameez Ragheb,75
+W,11:30,12:45,ISCIM,CS/MATH 113,Discrete Mathematics,1340,L8,FF-W243,Rameez Ragheb,75
+F,17:30,18:20,CS,CS/MATH 113,Discrete Mathematics,1093,R1,GF-E101,Muhammad Munawwar Anwar,50
+F,17:30,18:20,CS,CS/MATH 113,Discrete Mathematics,1095,R2,W-321,Shams Arfeen,50
+W,17:30,18:20,CS,CS/MATH 113,Discrete Mathematics,1097,R3,W-321,Muhammad Munawwar Anwar,50
+Th,13:30,14:20,CS,CS/MATH 113,Discrete Mathematics,1099,R4,W-234,Shams Arfeen,50
+Th,10:30,11:20,CS,CS/MATH 113,Discrete Mathematics,1101,R5,E-003,Muhammad Munawwar Anwar,50
+F,17:30,18:20,CS,CS/MATH 113,Discrete Mathematics,1105,R7,E-011,Shams Arfeen,50
+F,16:00,16:50,CS,CS/MATH 113,Discrete Mathematics,1341,R8,W-234,Shams Arfeen,50
+Th,10:00,13:20,CND,DES 203,Designing For & With People,1107,D1,PG-1,Hasan Habib,200
+W,13:30,16:50,CND,DES 203,Designing For & With People,1108,D2,CPE HALL,Fatin Nawaz,200
+M,8:30,11:20,CND,DES 203L,Designing For & w/h People Lab,1109,T1,FF-W244,Barira Yousuf,170
+M,14:30,17:20,CND,DES 203L,Designing For & w/h People Lab,1110,T2,E-010,Barira Yousuf,170
+F,14:30,16:10,CND,DES 204,Research in Design,1111,S1,FF-W242,Mishal Khattak,100
+M,14:40,16:20,CND,DES 204,Research in Design,1112,S2,C-015,Mishal Khattak,100
+F,9:50,11:30,CND,DES 213,Illustration and Protest,1113,D1,FF-W243,Isma Hasan,100
+W,9:50,11:30,CND,DES 213,Illustration and Protest,1113,D1,FF-W243,Isma Hasan,100
+F,9:50,11:30,CND,DES 217,Creating Comics,1114,J1,C-015,Rohama Malik,100
+W,9:50,11:30,CND,DES 217,Creating Comics,1114,J1,C-015,Rohama Malik,100
+M,8:30,11:50,CND,DES 303,Design Fictions and Provocatio,1115,D1,PG-1,Isma Hasan,200
+F,14:30,17:20,CND,DES 303L,Design Fictions & Provoca Lab,1116,T1,FF-W244,Luluwa Murtaza,170
+W,14:30,17:00,CND,DES 318,Digital Aestetics,1354,S1,FF-W244,Mishal Khattak,150
+T,10:00,11:15,SDP,DEV 212,Urban Sustainability,1138,S1,C-015,Farhan Anwar,75
+Th,10:00,11:15,SDP,DEV 212,Urban Sustainability,1138,S1,C-015,Farhan Anwar,75
+M,11:30,12:45,SDP,DEV 224,Development & Environmentalism,1297,L1,W-234,Tajreen Jafri,75
+T,11:30,12:45,SDP,DEV 224,Development & Environmentalism,1297,L1,W-234,Tajreen Jafri,75
+M,8:30,11:00,SDP,DEV 322,Intro to Program Planning,1139,L1,FF-C200,Shama Dossa,150
+T,15:30,16:45,SDP,DEV 324,Education Planning,1333,S1,W-321,Muhammad Aatir Khan,75
+Th,15:30,16:45,SDP,DEV 324,Education Planning,1333,S1,W-321,Muhammad Aatir Khan,75
+M,10:00,11:15,SDP,ECON 121,Principles of Macroeconomics,1253,L1,FF-W242,Mohammad Moeini Feizabadi,75
+W,10:00,11:15,SDP,ECON 121,Principles of Macroeconomics,1253,L1,FF-W242,Mohammad Moeini Feizabadi,75
+M,15:50,17:05,SDP,ECON 425,Institutional Economics,1141,S1,FF-W242,Aqdas Afzal,75
+W,15:50,17:05,SDP,ECON 425,Institutional Economics,1141,S1,FF-W242,Aqdas Afzal,75
+F,14:30,15:45,ECE,EE 212,Electric Network Analysis,1142,L1,C-015,Haleema Qamar,75
+W,14:30,15:45,ECE,EE 212,Electric Network Analysis,1142,L1,C-015,Haleema Qamar,75
+T,10:00,12:50,ECE,EE 212L,Electric Network Analysis Lab,1143,T1,W-114,Haleema Qamar,170
+M,10:30,11:20,ECE,EE 213,Electric Circuits-II,1145,L1,GF-E121,Saad Baig,50
+Th,10:30,11:20,ECE,EE 213,Electric Circuits-II,1145,L1,GF-E121,Saad Baig,50
+W,10:30,11:20,ECE,EE 213,Electric Circuits-II,1145,L1,GF-E121,Saad Baig,50
+T,17:15,18:30,ECE,EE 322,Analog & Digital Communication,1146,L1,W-234,Tariq Mumtaz,75
+Th,17:15,18:30,ECE,EE 322,Analog & Digital Communication,1146,L1,W-234,Tariq Mumtaz,75
+M,15:30,18:20,ECE,EE 322L,Analog and Digital Comm (Lab),1147,T1,W-111,Tariq Mumtaz,170
+T,8:30,9:45,ECE,EE 422,Wireless and Mobile Comm.,1150,L1,E-100,Tariq Mumtaz,75
+Th,8:30,9:45,ECE,EE 422,Wireless and Mobile Comm.,1150,L1,E-100,Tariq Mumtaz,75
+T,15:30,16:45,ECE,EE 432,Power Electronics,1151,L1,SFCL,Ishtiyaq Makda,75
+Th,15:30,16:45,ECE,EE 432,Power Electronics,1151,L1,SFCL,Ishtiyaq Makda,75
+F,10:30,13:20,ECE,EE 432L,Power Electronics (Lab),1152,T1,LG-C001,Haleema Qamar,170
+T,11:30,12:45,ECE,EE 452,Computer Vision,1153,L1,E-012,Muhammad Farhan,75
+Th,11:30,12:45,ECE,EE 452,Computer Vision,1153,L1,E-012,Muhammad Farhan,75
+F,8:30,9:20,ECE,EE/CE 252/251,Signals and Systems,1156,L1,FF-E220,Shafayat Abrar,50
+M,8:30,9:20,ECE,EE/CE 252/251,Signals and Systems,1156,L1,FF-E220,Shafayat Abrar,50
+W,8:30,9:20,ECE,EE/CE 252/251,Signals and Systems,1156,L1,FF-E220,Shafayat Abrar,50
+W,17:15,18:30,ECE,EE/CE 252/251,Signals and Systems,1157,L2,W-234,Adnan Aslam Chaudhry,75
+F,17:15,18:30,ECE,EE/CE 252/251,Signals and Systems,1157,L2,W-234,Adnan Aslam Chaudhry,75
+M,14:30,17:20,ECE,EE/CE 252L/251L,Signals and Systems Lab,1154,T1,W-110,Shafayat Abrar,170
+Th,15:30,18:20,ECE,EE/CE 252L/251L,Signals and Systems Lab,1155,T2,W-110,Shafayat Abrar,170
+M,8:30,10:10,ECE,EE/CE 301,Electrical Engineering Junior,1158,S1,E-003,Saad Baig,100
+M,11:30,12:45,ECE,EE/CE 354/361,Intro to Probability & Stats,1294,L2,FF-E220,Muhammad Umer Tariq,75
+W,11:30,12:45,ECE,EE/CE 354/361,Intro to Probability & Stats,1294,L2,FF-E220,Muhammad Umer Tariq,75
+F,11:30,13:10,ECE,EE/CE 354/361,Intro to Probability & Stats,1295,L3,FF-E220,Muhammad Umer Tariq,100
+M,14:30,15:20,ECE,EE/CE 354/361,Intro to Probability & Stats,1295,L3,FF-E220,Muhammad Umer Tariq,50
+Th,11:30,12:20,ECE,EE/CE 354/361,Intro to Probability & Stats,1290,R1,FF-N220,Zareen Tabassum,50
+F,17:30,18:20,ECE,EE/CE 354/361,Intro to Probability & Stats,1291,R2,GF-C109,Zareen Tabassum,50
+F,14:30,15:20,ECE,EE/CE 354/361,Intro to Probability & Stats,1292,R3,W-234,Zareen Tabassum,50
+M,10:30,13:20,ECE,EE/CE 366L,Introduction to Robotics Lab,1167,T1,LG26,Abdul Basit Memon,170
+F,14:30,17:00,ECE,EE/CE 391L,"Engineering, Design, & Innov.",1168,D1,PG-1,Munzir Zafar,150
+W,14:30,17:00,ECE,EE/CE 391L,"Engineering, Design, & Innov.",1168,D1,PG-1,Munzir Zafar,150
+F,14:30,17:00,ECE,EE/CE 391L,"Engineering, Design, & Innov.",1169,D2,PG-1,Muhammad Umer Tariq,150
+W,14:30,17:00,ECE,EE/CE 391L,"Engineering, Design, & Innov.",1169,D2,PG-1,Muhammad Umer Tariq,150
+T,11:30,12:45,ECE,EE/CE 453/352,Digital Signal Processing,1170,L1,C-015,Saad Baig,75
+Th,11:30,12:45,ECE,EE/CE 453/352,Digital Signal Processing,1170,L1,C-015,Saad Baig,75
+W,11:30,14:20,ECE,EE/CE 453L/352L,Digital Signal Processing Lab,1171,T1,SFCL,Saad Baig,170
+T,11:30,12:45,ECE,EE/CS 172/130,Digital Logic and Design,1185,L1,GF-E121,Areeba Rajput,75
+Th,11:30,12:45,ECE,EE/CS 172/130,Digital Logic and Design,1185,L1,GF-E121,Areeba Rajput,75
+T,15:30,16:45,ECE,EE/CS 172/130,Digital Logic and Design,1186,L2,W-234,Areeba Rajput,75
+Th,15:30,16:45,ECE,EE/CS 172/130,Digital Logic and Design,1186,L2,W-234,Areeba Rajput,75
+W,14:30,17:20,ECE,EE/CS 172L/130L,Digital Logic and Design Lab,1187,T1,W-111,Areeba Rajput,170
+F,10:30,13:20,ECE,EE/CS 172L/130L,Digital Logic and Design Lab,1188,T2,W-111,Areeba Rajput,170
+T,10:00,11:15,ECE,EE/CS 366/380,Introduction to Robotics,1189,L1,FF-N219,Abdul Basit Memon,75
+Th,10:00,11:15,ECE,EE/CS 366/380,Introduction to Robotics,1189,L1,FF-N219,Abdul Basit Memon,75
+F,10:30,11:20,ECE,EE/PHY 241,Electromagnetic Theory,1190,L1,FF-N219,Shafayat Abrar,50
+M,10:30,11:20,ECE,EE/PHY 241,Electromagnetic Theory,1190,L1,FF-N219,Shafayat Abrar,50
+W,10:30,11:20,ECE,EE/PHY 241,Electromagnetic Theory,1190,L1,FF-N219,Shafayat Abrar,50
+T,11:30,12:45,ISCIM,ENER 104,Renewable Energy,1191,L1,E-010,Mohamed Elsayed Orabi Mustafa,75
+Th,11:30,12:45,ISCIM,ENER 104,Renewable Energy,1191,L1,E-010,Mohamed Elsayed Orabi Mustafa,75
+W,11:30,14:20,ECE,ENGR 291L,Engineering Workshop,1286,T1,LG-C025,Haseeb Shaikh,170
+F,10:30,13:20,ECE,ENGR 291L,Engineering Workshop,1287,T2,LG-C025,Haseeb Shaikh,170
+W,15:30,18:20,ECE,ENGR 291L,Engineering Workshop,1288,T3,LG-C025,Haseeb Shaikh,170
+M,15:30,18:20,ECE,ENGR 291L,Engineering Workshop,1289,T4,LG-C025,Haseeb Shaikh,170
+T,13:15,14:30,ISCIM,ENVS 301,Intro Enviro Engineering,1192,L1,C-015,Hassaan Furqan Khan,75
+Th,13:15,14:30,ISCIM,ENVS 301,Intro Enviro Engineering,1192,L1,C-015,Hassaan Furqan Khan,75
+M,12:00,13:00,GSCP,GSCP 399,GSCP Research S II,1172,S1,FF-W243,Mohammad Moeini Feizabadi,60
+T,11:30,12:45,CH,HIST 123,Comparative Empires,1334,S1,FF-N220,Mariam Sabri,75
+Th,11:30,12:45,CH,HIST 123,Comparative Empires,1334,S1,W-234,Mariam Sabri,75
+F,14:30,15:20,CH,HIST 227,Understanding Histories,1310,L1,FF-N219,Abdullah Mirza,50
+M,17:15,18:30,CH,HIST 227,Understanding Histories,1310,L1,FF-W243,Abdullah Mirza,75
+Th,17:15,18:30,CH,HIST 227,Understanding Histories,1310,L1,FF-W243,Abdullah Mirza,75
+F,15:30,16:45,CH,HIST/LIT 134,Intro to Punjabi Sufi Lit,1174,S1,E-100,Naila Pervaiz,75
+Th,15:30,16:45,CH,HIST/LIT 134,Intro to Punjabi Sufi Lit,1174,S1,E-100,Naila Pervaiz,75
+M,12:50,14:30,CH,HUM 201,Conceptual Genealogies,1176,L1,GF-C109,Marcelo Alves de Paula Lima,100
+W,12:50,14:30,CH,HUM 201,Conceptual Genealogies,1176,L1,GF-C109,Marcelo Alves de Paula Lima,100
+M,12:50,14:30,CH,HUM 401,Heidegger,1178,S1,FF-N220,Najeeb Jan,100
+W,12:50,14:30,CH,HUM 401,Heidegger,1178,S1,FF-N220,Najeeb Jan,100
+M,8:40,10:20,CH,HUM/HIST 200,World Historical Figures,1309,L1,FF-N219,Marcelo Alves de Paula Lima,100
+W,9:50,11:30,CH,HUM/HIST 200,World Historical Figures,1309,L1,FF-N220,Marcelo Alves de Paula Lima,100
+T,15:30,17:10,CH,HUM/SDP 300/353,Public Intellectuals,1177,S1,E-012,Muhammad Haris,100
+Th,15:30,17:10,CH,HUM/SDP 300/353,Public Intellectuals,1177,S1,E-012,Muhammad Haris,100
+F,17:15,18:30,CH,LIT 207,What is Gender?,1180,S1,C-015,Haniya Habib,75
+W,17:15,18:30,CH,LIT 207,What is Gender?,1180,S1,C-015,Haniya Habib,75
+M,17:15,18:30,CH,LIT 225,Literary Theory and Criticism,1181,S1,E-011,Nahrain Al-Mousawi,75
+W,17:15,18:30,CH,LIT 225,Literary Theory and Criticism,1181,S1,E-011,Nahrain Al-Mousawi,75
+T,11:30,12:45,CH,LIT 315,Reading the Partition,1182,S1,FF-E220,Inam Ullah,75
+Th,11:30,12:45,CH,LIT 315,Reading the Partition,1182,S1,FF-E220,Inam Ullah,75
+T,8:30,9:45,CH,LIT 332,The World of Quratul Ain Hyder,1183,S1,W-321,Syed Afzal Ahmed,75
+Th,8:30,9:45,CH,LIT 332,The World of Quratul Ain Hyder,1183,S1,W-321,Syed Afzal Ahmed,75
+M,17:15,18:30,ISCIM,MATH 101,Calculus I,1217,L1,E-003,Sara Ashraf,75
+T,17:30,18:20,ISCIM,MATH 101,Calculus I,1217,L1,FF-N219,Sara Ashraf,50
+Th,17:15,18:30,ISCIM,MATH 101,Calculus I,1217,L1,FF-N219,Sara Ashraf,75
+T,15:30,16:45,ISCIM,MATH 102,Calculus II,1218,L1,C-015,Yousuf Kerai,75
+Th,15:30,16:45,ISCIM,MATH 102,Calculus II,1218,L1,C-015,Yousuf Kerai,75
+F,14:30,15:45,ISCIM,MATH 102,Calculus II,1219,L2,E-012,Yousuf Kerai,75
+W,14:30,15:45,ISCIM,MATH 102,Calculus II,1219,L2,E-012,Yousuf Kerai,75
+T,8:30,9:45,ISCIM,MATH 102,Calculus II,1220,L3,FF-C200,Aatyka Fatima,75
+Th,8:30,9:45,ISCIM,MATH 102,Calculus II,1220,L3,FF-C200,Aatyka Fatima,75
+T,10:00,11:15,ISCIM,MATH 102,Calculus II,1221,L4,E-011,Aatyka Fatima,75
+Th,10:00,11:15,ISCIM,MATH 102,Calculus II,1221,L4,E-011,Aatyka Fatima,75
+M,10:00,11:15,ISCIM,MATH 102,Calculus II,1222,L5,E-012,Sajal Rana,75
+W,10:00,11:15,ISCIM,MATH 102,Calculus II,1222,L5,E-012,Sajal Rana,75
+T,17:15,18:30,ISCIM,MATH 102,Calculus II,1223,L6,E-100,Muhammad Sami Siddiqui,75
+Th,17:15,18:30,ISCIM,MATH 102,Calculus II,1223,L6,E-100,Muhammad Sami Siddiqui,75
+F,8:30,9:45,ISCIM,MATH 102,Calculus II,1224,L7,FF-W242,Aatyka Fatima,75
+W,8:30,9:45,ISCIM,MATH 102,Calculus II,1224,L7,FF-W242,Aatyka Fatima,75
+M,15:50,17:05,ISCIM,MATH 205,Linear Algebra,1225,L1,FF-E220,Sajal Rana,75
+Th,15:50,17:05,ISCIM,MATH 205,Linear Algebra,1225,L1,FF-E220,Sajal Rana,75
+T,8:30,9:45,ISCIM,MATH 205,Linear Algebra,1226,L2,FF-E220,Aeyaz Jamil Kayani,75
+Th,8:30,9:45,ISCIM,MATH 205,Linear Algebra,1226,L2,FF-E220,Aeyaz Jamil Kayani,75
+M,8:30,9:45,ISCIM,MATH 305,Complex Analysis,1227,L1,E-010,Sajal Rana,75
+Th,13:15,14:30,ISCIM,MATH 305,Complex Analysis,1227,L1,CPE HALL,Sajal Rana,75
+T,13:15,14:30,ISCIM,MATH/MUS 106/226,Music and Mathematics,1228,L1,FF-W243,Yousuf Kerai,75
+Th,13:15,14:30,ISCIM,MATH/MUS 106/226,Music and Mathematics,1228,L1,FF-W243,Yousuf Kerai,75
+F,17:15,18:30,ECE,ME 432,Introduction to Nanotechnology,1229,L1,FF-N219,Ahmad Usman,75
+W,17:15,18:30,ECE,ME 432,Introduction to Nanotechnology,1229,L1,FF-N219,Ahmad Usman,75
+F,17:15,18:30,ECE,MGMT 301,Tech. Mgmnt & Entrepreneurship,1230,L1,E-012,Abid Butt,75
+W,17:15,18:30,ECE,MGMT 301,Tech. Mgmnt & Entrepreneurship,1230,L1,E-012,Abid Butt,75
+M,17:15,18:30,ECE,MGMT 320,Principles of Management,1231,L1,FF-E220,Muhammad Wamiq,75
+W,17:15,18:30,ECE,MGMT 320,Principles of Management,1231,L1,FF-E220,Muhammad Wamiq,75
+M,15:50,17:05,ECE,MGMT 321,Engineering Project Management,1232,L1,W-234,Muhammad Wamiq,75
+W,15:50,17:05,ECE,MGMT 321,Engineering Project Management,1232,L1,W-234,Muhammad Wamiq,75
+T,17:15,18:30,ECE,MGMT 322,Operations Management,1233,L1,FF-W242,Muhammad Wamiq,75
+Th,17:15,18:30,ECE,MGMT 322,Operations Management,1233,L1,FF-W242,Muhammad Wamiq,75
+T,10:40,12:20,CH,MUS 225,Ghazal Gayeki,1234,J1,FF-W243,Shahid Hamid,100
+Th,10:40,12:20,CH,MUS 225,Ghazal Gayeki,1234,J1,FF-W243,Shahid Hamid,100
+T,17:15,18:30,CH,MUS/HIS 221/253,History of SA music,1235,L1,FF-N220,Daniyal Ahmed,75
+Th,17:15,18:30,CH,MUS/HIS 221/253,History of SA music,1235,L1,FF-N220,Daniyal Ahmed,75
+M,17:15,18:30,CH,PHIL 122,Introduction to Western Philos,1236,S1,FF-W242,Irfan Muhammad,75
+W,17:15,18:30,CH,PHIL 122,Introduction to Western Philos,1236,S1,FF-W242,Irfan Muhammad,75
+M,11:30,12:45,CH,PHIL 326,Philosophical Hermeneutics,1238,L1,FF-N219,Irfan Muhammad,75
+W,11:30,12:45,CH,PHIL 326,Philosophical Hermeneutics,1238,L1,FF-N219,Irfan Muhammad,75
+M,14:25,15:40,CH,PHIL/CS 223/223,Ethics of AI,1237,L1,FF-N219,Aeyaz Jamil Kayani,75
+W,14:25,15:40,CH,PHIL/CS 223/223,Ethics of AI,1237,L1,FF-N219,Aeyaz Jamil Kayani,75
+F,10:00,11:15,CH,PHIL/SDP 222,What is Power?,1239,S1,FF-N220,Najeeb Jan,75
+W,10:00,11:15,CH,PHIL/SDP 222,What is Power?,1239,S1,FF-E220,Najeeb Jan,75
+T,17:15,18:30,CH,PHIL/SDP 222,What is Power?,1240,S2,E-011,Najeeb Jan,75
+Th,17:15,18:30,CH,PHIL/SDP 222,What is Power?,1240,S2,E-011,Najeeb Jan,75
+F,14:30,15:45,ISCIM,PHY 101,Mechanics & Thermodynamics,1241,L1,GF-E101,Syed Muntazir Mehdi Abidi,75
+W,14:30,15:45,ISCIM,PHY 101,Mechanics & Thermodynamics,1241,L1,GF-E101,Syed Muntazir Mehdi Abidi,75
+T,8:30,9:45,ISCIM,PHY 202,Quantum Mechanics,1242,L1,FF-N219,Syed Muntazir Mehdi Abidi,75
+Th,8:30,9:45,ISCIM,PHY 202,Quantum Mechanics,1242,L1,FF-N219,Syed Muntazir Mehdi Abidi,75
+F,10:00,13:20,PG,PLAY 113,Design Your Habib Experience,1245,D2,PG-1,Sameena Shahzaman,200
+F,10:00,13:20,PG,PLAY 113,Design Your Habib Experience,1246,D3,PG-1,Neelma Bhatti,200
+F,10:00,13:20,PG,PLAY 113,Design Your Habib Experience,1247,D4,PG-1,Sana Rizwan,200
+M,14:30,17:50,PG,PLAY 113,Design Your Habib Experience,1249,D6,PG-1,Abdul Basit Memon,200
+M,14:30,17:50,PG,PLAY 113,Design Your Habib Experience,1250,D7,PG-1,Anzar Khaliq,200
+T,10:00,11:15,SDP,POLI 102,Introduction to Political Sci,1193,S1,FF-E220,Ana Tawfiq Hussain,75
+Th,10:00,11:15,SDP,POLI 102,Introduction to Political Sci,1193,S1,FF-E220,Ana Tawfiq Hussain,75
+M,13:00,14:15,SDP,POLI 300,Petrocultures,1194,L1,W-234,Tajreen Jafri,75
+T,13:00,14:15,SDP,POLI 300,Petrocultures,1194,L1,W-234,Tajreen Jafri,75
+F,8:30,9:45,SDP,POLI 304,Politics of Conflict,1195,S1,E-100,Ana Tawfiq Hussain,75
+W,8:30,9:45,SDP,POLI 304,Politics of Conflict,1195,S1,E-100,Ana Tawfiq Hussain,75
+F,10:30,13:00,CH,REL 322,Many faces of the Sufi tradi,1196,S1,GF-C109,Muzammil Patel,150
+T,10:00,11:15,CH,REL/ANT 201,Rumi,1197,S1,GF-C109,Noman Baig,75
+Th,10:00,11:15,CH,REL/ANT 201,Rumi,1197,S1,GF-C109,Noman Baig,75
+M,12:30,13:20,SDP,SDP 103,Social Theory I,1198,L1,GF-E121,Ana Tawfiq Hussain,50
+T,11:30,12:45,SDP,SDP 103,Social Theory I,1199,S1,GF-E101,Coline Ferrant,75
+Th,11:30,12:45,SDP,SDP 103,Social Theory I,1199,S1,GF-E101,Coline Ferrant,75
+F,14:30,15:45,SDP,SDP 103,Social Theory I,1200,S2,GF-C109,Ana Tawfiq Hussain,75
+W,14:30,15:45,SDP,SDP 103,Social Theory I,1200,S2,GF-C109,Ana Tawfiq Hussain,75
+F,11:30,13:10,SDP,SDP 201,Qualitative Research Methods,1308,L1,W-321,Aaron Mulvany,100
+W,11:30,13:10,SDP,SDP 201,Qualitative Research Methods,1308,L1,W-321,Aaron Mulvany,100
+F,11:30,13:10,SDP,SDP 202B,Quantitative Research Methods,1202,L1,GF-E121,Zaineb Aftab Hussain Makati,100
+W,11:30,13:10,SDP,SDP 202B,Quantitative Research Methods,1202,L1,GF-E121,Zaineb Aftab Hussain Makati,100
+T,12:50,14:30,SDP,SDP 202B,Quantitative Research Methods,1203,L2,GF-C109,Zaineb Aftab Hussain Makati,100
+Th,12:50,14:30,SDP,SDP 202B,Quantitative Research Methods,1203,L2,GF-C109,Zaineb Aftab Hussain Makati,100
+M,14:30,15:20,SDP,SDP 206,Social Theory II,1204,L1,GF-E121,Noman Baig,50
+F,15:50,17:05,SDP,SDP 206,Social Theory II,1205,S1,W-321,Mahso Gichki,75
+W,15:50,17:05,SDP,SDP 206,Social Theory II,1205,S1,W-321,Mahso Gichki,75
+F,14:30,15:45,SDP,SDP 206,Social Theory II,1206,S2,FF-W243,Noman Baig,75
+W,14:30,15:45,SDP,SDP 206,Social Theory II,1206,S2,FF-W243,Noman Baig,75
+M,16:00,18:30,SDP,SDP 215,Urban Design and Public Space,1207,S1,GF-C109,Sana Rizwan,150
+T,11:30,13:10,SDP,SDP 302,Data Analytics,1208,S1,W-321,Sahaab Bader Sheikh,100
+Th,11:30,13:10,SDP,SDP 302,Data Analytics,1208,S1,W-321,Sahaab Bader Sheikh,100
+M,9:50,11:30,SDP,SDP 302,Data Analytics,1209,S2,W-321,Sahaab Bader Sheikh,100
+W,9:50,11:30,SDP,SDP 302,Data Analytics,1209,S2,W-321,Sahaab Bader Sheikh,100
+T,9:50,11:30,SDP,SDP 302,Data Analytics,1210,S3,FF-N220,Mohammad Moeini Feizabadi,100
+Th,9:50,11:30,SDP,SDP 302,Data Analytics,1210,S3,FF-N220,Mohammad Moeini Feizabadi,100
+M,14:40,16:20,SDP,SDP 303,Public Policy II,1212,L1,E-215,Tajreen Jafri,100
+F,9:50,11:30,SDP,SDP 303,Public Policy II,1213,S1,W-321,Farhan Anwar,100
+W,9:50,11:30,SDP,SDP 303,Public Policy II,1214,S2,GF-E101,Tajreen Jafri,100
+F,11:50,13:30,SDP,SDP 303,Public Policy II,1215,S3,FF-N219,Muhammad Aatir Khan,100
+M,8:30,11:00,SDP,SDP/CND 223/255,Intro to QGIS with GIS,1251,L1,FF-W243,Zaineb Aftab Hussain Makati,150
+M,13:00,14:15,SDP,SOC 322,Gender and Human Rights,1216,S1,GF-E101,Mahso Gichki,75
+W,13:00,14:15,SDP,SOC 322,Gender and Human Rights,1216,S1,GF-E101,Mahso Gichki,75
+F,17:15,18:30,SDP,SOC 422,SRS: Karachi,1252,S1,FF-W243,Coline Ferrant,75
+W,17:15,18:30,SDP,SOC 422,SRS: Karachi,1252,S1,FF-W243,Coline Ferrant,75
