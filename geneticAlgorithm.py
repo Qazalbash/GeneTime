@@ -1,76 +1,131 @@
-from datacleaning import DataCleaning
 import random
-from datetime import datetime, timedelta
-import pandas as pd
+from pprint import pprint
+
+from datacleaning import DataCleaning
+
+
+def add24Hours(time1: int, time2: int) -> int:
+    """Add 24 hours to a time
+
+    Args:
+        time1 (int): The time to add 24 hours to
+
+    Returns:
+        int: The time after adding 24 hours
+    """
+    minute1 = time1 % 100
+    hour1 = time1 // 100
+
+    minute2 = time2 % 100
+    hour2 = time2 // 100
+
+    totalMinutes = minute1 + minute2
+    totalHours = hour1 + hour2 + totalMinutes // 60
+    totalMinutes %= 60
+
+    return totalHours * 100 + totalMinutes
+
+
+def extend24Hours(time: int, minutes: int) -> int:
+    """Add 24 hours to a time
+
+    Args:
+        time1 (int): The time to add 24 hours to
+
+    Returns:
+        int: The time after adding 24 hours
+    """
+    minute = time % 100
+    hour = time // 100
+    totalMinutes = minute + minutes
+    totalHours = hour + totalMinutes // 60
+    totalMinutes = totalMinutes % 60
+    return totalHours * 100 + totalMinutes
 
 
 class GeneticAlgorithm:
+    """Class to implement the Genetic Algorithm"""
 
     def __init__(self) -> None:
-        self.dc = DataCleaning()
-        self.availableDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+        """Initialize the Genetic Algorithm class"""
+        self.dc = DataCleaning("Spring 2023 Schedule.csv")
+        self.availableDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
         self.population = []
-        # self.chromosome = {'Monday':{}, 'Tuesday':{}, 'Wednesday':{}, 'Thursday':{}, 'Friday':{}}
         self.populationSize = 20
-        # print(self.dc.class_nbr_dict)
 
-    def generate_start_time(self):
+    def generate_start_time(self) -> int:
+        """Generate a random start time for a class
 
+        Returns:
+            int: The start time for a class
+        """
         hours = random.randint(8, 18)  # Schedule between 8am and 6pm
         minutes = random.randint(0, 11) * 5  # Schedule in multiples of 5
-        return f'{hours:02d}:{minutes:02d}'
+        return hours * 100 + minutes
 
-
-    def initializePopulation(self):
+    def initializePopulation(self) -> None:
+        """Initialize the population of chromosomes"""
         for i in range(self.populationSize):
-            chromosome = {'Monday':{}, 'Tuesday':{}, 'Wednesday':{}, 'Thursday':{}, 'Friday':{}}
+            chromosome = {day: {} for day in self.availableDays}
             for classNumber, data in self.dc.class_nbr_dict.items():
-                days = random.sample(self.availableDays, data['Frequency'])
+                days = random.sample(self.availableDays, data["Frequency"])
                 for day in days:
-                    room = random.sample(self.dc.room_list,1)[0]
-                    startTime = self.generate_start_time()
-                    endTime = (pd.to_datetime(startTime) + pd.to_timedelta(data['Actual Class Duration'], unit='m')).strftime('%H:%M')
-                    chromosome[day][classNumber] = [data['Course title'], data['Instructor'], room, startTime, endTime]
+                    room = random.sample(self.dc.room_list, 1)[0]
+                    chromosome[day][classNumber] = [
+                        data["Course title"],  # course_name
+                        data["Instructor"],  # instructor
+                        room,  # room
+                        self.generate_start_time(),  # start_time
+                        data["Actual Class Duration"],  # duration
+                    ]
             self.population.append(chromosome)
 
+    @staticmethod
+    def fitnessEvaluation(chromosome: dict) -> None:
+        """Evaluate the fitness of a chromosome
 
-    def fitnessEvaluation(chromosome):
+        Args:
+            chromosome (dict): The chromosome to evaluate the fitness of
+        """
         roomConflicts = 0
         facultyClashes = 0
+
         for day in chromosome.keys():
             classes = list(chromosome[day].values())
-            # print(classes)
             for i in range(len(classes)):
-                class_data = classes[i]
-                room = class_data[2]
-                instructor = class_data[1]
-                start_time = datetime.strptime(class_data[3], '%H:%M')
-                end_time = datetime.strptime(class_data[4], '%H:%M')
-                for j in range(i+1, len(classes)):
-                    other_class_data = classes[j]
-                    if other_class_data[2] == room:
-                        other_start_time = datetime.strptime(other_class_data[3], '%H:%M')
-                        other_end_time = datetime.strptime(other_class_data[4], '%H:%M')
-                        if start_time < other_end_time and end_time > other_start_time:
+                course_name, instructor, room, start_time, duration = classes[i]
+                end_time = extend24Hours(start_time, duration)
+
+                for j in range(i + 1, len(classes)):
+                    (
+                        other_course_name,
+                        other_instructor,
+                        other_room,
+                        other_start_time,
+                        other_duration,
+                    ) = classes[j]
+
+                    other_end_time = extend24Hours(other_start_time, other_duration)
+
+                    if start_time < other_end_time and end_time > other_start_time:
+                        if other_room == room:
                             roomConflicts += 1
-                    if other_class_data[1] == instructor:
-                        other_start_time = datetime.strptime(other_class_data[3], '%H:%M')
-                        other_end_time = datetime.strptime(other_class_data[4], '%H:%M')
-                        if start_time < other_end_time and end_time > other_start_time:
+                        if other_instructor == instructor:
                             facultyClashes += 1
 
-        conflicts = roomConflicts+facultyClashes
+        conflicts = roomConflicts + facultyClashes
 
-        print(f'Total number of Room conflicts: {roomConflicts}')
-        print(f'Total number of Faculty conflicts: {facultyClashes}')
-        print(f'Total number of conflicts: {conflicts}')
-    
+        print(f"Total number of Room conflicts: {roomConflicts}")
+        print(f"Total number of Faculty conflicts: {facultyClashes}")
+        print(f"Total number of conflicts: {conflicts}")
 
 
 ga = GeneticAlgorithm()
 ga.initializePopulation()
 chromosome = ga.population[0]
-# print(chromosome)
+# pprint(chromosome)
 ga.fitnessEvaluation(chromosome)
+# print(ga.population)
+
 # ga.getAvailableTimes()
 # print(ga)
