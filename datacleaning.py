@@ -24,6 +24,7 @@ class DataCleaning:
             instructor = row['Instructor']
             if '\n' in instructor:
                 instructor = instructor.split("\n")
+                instructor = instructor[0]
             duration = row['Actual Class Duration']
             self.class_nbr_dict[class_nbr] = {'Course title': title, 'Instructor': instructor, 'Actual Class Duration':duration, 'Frequency':class_nbr_freq[class_nbr] }
         

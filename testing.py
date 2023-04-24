@@ -22,8 +22,11 @@
 
 # print(is_end_time_within_limit("8:00",50,"9:00"))
 import numpy as np
+import random
 
-lst1 = set(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'])
-lst2 = set(['Monday', 'Wednesday'])
-lst3 = lst1-lst2
-print(lst3)
+lst1 = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+lst2 = ['Monday', 'Wednesday']
+lst3 = set(lst1)-set(lst2)
+print(random.sample(lst3, 1)[0])
+
+
