@@ -19,10 +19,10 @@ class TimeTable(SelectionSchemes):
         self.DAY_END = "19:00"
         self.initializePopulation()
 
-    def generate_start_time(self):
-        hours = random.randint(8, 18)  # Schedule between 8am and 6pm
-        minutes = random.randint(0, 11) * 5  # Schedule in multiples of 5
-        return f'{hours:02d}:{minutes:02d}'
+    # def generate_start_time(self):
+    #     hours = random.randint(8, 18)  # Schedule between 8am and 6pm
+    #     minutes = random.randint(0, 11) * 5  # Schedule in multiples of 5
+    #     return f'{hours:02d}:{minutes:02d}'
 
     # returns end time to start time using the duration
     def generate_time(self,startTime,duration):
@@ -126,7 +126,12 @@ class TimeTable(SelectionSchemes):
                             nextDay = random.sample(potentialDays, 1)[0]
                             assigned_days.append(nextDay)
 
-            self.population.append(chromosome)             
+            self.population.append(chromosome)   
+
+    def fitnessEvaluation(chromosome):
+        pass
+        
+        
                                 
     # just to check if weekly schedule has all 447 classes
     def checkClasses(self, chromosome):
@@ -136,7 +141,39 @@ class TimeTable(SelectionSchemes):
                 counter+=len(roomInfo)
         print(counter)
 
+    
+    def find_free_slot(self,chromosome):
+        # days = ["Monday", "Tuesday"]
+        start_time = datetime.datetime.strptime(self.DAY_START, "%H:%M")
+        end_time = datetime.datetime.strptime(self.DAY_END, "%H:%M")
+        _delta = datetime.timedelta(minutes=5)
+        delta = datetime.timedelta(hours=1)
 
+        # iterate over all possible timeslots
+        while start_time + delta <= end_time:
+            end_slot = start_time + delta
+            free = True
+            # check if the timeslot overlaps with any existing classes
+            for day in self.availableDays:
+                for room in chromosome[day]:
+                    for slot in chromosome[day][room]:
+                        slot_start = datetime.datetime.strptime(slot[0], "%H:%M")
+                        slot_end = datetime.datetime.strptime(slot[1], "%H:%M")
+                        if (start_time < slot_end) and (slot_start < end_slot):
+                            free = False
+                            break
+                    if not free:
+                        break
+                if not free:
+                    break
+            # if the timeslot is free, return it
+            if free:
+                return [start_time.strftime("%H:%M"), end_slot.strftime("%H:%M")]
+            start_time += _delta
+        # if no free timeslot is found, return None
+        print('NO time slot found')
+        return None
+        
 
 filename = 'Spring 2023 Schedule.csv'
 populationSize = 20
@@ -148,4 +185,5 @@ generations = 100
 T1=TimeTable(filename, populationSize, offspringsNumber, mutationRate)
 chromosome = T1.population[19]
 print(chromosome)
-T1.checkClasses(chromosome)
+# T1.checkClasses(chromosome)
+T1.find_free_slot(chromosome)

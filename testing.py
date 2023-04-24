@@ -1,32 +1,64 @@
-# import datetime
+from datetime import datetime, timedelta
+import datetime
 
-# def is_end_time_within_limit(start_time_str, duration_minutes, end_time_limit_str):
-#     # Convert start time string to datetime object
-#     start_time = datetime.datetime.strptime(start_time_str, '%H:%M')
-    
-#     # Convert duration to timedelta object
-#     duration = datetime.timedelta(minutes=int(duration_minutes))
-    
-#     # Calculate end time
-#     end_time = start_time + duration
-    
-#     # Convert end time limit string to datetime object
-#     end_time_limit = datetime.datetime.strptime(end_time_limit_str, '%H:%M')
-    
-#     # Compare end time to end time limit
-#     if end_time <= end_time_limit:
-#         return True
-#     else:
-#         return False
+def find_free_slot(schedule):
+    days = ["Monday", "Tuesday"]
+    start_time = datetime.datetime.strptime("08:00", "%H:%M")
+    end_time = datetime.datetime.strptime("18:00", "%H:%M")
+    _delta = datetime.timedelta(minutes=5)
+    delta = datetime.timedelta(hours=1)
+
+    # iterate over all possible timeslots
+    while start_time + delta <= end_time:
+        end_slot = start_time + delta
+        free = True
+        # check if the timeslot overlaps with any existing classes
+        for day in days:
+            for room in schedule[day]:
+                for slot in schedule[day][room]:
+                    slot_start = datetime.datetime.strptime(slot[0], "%H:%M")
+                    slot_end = datetime.datetime.strptime(slot[1], "%H:%M")
+                    if (start_time < slot_end) and (slot_start < end_slot):
+                        free = False
+                        break
+                if not free:
+                    break
+            if not free:
+                break
+        # if the timeslot is free, return it
+        if free:
+            return [start_time.strftime("%H:%M"), end_slot.strftime("%H:%M")]
+        start_time += _delta
+    # if no free timeslot is found, return None
+    return None
 
 
-# print(is_end_time_within_limit("8:00",50,"9:00"))
-import numpy as np
-import random
 
-lst1 = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-lst2 = ['Monday', 'Wednesday']
-lst3 = set(lst1)-set(lst2)
-print(random.sample(lst3, 1)[0])
+schedule = {
+    "Monday": {
+        "room1": [
+            ["08:00", "09:00"],
+            ["09:05", "10:30"]
+        ],
+        "room2": [
+            ["08:30", "9:45"],
+            ["09:50", "10:40"],
+            ["10:50", "12:40"],
+        ]
+    },
+    "Tuesday": {
+        "room1": [
+            ["09:30", "10:30"],
+            ["15:50", "16:30"]
+        ],
+        "room2": [
+            ["13:50", "14:45"]
+        ]
+    }
+}
 
-
+free_slot = find_free_slot(schedule)
+if free_slot:
+    print("Free one-hour time slot:", free_slot)
+else:
+    print("No free one-hour time slot found in the week.")
