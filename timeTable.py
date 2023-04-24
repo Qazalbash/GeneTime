@@ -174,6 +174,29 @@ class TimeTable(SelectionSchemes):
         print('NO time slot found')
         return None
         
+    
+    def checkEndTimeLimit(self, chromosome):
+        endTimes = []
+        for day, dayInfo in chromosome.items():
+            dayMaxEndtime = datetime.datetime.strptime('8:30', '%H:%M')
+            strdayMaxEndTime = '8:30'
+            for room, roomInfo in dayInfo.items():
+                if len(roomInfo) != 0:
+                    lastClass = roomInfo[-1]
+                    endTime = datetime.datetime.strptime(lastClass[1], '%H:%M')
+                    if endTime > dayMaxEndtime:
+                        dayMaxEndtime = endTime
+                        strdayMaxEndTime = lastClass[1]
+            endTimes.append(strdayMaxEndTime)
+
+        numDays = 0
+        for time in endTimes:
+            if time == self.DAY_END:
+                numDays += 1
+        
+        print(endTimes)
+        print(numDays)
+        
 
 filename = 'Spring 2023 Schedule.csv'
 populationSize = 20
@@ -184,6 +207,7 @@ generations = 100
 
 T1=TimeTable(filename, populationSize, offspringsNumber, mutationRate)
 chromosome = T1.population[19]
-print(chromosome)
+# print(chromosome)
 # T1.checkClasses(chromosome)
-T1.find_free_slot(chromosome)
+# T1.find_free_slot(chromosome)
+T1.checkEndTimeLimit(chromosome)
