@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import datetime
 
+
 def find_free_slot(schedule):
     days = ["Monday", "Tuesday"]
     start_time = datetime.datetime.strptime("08:00", "%H:%M")
@@ -33,30 +34,15 @@ def find_free_slot(schedule):
     return None
 
 
-
-
-
 schedule = {
     "Monday": {
-        "room1": [
-            ["08:00", "09:00"],
-            ["09:05", "10:30"]
-        ],
-        "room2": [
-            ["08:30", "9:45"],
-            ["09:50", "10:40"],
-            ["10:50", "12:40"],
-        ]
+        "room1": [["08:00", "09:00"], ["09:05", "10:30"]],
+        "room2": [["08:30", "9:45"], ["09:50", "10:40"], ["10:50", "12:40"]],
     },
     "Tuesday": {
-        "room1": [
-            ["09:30", "10:30"],
-            ["15:50", "16:30"]
-        ],
-        "room2": [
-            ["13:50", "14:45"]
-        ]
-    }
+        "room1": [["09:30", "10:30"], ["15:50", "16:30"]],
+        "room2": [["13:50", "14:45"]],
+    },
 }
 
 free_slot = find_free_slot(schedule)
