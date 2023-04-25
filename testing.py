@@ -34,6 +34,8 @@ def find_free_slot(schedule):
 
 
 
+
+
 schedule = {
     "Monday": {
         "room1": [

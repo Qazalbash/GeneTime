@@ -6,8 +6,10 @@ class DataCleaning:
         self.filename = filename
         self.class_nbr_dict ={}
         self.df = pd.read_csv(self.filename)
-
+        self.numclasses_multipleinstances = 0
+        
         self.extractingFromDataset()
+        self.getnumclasses()
 
     def extractingFromDataset(self):
         # Extract the unique values of "Class nbr" and "Instructor and store them in a list
@@ -28,12 +30,21 @@ class DataCleaning:
             duration = row['Actual Class Duration']
             self.class_nbr_dict[class_nbr] = {'Course title': title, 'Instructor': instructor, 'Actual Class Duration':duration, 'Frequency':class_nbr_freq[class_nbr] }
         
+    def getnumclasses(self):
+        for class_number , info in self.class_nbr_dict.items():
+            freq=info["Frequency"]
+            if freq > 1:
+                self.numclasses_multipleinstances+=1
 
-# dc=DataCleaning()
+dc=DataCleaning("Spring 2023 Schedule.csv")
 
 # print("-------- Statistics--------")
 # print("Number of classrooms: ",len(dc.room_list))
 # print("Number of Classes (no. of unique class br) at Habib: ",len(dc.class_nbr_dict))
 # print("Dictionary storing all data")
-# print(dc.class_nbr_dict)
+# print(len(dc.class_nbr_dict))
+
+
+
+
 # print(dc.room_list)

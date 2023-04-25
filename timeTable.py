@@ -4,6 +4,7 @@ import pandas as pd
 from selectionSchemes import SelectionSchemes
 import random
 from pprint import pprint
+from classDetails import ClassDetails
 
 
 class TimeTable(SelectionSchemes):
@@ -16,7 +17,8 @@ class TimeTable(SelectionSchemes):
         self.offspringsNumber = offspringsNumber
         self.mutationRate = mutationRate
         self.DAY_START = "8:30"
-        self.DAY_END = "19:00"
+        self.DAY_END = "18:00"
+        self.NUM_ROOMS_WEEKLY = 150
         self.initializePopulation()
 
     # def generate_start_time(self):
@@ -82,7 +84,7 @@ class TimeTable(SelectionSchemes):
     def initializePopulation(self):
         for i in range(self.populationSize):
             chromosome, faculty_working_hours = self.initializeChromosome()
-
+            C1=ClassDetails()
             for classNumber, data in self.data.class_nbr_dict.items():
                 assigned_days = random.sample(self.availableDays, data['Frequency'])  # assigned random days for each class       
                 for day in assigned_days:  # iterates through days to find a suitable room on each day
@@ -99,6 +101,7 @@ class TimeTable(SelectionSchemes):
                         chromosome[day][room].append([current_class_start_time,end_time,classNumber])
                         faculty_working_hours = self.addToFacultySchedule(data["Instructor"],day, current_class_start_time, end_time, faculty_working_hours)
                         is_roomfound = 1  # room found exit loop
+                        C1.addClass(classNumber, day, room, current_class_start_time, end_time )
                     else:                             
                         room_number_index = self.data.room_list.index(room)
                         startIndex = room_number_index
@@ -117,6 +120,7 @@ class TimeTable(SelectionSchemes):
                                 chromosome[day][next_room].append([current_class_start_time,end_time,classNumber])
                                 faculty_working_hours = self.addToFacultySchedule(data["Instructor"],day, current_class_start_time, end_time,faculty_working_hours)
                                 is_roomfound=1
+                                C1.addClass(classNumber, day,  next_room, current_class_start_time, end_time )
                                 break
                             if room_number_index == startIndex and is_roomfound == 0:
                                 break
@@ -126,11 +130,28 @@ class TimeTable(SelectionSchemes):
                             nextDay = random.sample(potentialDays, 1)[0]
                             assigned_days.append(nextDay)
 
-            self.population.append(chromosome)   
+            fitness=self.fitnessEvaluation(chromosome,C1)
+            self.population.append([fitness,chromosome])   
+            
 
-    def fitnessEvaluation(chromosome):
-        pass
+    def fitnessEvaluation(self,chromosome, C1):
+        counter_same_time=self.SOFT_class_at_same_time(C1)
+        counter_same_room=self.SOFT_class_in_same_room(C1)
+        counter_room_withinlimit = self.SOFT_checkEndTimeLimit(chromosome)
+        freeslotavailable=self.SOFT_find_free_slot(chromosome)
+
+        fitness_same_room = (counter_same_room/self.data.numclasses_multipleinstances)*100
+        fitness_same_time = (counter_same_time/self.data.numclasses_multipleinstances)*100
+        fitness_withinlimit = (counter_room_withinlimit/self.NUM_ROOMS_WEEKLY)*100
         
+        if freeslotavailable:
+            fitness_free_slot = 200
+        else:
+            fitness_free_slot=0
+
+
+        totalFitness = fitness_same_room+fitness_same_time+fitness_withinlimit+fitness_free_slot
+        return totalFitness
         
                                 
     # just to check if weekly schedule has all 447 classes
@@ -142,7 +163,7 @@ class TimeTable(SelectionSchemes):
         print(counter)
 
     
-    def find_free_slot(self,chromosome):
+    def SOFT_find_free_slot(self,chromosome):
         # days = ["Monday", "Tuesday"]
         start_time = datetime.datetime.strptime(self.DAY_START, "%H:%M")
         end_time = datetime.datetime.strptime(self.DAY_END, "%H:%M")
@@ -168,46 +189,71 @@ class TimeTable(SelectionSchemes):
                     break
             # if the timeslot is free, return it
             if free:
-                return [start_time.strftime("%H:%M"), end_slot.strftime("%H:%M")]
+                print [start_time.strftime("%H:%M"), end_slot.strftime("%H:%M")]
+                return
             start_time += _delta
         # if no free timeslot is found, return None
-        print('NO time slot found')
         return None
         
     
-    def checkEndTimeLimit(self, chromosome):
+    def SOFT_checkEndTimeLimit(self, chromosome):
         endTimes = []
+        count =0
         for day, dayInfo in chromosome.items():
-            dayMaxEndtime = datetime.datetime.strptime('8:30', '%H:%M')
-            strdayMaxEndTime = '8:30'
             for room, roomInfo in dayInfo.items():
                 if len(roomInfo) != 0:
                     lastClass = roomInfo[-1]
                     endTime = datetime.datetime.strptime(lastClass[1], '%H:%M')
-                    if endTime > dayMaxEndtime:
-                        dayMaxEndtime = endTime
-                        strdayMaxEndTime = lastClass[1]
-            endTimes.append(strdayMaxEndTime)
+                    official_day_end = datetime.datetime.strptime(self.DAY_END, '%H:%M')
+                    buffer_official_day_end = official_day_end - datetime.timedelta(minutes=60)
+                    if endTime <= official_day_end  and endTime >= buffer_official_day_end:
+                        count+=1
+        return (self.NUM_ROOMS_WEEKLY-count)
 
-        numDays = 0
-        for time in endTimes:
-            if time == self.DAY_END:
-                numDays += 1
-        
-        print(endTimes)
-        print(numDays)
+    def SOFT_class_in_same_room(self,C1):
+        same_room_counter=0
+        for class_number , instances in C1.Class_Dict.items():
+            flag=True
+            if len(instances) > 1:
+                room_no=instances[0][1]
+                for class_instance in instances[1:]:
+                    if class_instance[1] != room_no:
+                        flag=False
+            if len(instances) > 1 and flag == True:
+                same_room_counter+=1
+
+        return same_room_counter
+
+    def SOFT_class_at_same_time(self,C1):
+        same_time_counter=0
+        for class_number , instances in C1.Class_Dict.items():
+            flag=True
+            if len(instances) > 1:
+                start_time=datetime.datetime.strptime(instances[0][2], '%H:%M')
+                for class_instance in instances[1:]:
+                    next_start_time=datetime.datetime.strptime(class_instance[2], '%H:%M')
+                    if next_start_time!= start_time:
+                        flag = False
+            if flag:
+                same_time_counter+=1
+
+        return same_time_counter
+
         
 
 filename = 'Spring 2023 Schedule.csv'
-populationSize = 20
+populationSize = 10
 mutationRate = 0.2
 offspringsNumber = 10
 generations = 100
 
 
 T1=TimeTable(filename, populationSize, offspringsNumber, mutationRate)
-chromosome = T1.population[19]
+# print(T1.population)
+# chromosome = T1.population[0]
 # print(chromosome)
-# T1.checkClasses(chromosome)
-# T1.find_free_slot(chromosome)
-T1.checkEndTimeLimit(chromosome)
+# print(chromosome)
+# T1.checkClasses(chromosome[1])
+# print(T1.find_free_slot(chromosome))
+# print(T1.SOFT_checkEndTimeLimit(chromosome[1]))
+# print(T1.SOFT_class_in_same_room(chromosome))
