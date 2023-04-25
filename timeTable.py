@@ -68,7 +68,7 @@ class TimeTable(SelectionSchemes):
     def facultyClash(self, instructor, day, start_time, end_time):
         start_time = datetime.datetime.strptime(start_time, "%H:%M")
         end_time = datetime.datetime.strptime(end_time, "%H:%M")
-        daily_schedule = faculty_working_hours[instructor][day]
+        daily_schedule = self.faculty_working_hours[instructor][day]
         if len(daily_schedule) == 0:
             return False
         else:
@@ -89,6 +89,7 @@ class TimeTable(SelectionSchemes):
     def initializePopulation(self):
         for i in range(self.populationSize):
             chromosome, faculty_working_hours = self.initializeChromosome()
+            self.faculty_working_hours = faculty_working_hours
             C1 = ClassDetails()
             for classNumber, data in self.data.class_nbr_dict.items():
                 # assigned random days for each class
@@ -329,8 +330,9 @@ class TimeTable(SelectionSchemes):
         # TODO the function is returning wrong time
         start = self.generate_time(class2[-1][2], 15)
         end = self.generate_time(start, duration)
+        instructor = self.data.class_nbr_dict[number]["Instructor"]
 
-        if self.check_faculty_clash(day2, room2, start, end):
+        if self.facultyClash(instructor, day2, start, end):
             return self.mutation(chromosome, itteration - 1)
 
         class2.append([start, end, number])
