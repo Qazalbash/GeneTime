@@ -250,8 +250,8 @@ generations = 100
 
 T1=TimeTable(filename, populationSize, offspringsNumber, mutationRate)
 # print(T1.population)
-# chromosome = T1.population[0]
-# print(chromosome)
+chromosome = T1.population[0]
+print(chromosome)
 # print(chromosome)
 # T1.checkClasses(chromosome[1])
 # print(T1.find_free_slot(chromosome))
