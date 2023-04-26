@@ -10,6 +10,8 @@ from selectionSchemes import SelectionSchemes
 
 
 class TimeTable(SelectionSchemes):
+    TIME_GAP = 15  # 15 minutes gap between classes
+
     def __init__(
         self, filename, populationSize, offspringsNumber, mutationRate
     ) -> None:
@@ -39,7 +41,7 @@ class TimeTable(SelectionSchemes):
     # Add 5 minutes to the datetime object
     def add_five_minutes(self, time_str):
         time_obj = datetime.datetime.strptime(time_str, "%H:%M")
-        new_time_obj = time_obj + datetime.timedelta(minutes=15)
+        new_time_obj = time_obj + datetime.timedelta(minutes=TimeTable.TIME_GAP)
         new_time_str = new_time_obj.strftime("%H:%M")
         return new_time_str
 
@@ -198,10 +200,7 @@ class TimeTable(SelectionSchemes):
         ) * 100
         fitness_withinlimit = (counter_room_withinlimit / self.NUM_ROOMS_WEEKLY) * 100
 
-        if freeslotavailable:
-            fitness_free_slot = 200
-        else:
-            fitness_free_slot = 0
+        fitness_free_slot = 200 * freeslotavailable
 
         totalFitness = (
             fitness_same_room
@@ -311,25 +310,39 @@ class TimeTable(SelectionSchemes):
             day2 = random.choice(self.availableDays)
 
         room1 = random.choice(list(chromosome[day1].keys()))
-        room2 = random.choice(list(chromosome[day2].keys()))
 
         class1 = chromosome[day1][room1]
-        class2 = chromosome[day2][room2]
 
-        class_index = random.randint(0, len(chromosome[day1][room1]) - 1)
+        if len(class1) == 0:
+            return self.mutation(chromosome, itteration - 1)
+        class_index = random.randint(0, len(class1) - 1)
 
         start, end, number = class1[class_index]
+
+        for room2 in chromosome[day2].keys():
+            class2 = chromosome[day2][room2]
+            if any(number == c[2] for c in class2):
+                return self.mutation(chromosome, itteration - 1)
+
+        room2 = random.choice(list(chromosome[day2].keys()))
+        class2 = chromosome[day2][room2]
+
+        print(class1, class2, sep="\n")
 
         if any(number == c[2] for c in class2):
             return self.mutation(chromosome, itteration - 1)
 
-        duration = datetime.datetime.strptime(
-            end, "%H:%M"
-        ) - datetime.datetime.strptime(start, "%H:%M")
+        duration = instructor = self.data.class_nbr_dict[number][
+            "Actual Class Duration"
+        ]
 
         # TODO the function is returning wrong time
-        start = self.generate_time(class2[-1][2], 15)
+        start = self.generate_time(class2[-1][1], TimeTable.TIME_GAP)
         end = self.generate_time(start, duration)
+
+        if self.is_end_time_within_limit(end, duration):
+            return self.mutation(chromosome, itteration - 1)
+
         instructor = self.data.class_nbr_dict[number]["Instructor"]
 
         if self.facultyClash(instructor, day2, start, end):
@@ -337,6 +350,8 @@ class TimeTable(SelectionSchemes):
 
         class2.append([start, end, number])
         del class1[class_index]
+
+        print(class1, class2, sep="\n")
 
         chromosome[day1][room1] = class1
         chromosome[day2][room2] = class2
@@ -354,9 +369,9 @@ generations = 100
 T1 = TimeTable(filename, populationSize, offspringsNumber, mutationRate)
 # print(T1.population)
 chromosome = T1.population[0]
-pprint(chromosome[1])
-print("-----------------------------------------------------------------")
-pprint(T1.mutation(chromosome[1]))
+# pprint(chromosome[1])
+# print("-----------------------------------------------------------------")
+T1.mutation(chromosome[1])
 # print(T1.data)
 # print(chromosome)
 # T1.checkClasses(chromosome[1])
