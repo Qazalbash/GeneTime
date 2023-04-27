@@ -21,8 +21,8 @@ class SelectionSchemes:
             # for index in randomlist:
             #     temp_population.append(self.population[index])
             self.population = temp_population
-            self.population.sort()
-            self.population.reverse()
+            # self.population.sort()
+            # self.population.reverse()
 
     def fpsSelection(self, flag):
         sumFitness = 0
@@ -59,7 +59,7 @@ class SelectionSchemes:
 
         elif flag == 1:
             selectedIndexes = []
-            while len(selectedIndexes) < 30:
+            while len(selectedIndexes) < self.populationSize:
                 randomIndex = random.uniform(0, 1)
                 for index in range(len(ranges)):
                     if (
@@ -73,8 +73,8 @@ class SelectionSchemes:
                 tempPopulation.append(self.population[i])
 
             self.population = tempPopulation
-            self.population.sort()
-            self.population.reverse()
+            # self.population.sort()
+            # self.population.reverse()
 
     def rbsSelection(self, flag):
         self.population = sorted(self.population, key=lambda x: x[0])
@@ -114,7 +114,7 @@ class SelectionSchemes:
 
         elif flag == 1:
             selectedIndexes = []
-            while len(selectedIndexes) < 30:
+            while len(selectedIndexes) < self.populationSize:
                 randomIndex = random.uniform(0, 1)
                 for index in range(len(ranges)):
                     if (
@@ -128,8 +128,8 @@ class SelectionSchemes:
                 tempPopulation.append(self.population[i])
 
             self.population = tempPopulation
-            self.population.sort()
-            self.population.reverse()
+            # self.population.sort()
+            # self.population.reverse()
 
     def truncation(self, flag):
         # self.population.sort()
@@ -192,5 +192,5 @@ class SelectionSchemes:
                 tempPopulation.append(self.population[index])
 
             self.population = tempPopulation
-            self.population.sort()
-            self.population.reverse()
+            # self.population.sort()
+            # self.population.reverse()

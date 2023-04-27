@@ -2,20 +2,20 @@ import random
 from timeTable import TimeTable
 
 
-def evolutionaryAlgorithm(
-    filename, populationSize, mutationRate, offspringsNumber, generations
-):
+def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumber, generations):
     timetable = TimeTable(filename, populationSize, mutationRate, offspringsNumber)
+  
     timetable.initializePopulation()
 
-    for i in range(timetable.populationSize):
-        chromosome = timetable.population[i]
-        fitness = timetable.fitnessEvaluation(chromosome)
-        timetable.population[i] = [fitness, chromosome]
+    # for i in range(timetable.populationSize):
+    #     chromosome = timetable.population[i]
+    #     fitness = timetable.fitnessEvaluation(chromosome)
+    #     timetable.population[i] = [fitness, chromosome]
 
     # parents = timetable.truncation(0)
 
     for generation in range(generations):
+        print('-------------------- Generation Number = ' + str(generation+1) + ' --------------------')
         totalOffsprings = []
         for i in range(offspringsNumber // 2):
             parents = timetable.truncation(0)
@@ -27,11 +27,29 @@ def evolutionaryAlgorithm(
             p1 = parents[0]
             p2 = parents[1]
 
-    print(p1[0])
+            offspringOne, offspringTwo = timetable.crossover(p1, p2)
+            timetable.population.append(offspringOne)
+            timetable.population.append(offspringTwo)
+
+        timetable.truncation(1)
+        # timetable.randomSelection(1)
+        # timetable.fpsSelection(1)
+        # timetable.rbsSelection(1)
+        # timetable.binarySelection(1)
+
+    timetable.population = sorted(timetable.population, key=lambda x: x[0])
+    timetable.population.reverse()
+    print(timetable.population[0][0])
+    
+
+
+    # print(offspringOne)
+    # print("---------------------------------------------------")
+    # print(offspringTwo)
 
 
 filename = "Spring 2023 Schedule.csv"
-populationSize = 20
+populationSize = 30
 mutationRate = 0.2
 offspringsNumber = 10
 generations = 100

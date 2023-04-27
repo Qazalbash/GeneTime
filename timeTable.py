@@ -1,7 +1,7 @@
 import datetime
 import random
 from pprint import pprint
-
+import copy
 import pandas as pd
 
 from classDetails import ClassDetails
@@ -24,7 +24,7 @@ class TimeTable(SelectionSchemes):
         self.DAY_START = "8:30"
         self.DAY_END = "18:00"
         self.NUM_ROOMS_WEEKLY = 150
-        self.initializePopulation()
+        # self.initializePopulation()
 
     # def generate_start_time(self):
     #     hours = random.randint(8, 18)  # Schedule between 8am and 6pm
@@ -67,10 +67,10 @@ class TimeTable(SelectionSchemes):
         return chromosome, faculty_working_hours
 
     # returns True if an instructor is teaching a class on the same day at the same time in two different rooms, otherwise returns False
-    def facultyClash(self, instructor, day, start_time, end_time):
+    def facultyClash(self, instructor, day, start_time, end_time, faculty_working_hours):
         start_time = datetime.datetime.strptime(start_time, "%H:%M")
         end_time = datetime.datetime.strptime(end_time, "%H:%M")
-        daily_schedule = self.faculty_working_hours[instructor][day]
+        daily_schedule = faculty_working_hours[instructor][day]
         if len(daily_schedule) == 0:
             return False
         else:
@@ -83,15 +83,15 @@ class TimeTable(SelectionSchemes):
 
     # adds the timeslot to the instructor's weekly schedule
     def addToFacultySchedule(
-        self, instructor, day, start_time, end_time, faculty_working_hours
+        self, instructor, day, start_time, end_time, classNumber, faculty_working_hours
     ):
-        faculty_working_hours[instructor][day].append([start_time, end_time])
+        faculty_working_hours[instructor][day].append([start_time, end_time, classNumber])
         return faculty_working_hours
 
     def initializePopulation(self):
         for i in range(self.populationSize):
             chromosome, faculty_working_hours = self.initializeChromosome()
-            self.faculty_working_hours = faculty_working_hours
+            # self.faculty_working_hours = faculty_working_hours
             C1 = ClassDetails()
             for classNumber, data in self.data.class_nbr_dict.items():
                 # assigned random days for each class
@@ -110,7 +110,7 @@ class TimeTable(SelectionSchemes):
                         current_class_start_time, data["Actual Class Duration"]
                     )
                     if self.facultyClash(
-                        data["Instructor"], day, current_class_start_time, end_time
+                        data["Instructor"], day, current_class_start_time, end_time, faculty_working_hours
                     ) == False and self.is_end_time_within_limit(
                         current_class_start_time, data["Actual Class Duration"]
                     ):
@@ -122,6 +122,7 @@ class TimeTable(SelectionSchemes):
                             day,
                             current_class_start_time,
                             end_time,
+                            classNumber,
                             faculty_working_hours,
                         )
                         is_roomfound = 1  # room found exit loop
@@ -153,6 +154,7 @@ class TimeTable(SelectionSchemes):
                                 day,
                                 current_class_start_time,
                                 end_time,
+                                faculty_working_hours
                             ) == False and self.is_end_time_within_limit(
                                 current_class_start_time, data["Actual Class Duration"]
                             ):  # add faculty
@@ -164,6 +166,7 @@ class TimeTable(SelectionSchemes):
                                     day,
                                     current_class_start_time,
                                     end_time,
+                                    classNumber,
                                     faculty_working_hours,
                                 )
                                 is_roomfound = 1
@@ -184,7 +187,8 @@ class TimeTable(SelectionSchemes):
                             assigned_days.append(nextDay)
 
             fitness = self.fitnessEvaluation(chromosome, C1)
-            self.population.append([fitness, chromosome])
+            self.population.append([fitness, chromosome, C1, faculty_working_hours])
+
 
     def fitnessEvaluation(self, chromosome, C1):
         counter_same_time = self.SOFT_class_at_same_time(C1)
@@ -200,7 +204,10 @@ class TimeTable(SelectionSchemes):
         ) * 100
         fitness_withinlimit = (counter_room_withinlimit / self.NUM_ROOMS_WEEKLY) * 100
 
-        fitness_free_slot = 200 * freeslotavailable
+        if freeslotavailable:
+            fitness_free_slot = 200
+        else:
+            fitness_free_slot = 0
 
         totalFitness = (
             fitness_same_room
@@ -300,9 +307,12 @@ class TimeTable(SelectionSchemes):
 
         return same_time_counter
 
-    def mutation(self, chromosome, itteration=10):
+    def mutation(self, chromosome, C1, faculty_working_hours, itteration=10):
+    # def mutation(self, chromosome, faculty_working_hours, itteration=10):
+        mutatedChromosome = copy.deepcopy(chromosome)
         if itteration == 0:
-            return chromosome
+            return mutatedChromosome, C1, faculty_working_hours
+            # return mutatedChromosome
 
         day1 = random.choice(self.availableDays)
         day2 = random.choice(self.availableDays)
@@ -311,67 +321,122 @@ class TimeTable(SelectionSchemes):
 
         room1 = random.choice(list(chromosome[day1].keys()))
 
-        class1 = chromosome[day1][room1]
+        class1 = mutatedChromosome[day1][room1]
 
         if len(class1) == 0:
-            return self.mutation(chromosome, itteration - 1)
+            return self.mutation(mutatedChromosome, C1, faculty_working_hours, itteration - 1)
+            # return self.mutation(mutatedChromosome, faculty_working_hours, itteration-1)
         class_index = random.randint(0, len(class1) - 1)
 
         start, end, number = class1[class_index]
 
-        for room2 in chromosome[day2].keys():
-            class2 = chromosome[day2][room2]
+        for room2 in mutatedChromosome[day2].keys():
+            class2 = mutatedChromosome[day2][room2]
             if any(number == c[2] for c in class2):
-                return self.mutation(chromosome, itteration - 1)
+                return self.mutation(mutatedChromosome, C1, faculty_working_hours, itteration - 1)
+                # return self.mutation(mutatedChromosome, faculty_working_hours, itteration-1)
 
-        room2 = random.choice(list(chromosome[day2].keys()))
-        class2 = chromosome[day2][room2]
+        room2 = random.choice(list(mutatedChromosome[day2].keys()))
+        class2 = mutatedChromosome[day2][room2]
 
-        print(class1, class2, sep="\n")
+        # print(class1, class2, sep="\n")
 
         if any(number == c[2] for c in class2):
-            return self.mutation(chromosome, itteration - 1)
+            return self.mutation(mutatedChromosome, C1, faculty_working_hours, itteration - 1)
+            # return self.mutation(mutatedChromosome, faculty_working_hours, itteration-1)
 
         duration = instructor = self.data.class_nbr_dict[number][
             "Actual Class Duration"
         ]
 
         # TODO the function is returning wrong time
-        start = self.generate_time(class2[-1][1], TimeTable.TIME_GAP)
-        end = self.generate_time(start, duration)
+        if len(class2) == 0:
+            start = self.DAY_START
+            end = self.generate_time(start, duration)
+        else:
+            start = self.generate_time(class2[-1][1], TimeTable.TIME_GAP)
+            end = self.generate_time(start, duration)
 
         if self.is_end_time_within_limit(end, duration):
-            return self.mutation(chromosome, itteration - 1)
+            return self.mutation(mutatedChromosome, C1, faculty_working_hours, itteration - 1)
+            # return self.mutation(mutatedChromosome, faculty_working_hours, itteration-1)
 
         instructor = self.data.class_nbr_dict[number]["Instructor"]
 
-        if self.facultyClash(instructor, day2, start, end):
-            return self.mutation(chromosome, itteration - 1)
+        if self.facultyClash(instructor, day2, start, end, faculty_working_hours):
+            return self.mutation(mutatedChromosome, C1, faculty_working_hours, itteration - 1)
+            # return self.mutation(mutatedChromosome, faculty_working_hours, itteration-1)
 
         class2.append([start, end, number])
         del class1[class_index]
 
-        print(class1, class2, sep="\n")
+        # print(class1, class2, sep="\n")
 
-        chromosome[day1][room1] = class1
-        chromosome[day2][room2] = class2
+        mutatedChromosome[day1][room1] = class1
+        mutatedChromosome[day2][room2] = class2
 
-        return chromosome
+        updated_faculty_working_hours = self.updateFacultySchedule(instructor, day1, number, day2, start, end, faculty_working_hours)
+        classDetails = C1.Class_Dict
+        C2 = ClassDetails()
+        C2.Class_Dict = self.updateClassDetails(number, day1, room1, start, end, day2, room2, classDetails)
+
+        return mutatedChromosome, C2, updated_faculty_working_hours
+
+        # return mutatedChromosome
+    
+    
+    def updateFacultySchedule(self, instructor, day1, number, day2, start, end, faculty_working_hours):
+        updated_faculty_working_hours = copy.deepcopy(faculty_working_hours)
+        lstOfClasses = updated_faculty_working_hours[instructor][day1]
+        for _class in lstOfClasses:
+            if _class[2] == number:
+                lstOfClasses.remove(_class)
+                updated_faculty_working_hours[instructor][day1] = lstOfClasses
+                break
+        updated_faculty_working_hours[instructor][day2].append([start, end, number])
+        return updated_faculty_working_hours
+    
+    def updateClassDetails(self, number, day1, room1, start, end, day2, room2, classDetails):
+        updatedClassDetails = copy.deepcopy(classDetails)
+        lstInstances = updatedClassDetails[number]
+        for instance in lstInstances:
+            if instance[0] == day1 and instance[1] == room1:
+                lstInstances.remove(instance)
+                updatedClassDetails[number] = lstInstances
+                break
+        updatedClassDetails[number].append([day2, room2, start, end])
+        return updatedClassDetails
 
 
-filename = "Spring 2023 Schedule.csv"
-populationSize = 10
-mutationRate = 0.2
-offspringsNumber = 10
-generations = 100
+    def crossover(self, p1, p2):
+        offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours = self.mutation(p1[1], p1[2], p1[3])
+        offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours = self.mutation(p2[1], p2[2], p2[3])
+
+        # print('OFFSPRING-------------------------------------------------')
+
+        offspringOneFitness = self.fitnessEvaluation(offspringOneChromosome, offspringOneClassDetails)
+        offspringTwoFitness = self.fitnessEvaluation(offspringTwoChromosome, offspringTwoClassDetails)
+
+        offspringOne = [offspringOneFitness, offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours]
+        offspringTwo = [offspringTwoFitness, offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours]
+
+        return offspringOne, offspringTwo
 
 
-T1 = TimeTable(filename, populationSize, offspringsNumber, mutationRate)
-# print(T1.population)
-chromosome = T1.population[0]
-# pprint(chromosome[1])
+# filename = "Spring 2023 Schedule.csv"
+# populationSize = 10
+# mutationRate = 0.2
+# offspringsNumber = 10
+# generations = 100
+
+
+# T1 = TimeTable(filename, populationSize, offspringsNumber, mutationRate)
+# # print(T1.population)
+# chromosome = T1.population[0]
+# print(chromosome[2].Class_Dict)
 # print("-----------------------------------------------------------------")
-T1.mutation(chromosome[1])
+# T1.mutation(chromosome[1], chromosome[2], chromosome[3])
+# T1.mutation(chromosome[1], chromosome[3])
 # print(T1.data)
 # print(chromosome)
 # T1.checkClasses(chromosome[1])

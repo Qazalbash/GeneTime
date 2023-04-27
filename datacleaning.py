@@ -14,6 +14,13 @@ class DataCleaning:
         # Extract the unique values of "Class nbr" and "Instructor and store them in a list
         self.room_list = self.df["Room"].unique().tolist()
         self.instructor_list = self.df["Instructor"].unique().tolist()
+        for instructorName in self.instructor_list:
+            if "\n" in instructorName:
+                splittedInstructorName = instructorName.split("\n")
+                firstInstructorName = splittedInstructorName[0]
+                self.instructor_list.remove(instructorName)
+                if firstInstructorName not in self.instructor_list:
+                    self.instructor_list.append(firstInstructorName)
 
         # Count the frequency of each Class nbr and store it in a dictionary
         class_nbr_freq = self.df["Class nbr"].value_counts().to_dict()
