@@ -20,9 +20,7 @@ class SelectionSchemes:
             temp_population = [self.population[index] for index in randomlist]
             # for index in randomlist:
             #     temp_population.append(self.population[index])
-            self.population = temp_population
-            # self.population.sort()
-            # self.population.reverse()
+            self.population = temp_population  # self.population.sort()  # self.population.reverse()
 
     def fpsSelection(self, flag):
         sumFitness = 0
@@ -62,19 +60,14 @@ class SelectionSchemes:
             while len(selectedIndexes) < self.populationSize:
                 randomIndex = random.uniform(0, 1)
                 for index in range(len(ranges)):
-                    if (
-                        ranges[index][0] <= randomIndex <= ranges[index][1]
-                        and index not in selectedIndexes
-                    ):
+                    if (ranges[index][0] <= randomIndex <= ranges[index][1] and index not in selectedIndexes):
                         selectedIndexes.append(index)
 
             tempPopulation = []
             for i in selectedIndexes:
                 tempPopulation.append(self.population[i])
 
-            self.population = tempPopulation
-            # self.population.sort()
-            # self.population.reverse()
+            self.population = tempPopulation  # self.population.sort()  # self.population.reverse()
 
     def rbsSelection(self, flag):
         self.population = sorted(self.population, key=lambda x: x[0])
@@ -117,19 +110,14 @@ class SelectionSchemes:
             while len(selectedIndexes) < self.populationSize:
                 randomIndex = random.uniform(0, 1)
                 for index in range(len(ranges)):
-                    if (
-                        ranges[index][0] <= randomIndex <= ranges[index][1]
-                        and index not in selectedIndexes
-                    ):
+                    if (ranges[index][0] <= randomIndex <= ranges[index][1] and index not in selectedIndexes):
                         selectedIndexes.append(index)
 
             tempPopulation = []
             for i in selectedIndexes:
                 tempPopulation.append(self.population[i])
 
-            self.population = tempPopulation
-            # self.population.sort()
-            # self.population.reverse()
+            self.population = tempPopulation  # self.population.sort()  # self.population.reverse()
 
     def truncation(self, flag):
         # self.population.sort()
@@ -140,26 +128,20 @@ class SelectionSchemes:
             return [self.population[0], self.population[1]]
 
         elif flag == 1:
-            self.population = self.population[0 : self.populationSize]
+            self.population = self.population[0: self.populationSize]
 
     def binarySelection(self, flag):
         if flag == 0:
             contestant1 = random.randint(0, self.populationSize - 1)
-            contestant2 = random.choice(
-                list(set(range(self.populationSize)) - set([contestant1]))
-            )
+            contestant2 = random.choice(list(set(range(self.populationSize)) - set([contestant1])))
 
             if self.population[contestant1][0] >= self.population[contestant2][0]:
                 p1Index = contestant1
             else:
                 p1Index = contestant2
 
-            contestant1 = random.choice(
-                list(set(range(self.populationSize)) - set([p1Index]))
-            )
-            contestant2 = random.choice(
-                list(set(range(self.populationSize)) - set([p1Index, contestant1]))
-            )
+            contestant1 = random.choice(list(set(range(self.populationSize)) - set([p1Index])))
+            contestant2 = random.choice(list(set(range(self.populationSize)) - set([p1Index, contestant1])))
 
             if self.population[contestant1][0] >= self.population[contestant2][0]:
                 p2Index = contestant1
@@ -172,15 +154,9 @@ class SelectionSchemes:
             selectedIndexes = []
 
             for i in range(self.populationSize):
-                contestant1 = random.choice(
-                    list(set(range(len(self.population))) - set(selectedIndexes))
-                )
+                contestant1 = random.choice(list(set(range(len(self.population))) - set(selectedIndexes)))
                 contestant2 = random.choice(
-                    list(
-                        set(range(len(self.population)))
-                        - set(selectedIndexes + [contestant1])
-                    )
-                )
+                    list(set(range(len(self.population))) - set(selectedIndexes + [contestant1])))
 
                 if self.population[contestant1][0] >= self.population[contestant2][0]:
                     selectedIndexes.append(contestant1)
@@ -191,6 +167,4 @@ class SelectionSchemes:
             for index in selectedIndexes:
                 tempPopulation.append(self.population[index])
 
-            self.population = tempPopulation
-            # self.population.sort()
-            # self.population.reverse()
+            self.population = tempPopulation  # self.population.sort()  # self.population.reverse()
