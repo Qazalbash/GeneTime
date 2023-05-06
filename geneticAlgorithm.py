@@ -3,6 +3,7 @@ from timeTable import TimeTable
 
 
 def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumber, generations):
+    numMutations = 5
     timetable = TimeTable(filename, populationSize, mutationRate, offspringsNumber)
   
     timetable.initializePopulation()
@@ -27,12 +28,12 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
             p1 = parents[0]
             p2 = parents[1]
 
-            offspringOne, offspringTwo = timetable.crossover(p1, p2)
+            offspringOne, offspringTwo = timetable.crossover(p1, p2, numMutations)
             timetable.population.append(offspringOne)
             timetable.population.append(offspringTwo)
 
-        timetable.truncation(1)
-        # timetable.randomSelection(1)
+        # timetable.truncation(1)
+        timetable.randomSelection(1)
         # timetable.fpsSelection(1)
         # timetable.rbsSelection(1)
         # timetable.binarySelection(1)
@@ -49,7 +50,7 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
 
 
 filename = "Spring 2023 Schedule.csv"
-populationSize = 30
+populationSize = 50
 mutationRate = 0.2
 offspringsNumber = 10
 generations = 100

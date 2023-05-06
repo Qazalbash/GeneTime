@@ -408,9 +408,12 @@ class TimeTable(SelectionSchemes):
         return updatedClassDetails
 
 
-    def crossover(self, p1, p2):
-        offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours = self.mutation(p1[1], p1[2], p1[3])
-        offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours = self.mutation(p2[1], p2[2], p2[3])
+    def crossover(self, p1, p2, numMutations):
+        offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours = p1[1], p1[2], p1[3]
+        offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours = p2[1], p2[2], p2[3]
+        for i in range(numMutations):
+            offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours = self.mutation(offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours)
+            offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours = self.mutation(offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours)
 
         # print('OFFSPRING-------------------------------------------------')
 
