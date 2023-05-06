@@ -1,11 +1,10 @@
-import random
 from timeTable import TimeTable
 
 
 def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumber, generations):
     numMutations = 5
     timetable = TimeTable(filename, populationSize, mutationRate, offspringsNumber)
-  
+
     timetable.initializePopulation()
 
     # for i in range(timetable.populationSize):
@@ -16,7 +15,7 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
     # parents = timetable.truncation(0)
 
     for generation in range(generations):
-        print('-------------------- Generation Number = ' + str(generation+1) + ' --------------------')
+        print('-------------------- Generation Number = ' + str(generation + 1) + ' --------------------')
         totalOffsprings = []
         for i in range(offspringsNumber // 2):
             parents = timetable.truncation(0)
@@ -41,8 +40,6 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
     timetable.population = sorted(timetable.population, key=lambda x: x[0])
     timetable.population.reverse()
     print(timetable.population[0][0])
-    
-
 
     # print(offspringOne)
     # print("---------------------------------------------------")

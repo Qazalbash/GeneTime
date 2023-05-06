@@ -1,7 +1,5 @@
-from datetime import datetime, timedelta
 import datetime
 import copy
-
 
 # def find_free_slot(schedule):
 #     days = ["Monday", "Tuesday"]
@@ -53,6 +51,6 @@ import copy
 #     print("No free one-hour time slot found in the week.")
 
 
-lst = [3,48,91]
+lst = [3, 48, 91]
 lst.insert(0, 10)
 print(lst)

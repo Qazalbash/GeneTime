@@ -34,12 +34,8 @@ class DataCleaning:
             if "\n" in instructor:
                 instructor = instructor.split("\n")
                 instructor = instructor[0]
-            self.class_nbr_dict[class_nbr] = {
-                "Course title": title,
-                "Instructor": instructor,
-                "Actual Class Duration": duration,
-                "Frequency": class_nbr_freq[class_nbr],
-            }
+            self.class_nbr_dict[class_nbr] = {"Course title": title, "Instructor": instructor,
+                                              "Actual Class Duration": duration, "Frequency": class_nbr_freq[class_nbr]}
 
     def getnumclasses(self):
         for class_number, info in self.class_nbr_dict.items():

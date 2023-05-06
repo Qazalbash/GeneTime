@@ -1,8 +1,7 @@
-import datetime
-import random
-from pprint import pprint
 import copy
+import datetime
 import pandas as pd
+import random
 
 from classDetails import ClassDetails
 from datacleaning import DataCleaning
@@ -13,7 +12,7 @@ class TimeTable(SelectionSchemes):
     TIME_GAP = 15  # 15 minutes gap between classes
 
     def __init__(
-        self, filename, populationSize, offspringsNumber, mutationRate
+            self, filename, populationSize, offspringsNumber, mutationRate
     ) -> None:
         self.data = DataCleaning(filename)
         self.availableDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
@@ -34,7 +33,7 @@ class TimeTable(SelectionSchemes):
     # returns end time to start time using the duration
     def generate_time(self, startTime, duration):
         endTime = (
-            pd.to_datetime(startTime) + pd.to_timedelta(duration, unit="m")
+                pd.to_datetime(startTime) + pd.to_timedelta(duration, unit="m")
         ).strftime("%H:%M")
         return endTime
 
@@ -73,18 +72,15 @@ class TimeTable(SelectionSchemes):
         daily_schedule = faculty_working_hours[instructor][day]
         if len(daily_schedule) == 0:
             return False
-        else:
-            for _class in daily_schedule:
-                other_start_time = datetime.datetime.strptime(_class[0], "%H:%M")
-                other_end_time = datetime.datetime.strptime(_class[1], "%H:%M")
-                if start_time < other_end_time and end_time > other_start_time:
-                    return True
-            return False
+        for _class in daily_schedule:
+            other_start_time = datetime.datetime.strptime(_class[0], "%H:%M")
+            other_end_time = datetime.datetime.strptime(_class[1], "%H:%M")
+            if start_time < other_end_time and end_time > other_start_time:
+                return True
+        return False
 
     # adds the timeslot to the instructor's weekly schedule
-    def addToFacultySchedule(
-        self, instructor, day, start_time, end_time, classNumber, faculty_working_hours
-    ):
+    def addToFacultySchedule(self, instructor, day, start_time, end_time, classNumber, faculty_working_hours):
         faculty_working_hours[instructor][day].append([start_time, end_time, classNumber])
         return faculty_working_hours
 
@@ -109,22 +105,14 @@ class TimeTable(SelectionSchemes):
                     end_time = self.generate_time(
                         current_class_start_time, data["Actual Class Duration"]
                     )
-                    if self.facultyClash(
-                        data["Instructor"], day, current_class_start_time, end_time, faculty_working_hours
-                    ) == False and self.is_end_time_within_limit(
-                        current_class_start_time, data["Actual Class Duration"]
-                    ):
-                        chromosome[day][room].append(
-                            [current_class_start_time, end_time, classNumber]
-                        )
-                        faculty_working_hours = self.addToFacultySchedule(
-                            data["Instructor"],
-                            day,
-                            current_class_start_time,
-                            end_time,
-                            classNumber,
-                            faculty_working_hours,
-                        )
+                    if not self.facultyClash(data["Instructor"], day, current_class_start_time, end_time,
+                                             faculty_working_hours) and self.is_end_time_within_limit(
+                        current_class_start_time,
+                        data["Actual Class Duration"]):
+                        chromosome[day][room].append([current_class_start_time, end_time, classNumber])
+                        faculty_working_hours = self.addToFacultySchedule(data["Instructor"], day,
+                                                                          current_class_start_time, end_time,
+                                                                          classNumber, faculty_working_hours)
                         is_roomfound = 1  # room found exit loop
                         C1.addClass(
                             classNumber, day, room, current_class_start_time, end_time
@@ -150,11 +138,11 @@ class TimeTable(SelectionSchemes):
                                 current_class_start_time, data["Actual Class Duration"]
                             )
                             if self.facultyClash(
-                                data["Instructor"],
-                                day,
-                                current_class_start_time,
-                                end_time,
-                                faculty_working_hours
+                                    data["Instructor"],
+                                    day,
+                                    current_class_start_time,
+                                    end_time,
+                                    faculty_working_hours
                             ) == False and self.is_end_time_within_limit(
                                 current_class_start_time, data["Actual Class Duration"]
                             ):  # add faculty
@@ -189,7 +177,6 @@ class TimeTable(SelectionSchemes):
             fitness = self.fitnessEvaluation(chromosome, C1)
             self.population.append([fitness, chromosome, C1, faculty_working_hours])
 
-
     def fitnessEvaluation(self, chromosome, C1):
         counter_same_time = self.SOFT_class_at_same_time(C1)
         counter_same_room = self.SOFT_class_in_same_room(C1)
@@ -197,24 +184,20 @@ class TimeTable(SelectionSchemes):
         freeslotavailable = self.SOFT_find_free_slot(chromosome)
 
         fitness_same_room = (
-            counter_same_room / self.data.numclasses_multipleinstances
-        ) * 100
+                                    counter_same_room / self.data.numclasses_multipleinstances
+                            ) * 100
         fitness_same_time = (
-            counter_same_time / self.data.numclasses_multipleinstances
-        ) * 100
+                                    counter_same_time / self.data.numclasses_multipleinstances
+                            ) * 100
         fitness_withinlimit = (counter_room_withinlimit / self.NUM_ROOMS_WEEKLY) * 100
 
         if freeslotavailable:
-            fitness_free_slot = 200
+            fitness_free_slot = 200 
         else:
             fitness_free_slot = 0
 
-        totalFitness = (
-            fitness_same_room
-            + fitness_same_time
-            + fitness_withinlimit
-            + fitness_free_slot
-        )
+        totalFitness = fitness_same_room + fitness_same_time + fitness_withinlimit + fitness_free_slot
+
         return totalFitness
 
     # just to check if weekly schedule has all 447 classes
@@ -269,10 +252,7 @@ class TimeTable(SelectionSchemes):
                     buffer_official_day_end = official_day_end - datetime.timedelta(
                         minutes=60
                     )
-                    if (
-                        endTime <= official_day_end
-                        and endTime >= buffer_official_day_end
-                    ):
+                    if official_day_end >= endTime >= buffer_official_day_end:
                         count += 1
         return self.NUM_ROOMS_WEEKLY - count
 
@@ -297,9 +277,7 @@ class TimeTable(SelectionSchemes):
             if len(instances) > 1:
                 start_time = datetime.datetime.strptime(instances[0][2], "%H:%M")
                 for class_instance in instances[1:]:
-                    next_start_time = datetime.datetime.strptime(
-                        class_instance[2], "%H:%M"
-                    )
+                    next_start_time = datetime.datetime.strptime(class_instance[2], "%H:%M")
                     if next_start_time != start_time:
                         flag = False
             if flag:
@@ -308,7 +286,7 @@ class TimeTable(SelectionSchemes):
         return same_time_counter
 
     def mutation(self, chromosome, C1, faculty_working_hours, itteration=10):
-    # def mutation(self, chromosome, faculty_working_hours, itteration=10):
+        # def mutation(self, chromosome, faculty_working_hours, itteration=10):
         mutatedChromosome = copy.deepcopy(chromosome)
         if itteration == 0:
             return mutatedChromosome, C1, faculty_working_hours
@@ -345,9 +323,7 @@ class TimeTable(SelectionSchemes):
             return self.mutation(mutatedChromosome, C1, faculty_working_hours, itteration - 1)
             # return self.mutation(mutatedChromosome, faculty_working_hours, itteration-1)
 
-        duration = instructor = self.data.class_nbr_dict[number][
-            "Actual Class Duration"
-        ]
+        duration = instructor = self.data.class_nbr_dict[number]["Actual Class Duration"]
 
         # TODO the function is returning wrong time
         if len(class2) == 0:
@@ -375,7 +351,8 @@ class TimeTable(SelectionSchemes):
         mutatedChromosome[day1][room1] = class1
         mutatedChromosome[day2][room2] = class2
 
-        updated_faculty_working_hours = self.updateFacultySchedule(instructor, day1, number, day2, start, end, faculty_working_hours)
+        updated_faculty_working_hours = self.updateFacultySchedule(instructor, day1, number, day2, start, end,
+                                                                   faculty_working_hours)
         classDetails = C1.Class_Dict
         C2 = ClassDetails()
         C2.Class_Dict = self.updateClassDetails(number, day1, room1, start, end, day2, room2, classDetails)
@@ -383,8 +360,7 @@ class TimeTable(SelectionSchemes):
         return mutatedChromosome, C2, updated_faculty_working_hours
 
         # return mutatedChromosome
-    
-    
+
     def updateFacultySchedule(self, instructor, day1, number, day2, start, end, faculty_working_hours):
         updated_faculty_working_hours = copy.deepcopy(faculty_working_hours)
         lstOfClasses = updated_faculty_working_hours[instructor][day1]
@@ -395,7 +371,7 @@ class TimeTable(SelectionSchemes):
                 break
         updated_faculty_working_hours[instructor][day2].append([start, end, number])
         return updated_faculty_working_hours
-    
+
     def updateClassDetails(self, number, day1, room1, start, end, day2, room2, classDetails):
         updatedClassDetails = copy.deepcopy(classDetails)
         lstInstances = updatedClassDetails[number]
@@ -424,7 +400,6 @@ class TimeTable(SelectionSchemes):
         offspringTwo = [offspringTwoFitness, offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours]
 
         return offspringOne, offspringTwo
-
 
 # filename = "Spring 2023 Schedule.csv"
 # populationSize = 10
