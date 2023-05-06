@@ -2,13 +2,18 @@ import pandas as pd
 
 
 class DataCleaning:
-    def __init__(self, filename) -> None:
+    def __init__(self, filename, filenameStudents) -> None:
         self.filename = filename
         self.class_nbr_dict = {}
         self.df = pd.read_csv(self.filename)
         self.numclasses_multipleinstances = 0
         self.extractingFromDataset()
         self.getnumclasses()
+
+        self.filenameStudents = filenameStudents
+        self.dfStudents = pd.read_csv(filenameStudents)
+        self.createStudentToClassesDict()
+        self.createClasstoStudentsDict()
 
     def extractingFromDataset(self):
         # Extract the unique values of "Class nbr" and "Instructor and store them in a list
@@ -43,8 +48,33 @@ class DataCleaning:
             if freq > 1:
                 self.numclasses_multipleinstances += 1
 
+    def createStudentToClassesDict(self):
+        self.studentToClassesDict = {}
+        for index, row in self.dfStudents.iterrows():
+            name = row['Name (anonymized)']
+            class_nbr = row['Class Nbr']
+            if name in self.studentToClassesDict:
+                self.studentToClassesDict[name].append(class_nbr)
+            else:
+                self.studentToClassesDict[name] = [class_nbr]
 
-dc = DataCleaning("Spring 2023 Schedule.csv")
+    def createClasstoStudentsDict(self):
+        self.studentList = self.dfStudents["Name (anonymized)"].unique().tolist()
+        self.classToStudentDict = {}
+        for index, row in self.dfStudents.iterrows():
+            classNbr = row['Class Nbr']
+            name = row['Name (anonymized)']
+            if classNbr in self.classToStudentDict:
+                self.classToStudentDict[classNbr].append(name)
+            else:
+                self.classToStudentDict[classNbr] = [name]
+
+
+
+dc = DataCleaning("Spring 2023 Schedule.csv", "Spring 2023 student enrollment.csv")
+# print(dc.studentToClassesDict)
+# print(dc.classToStudentDict)
+# print(dc.studentList)
 
 # print("-------- Statistics--------")
 # print("Number of classrooms: ",len(dc.room_list))

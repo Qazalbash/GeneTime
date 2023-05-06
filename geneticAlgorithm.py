@@ -1,9 +1,9 @@
 from timeTable import TimeTable
 
 
-def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumber, generations):
-    numMutations = 5
-    timetable = TimeTable(filename, populationSize, mutationRate, offspringsNumber)
+def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumber, generations, filenameStudents):
+    numMutations = 1
+    timetable = TimeTable(filename, populationSize, mutationRate, offspringsNumber, filenameStudents)
 
     timetable.initializePopulation()
 
@@ -47,11 +47,12 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
 
 
 filename = "Spring 2023 Schedule.csv"
-populationSize = 50
+filenameStudents = "Spring 2023 student enrollment.csv"
+populationSize = 20
 mutationRate = 0.2
 offspringsNumber = 10
 generations = 100
 
 evolutionaryAlgorithm(
-    filename, populationSize, mutationRate, offspringsNumber, generations
+    filename, populationSize, mutationRate, offspringsNumber, generations, filenameStudents
 )
