@@ -1,8 +1,10 @@
 import copy
-import datetime
-import pandas as pd
-import random
 import csv
+import datetime
+import random
+
+import pandas as pd
+
 from classDetails import ClassDetails
 from datacleaning import DataCleaning
 from selectionSchemes import SelectionSchemes
@@ -49,9 +51,7 @@ class TimeTable(SelectionSchemes):
         duration = datetime.timedelta(minutes=int(duration_minutes))
         end_time = start_time + duration
         end_time_limit = datetime.datetime.strptime(self.DAY_END, "%H:%M")
-        if end_time <= end_time_limit:
-            return True
-        return False
+        return end_time <= end_time_limit
 
     def initializeChromosome(self):
         chromosome = {}
@@ -88,7 +88,7 @@ class TimeTable(SelectionSchemes):
     def addToFacultySchedule(self, instructor, day, start_time, end_time, classNumber, faculty_working_hours):
         faculty_working_hours[instructor][day].append([start_time, end_time, classNumber])
         return faculty_working_hours
-    
+
     # adds the timeslot to the students' weekly schedule (those students which belong to the class being added)
     def addToStudentSchedules(self, classNumber, day, start_time, end_time, studentSchedules):
         if classNumber in self.data.classToStudentDict:
@@ -98,7 +98,6 @@ class TimeTable(SelectionSchemes):
             return studentSchedules
         else:
             return studentSchedules
-        
 
     def initializePopulation(self):
         for i in range(self.populationSize):
@@ -155,13 +154,13 @@ class TimeTable(SelectionSchemes):
                                 current_class_start_time, data["Actual Class Duration"]
                             )
                             if self.facultyClash(data["Instructor"],
-                                    day,
-                                    current_class_start_time,
-                                    end_time,
-                                    faculty_working_hours
-                            ) == False and self.is_end_time_within_limit(
+                                                 day,
+                                                 current_class_start_time,
+                                                 end_time,
+                                                 faculty_working_hours
+                                                 ) == False and self.is_end_time_within_limit(
                                 current_class_start_time, data["Actual Class Duration"]
-                            ):  
+                            ):
                                 chromosome[day][next_room].append(
                                     [current_class_start_time, end_time, classNumber]
                                 )
@@ -208,12 +207,10 @@ class TimeTable(SelectionSchemes):
                                     counter_same_time / self.data.numclasses_multipleinstances
                             ) * 100
         fitness_withinlimit = (counter_room_withinlimit / self.NUM_ROOMS_WEEKLY) * 100
+        fitness_free_slot = 200 * freeslotavailable
 
-        if freeslotavailable:
-            fitness_free_slot = 200 
-        else:
-            fitness_free_slot = 0
-
+        # totalFitness = math.log10(
+        #     1.1 ** fitness_same_room + 1.1 ** fitness_same_time + 1.1 ** fitness_withinlimit + 1.1 ** fitness_free_slot)
         totalFitness = fitness_same_room + fitness_same_time + fitness_withinlimit + fitness_free_slot
 
         return totalFitness
@@ -253,10 +250,12 @@ class TimeTable(SelectionSchemes):
             # if the timeslot is free, return it
             if free:
                 print(start_time.strftime("%H:%M"), end_slot.strftime("%H:%M"))
-                return
+
+                return True
+
             start_time += _delta
         # if no free timeslot is found, return None
-        return None
+        return False
 
     def SOFT_checkEndTimeLimit(self, chromosome):
         endTimes = []
@@ -283,9 +282,8 @@ class TimeTable(SelectionSchemes):
                 for class_instance in instances[1:]:
                     if class_instance[1] != room_no:
                         flag = False
-            if len(instances) > 1 and flag == True:
+            if len(instances) > 1 and flag:
                 same_room_counter += 1
-
         return same_room_counter
 
     def SOFT_class_at_same_time(self, C1):
@@ -300,9 +298,8 @@ class TimeTable(SelectionSchemes):
                         flag = False
             if flag:
                 same_time_counter += 1
-
         return same_time_counter
-        
+
     def SOFT_student_conflicts(self, studentSchedules):
         totalStudentClassConflicts = 0
         totalStudentsWithConflicts = 0
@@ -312,20 +309,19 @@ class TimeTable(SelectionSchemes):
                 if len(dayInfo) == 0 or len(dayInfo) == 1:
                     totalStudentClassConflicts += 0
                 else:
-                    for i in range(len(dayInfo)-1):
+                    for i in range(len(dayInfo) - 1):
                         start_time = datetime.datetime.strptime(dayInfo[i][0], "%H:%M")
                         end_time = datetime.datetime.strptime(dayInfo[i][1], "%H:%M")
-                        for j in range(i+1, len(dayInfo)):
+                        for j in range(i + 1, len(dayInfo)):
                             other_start_time = datetime.datetime.strptime(dayInfo[j][0], "%H:%M")
-                            other_end_time =  datetime.datetime.strptime(dayInfo[j][1], "%H:%M")
+                            other_end_time = datetime.datetime.strptime(dayInfo[j][1], "%H:%M")
                             if start_time < other_end_time and end_time > other_start_time:
                                 studentHasConflict = True
-                                totalStudentClassConflicts+=1
+                                totalStudentClassConflicts += 1
             if studentHasConflict == True:
                 totalStudentsWithConflicts += 1
 
         return totalStudentClassConflicts, totalStudentsWithConflicts
-        
 
     def mutation(self, chromosome, C1, faculty_working_hours, studentSchedules, itteration=10):
         # def mutation(self, chromosome, faculty_working_hours, itteration=10):
@@ -395,7 +391,7 @@ class TimeTable(SelectionSchemes):
 
         updated_faculty_working_hours = self.updateFacultySchedule(instructor, day1, number, day2, start, end,
                                                                    faculty_working_hours)
-        
+
         # updatedStudentSchedules = self.updateStudentSchedules(number, day1, day2, start, end, studentSchedules)
 
         classDetails = C1.Class_Dict
@@ -428,7 +424,7 @@ class TimeTable(SelectionSchemes):
                 break
         updatedClassDetails[number].append([day2, room2, start, end])
         return updatedClassDetails
-    
+
     def updateStudentSchedules(self, number, day1, day2, start, end, studentSchedules):
         updatedStudentSchedules = copy.deepcopy(studentSchedules)
         if number in self.data.classToStudentDict:
@@ -445,30 +441,43 @@ class TimeTable(SelectionSchemes):
         else:
             return updatedStudentSchedules
 
-
     def crossover(self, p1, p2, numMutations):
-        offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours, offspringOneStudentSchedules = p1[1], p1[2], p1[3], p1[4]
-        offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours, offspringTwoStudentSchedules = p2[1], p2[2], p2[3], p2[4]
+        offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours, offspringOneStudentSchedules = p1[
+            1], p1[2], p1[3], p1[4]
+        offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours, offspringTwoStudentSchedules = p2[
+            1], p2[2], p2[3], p2[4]
         for i in range(numMutations):
-            offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours, offspringOneStudentSchedules = self.mutation(offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours, offspringOneStudentSchedules)
-            offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours,  offspringTwoStudentSchedules = self.mutation(offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours, offspringTwoStudentSchedules)
+            offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours, offspringOneStudentSchedules = self.mutation(
+                offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours,
+                offspringOneStudentSchedules)
+            offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours, offspringTwoStudentSchedules = self.mutation(
+                offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours,
+                offspringTwoStudentSchedules)
 
         # print('OFFSPRING-------------------------------------------------')
 
-        offspringOneFitness = self.fitnessEvaluation(offspringOneChromosome, offspringOneClassDetails, offspringOneStudentSchedules)
-        offspringTwoFitness = self.fitnessEvaluation(offspringTwoChromosome, offspringTwoClassDetails, offspringTwoStudentSchedules)
+        offspringOneFitness = self.fitnessEvaluation(offspringOneChromosome, offspringOneClassDetails,
+                                                     offspringOneStudentSchedules)
+        offspringTwoFitness = self.fitnessEvaluation(offspringTwoChromosome, offspringTwoClassDetails,
+                                                     offspringTwoStudentSchedules)
 
-        offspringOne = [offspringOneFitness, offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours, offspringOneStudentSchedules]
-        offspringTwo = [offspringTwoFitness, offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours, offspringTwoStudentSchedules]
+        offspringOne = [offspringOneFitness, offspringOneChromosome, offspringOneClassDetails, offspringOneFacultyHours,
+                        offspringOneStudentSchedules]
+        offspringTwo = [offspringTwoFitness, offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours,
+                        offspringTwoStudentSchedules]
 
         return offspringOne, offspringTwo
-    
+
     def getTimeTable(self, classDetails):
         with open('schedules/schedule.csv', 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(['Day', 'Start Time', 'End Time', 'Program', 'Course code', 'Course title', 'Class nbr', 'Section', 'Room', 'Instructor', 'Actual Class Duration'])
+            writer.writerow(
+                ['Day', 'Start Time', 'End Time', 'Program', 'Course code', 'Course title', 'Class nbr', 'Section',
+                 'Room', 'Instructor', 'Actual Class Duration'])
             for classNumber, instances in classDetails.Class_Dict.items():
-                class_info = self.data.df.loc[self.data.df['Class nbr'] == classNumber, ['Program', 'Course code', 'Course title', 'Section', 'Instructor', 'Actual Class Duration']].iloc[0].tolist()
+                class_info = self.data.df.loc[
+                    self.data.df['Class nbr'] == classNumber, ['Program', 'Course code', 'Course title', 'Section',
+                                                               'Instructor', 'Actual Class Duration']].iloc[0].tolist()
                 for instance in instances:
                     day = instance[0]
                     room = instance[1]
@@ -478,10 +487,9 @@ class TimeTable(SelectionSchemes):
                     if "\n" in instructor:
                         instructor = instructor.split("\n")
                         instructor = instructor[0]
-                    row = [day, start_time, end_time, class_info[0], class_info[1], class_info[2], classNumber, class_info[3], room, instructor, class_info[5]]
+                    row = [day, start_time, end_time, class_info[0], class_info[1], class_info[2], classNumber,
+                           class_info[3], room, instructor, class_info[5]]
                     writer.writerow(row)
-        
-
 
 # filename = "Spring 2023 Schedule.csv"
 # # filename = "Spring 2023 Schedule (no lectures).csv"
