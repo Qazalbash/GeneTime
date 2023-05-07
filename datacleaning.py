@@ -71,7 +71,11 @@ class DataCleaning:
 
 
 
-dc = DataCleaning("Spring 2023 Schedule.csv", "Spring 2023 student enrollment.csv")
+# dc = DataCleaning("Spring 2023 Schedule.csv", "Spring 2023 student enrollment.csv")
+# # print(dc.df)
+# class_nbr = 1033
+# class_info = dc.df.loc[dc.df['Class nbr'] == class_nbr, ['Program', 'Course code', 'Course title', 'Section', 'Instructor', 'Actual Class Duration']].iloc[0].tolist()
+# print(class_info)
 # print(dc.studentToClassesDict)
 # print(dc.classToStudentDict)
 # print(dc.studentList)

@@ -2,7 +2,7 @@ import copy
 import datetime
 import pandas as pd
 import random
-
+import csv
 from classDetails import ClassDetails
 from datacleaning import DataCleaning
 from selectionSchemes import SelectionSchemes
@@ -129,7 +129,7 @@ class TimeTable(SelectionSchemes):
                         faculty_working_hours = self.addToFacultySchedule(data["Instructor"], day,
                                                                           current_class_start_time, end_time,
                                                                           classNumber, faculty_working_hours)
-                        studentSchedules = self.addToStudentSchedules(classNumber, day, current_class_start_time, end_time, studentSchedules)
+                        # studentSchedules = self.addToStudentSchedules(classNumber, day, current_class_start_time, end_time, studentSchedules)
                         is_roomfound = 1  # room found exit loop
                         C1.addClass(
                             classNumber, day, room, current_class_start_time, end_time
@@ -173,7 +173,7 @@ class TimeTable(SelectionSchemes):
                                     classNumber,
                                     faculty_working_hours,
                                 )
-                                studentSchedules = self.addToStudentSchedules(classNumber, day, current_class_start_time, end_time, studentSchedules)
+                                # studentSchedules = self.addToStudentSchedules(classNumber, day, current_class_start_time, end_time, studentSchedules)
                                 is_roomfound = 1
                                 C1.addClass(
                                     classNumber,
@@ -199,7 +199,7 @@ class TimeTable(SelectionSchemes):
         counter_same_room = self.SOFT_class_in_same_room(C1)
         counter_room_withinlimit = self.SOFT_checkEndTimeLimit(chromosome)
         freeslotavailable = self.SOFT_find_free_slot(chromosome)
-        counter_student_class_conflicts, counter_students_with_conflicts = self.SOFT_student_conflicts(studentSchedules)
+        # counter_student_class_conflicts, counter_students_with_conflicts = self.SOFT_student_conflicts(studentSchedules)
         # print(totalStudentsWithConflicts)
         fitness_same_room = (
                                     counter_same_room / self.data.numclasses_multipleinstances
@@ -252,7 +252,7 @@ class TimeTable(SelectionSchemes):
                     break
             # if the timeslot is free, return it
             if free:
-                print[start_time.strftime("%H:%M"), end_slot.strftime("%H:%M")]
+                print(start_time.strftime("%H:%M"), end_slot.strftime("%H:%M"))
                 return
             start_time += _delta
         # if no free timeslot is found, return None
@@ -375,7 +375,7 @@ class TimeTable(SelectionSchemes):
             start = self.generate_time(class2[-1][1], TimeTable.TIME_GAP)
             end = self.generate_time(start, duration)
 
-        if self.is_end_time_within_limit(end, duration):
+        if not self.is_end_time_within_limit(start, duration):
             return self.mutation(mutatedChromosome, C1, faculty_working_hours, studentSchedules, itteration - 1)
             # return self.mutation(mutatedChromosome, faculty_working_hours, itteration-1)
 
@@ -396,13 +396,14 @@ class TimeTable(SelectionSchemes):
         updated_faculty_working_hours = self.updateFacultySchedule(instructor, day1, number, day2, start, end,
                                                                    faculty_working_hours)
         
-        updatedStudentSchedules = self.updateStudentSchedules(number, day1, day2, start, end, studentSchedules)
+        # updatedStudentSchedules = self.updateStudentSchedules(number, day1, day2, start, end, studentSchedules)
 
         classDetails = C1.Class_Dict
         C2 = ClassDetails()
         C2.Class_Dict = self.updateClassDetails(number, day1, room1, start, end, day2, room2, classDetails)
 
-        return mutatedChromosome, C2, updated_faculty_working_hours, updatedStudentSchedules
+        # return mutatedChromosome, C2, updated_faculty_working_hours, updatedStudentSchedules
+        return mutatedChromosome, C2, updated_faculty_working_hours, studentSchedules
 
         # return mutatedChromosome
 
@@ -461,11 +462,31 @@ class TimeTable(SelectionSchemes):
         offspringTwo = [offspringTwoFitness, offspringTwoChromosome, offspringTwoClassDetails, offspringTwoFacultyHours, offspringTwoStudentSchedules]
 
         return offspringOne, offspringTwo
+    
+    def getTimeTable(self, classDetails):
+        with open('schedules/schedule.csv', 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(['Day', 'Start Time', 'End Time', 'Program', 'Course code', 'Course title', 'Class nbr', 'Section', 'Room', 'Instructor', 'Actual Class Duration'])
+            for classNumber, instances in classDetails.Class_Dict.items():
+                class_info = self.data.df.loc[self.data.df['Class nbr'] == classNumber, ['Program', 'Course code', 'Course title', 'Section', 'Instructor', 'Actual Class Duration']].iloc[0].tolist()
+                for instance in instances:
+                    day = instance[0]
+                    room = instance[1]
+                    start_time = instance[2]
+                    end_time = instance[3]
+                    instructor = class_info[4]
+                    if "\n" in instructor:
+                        instructor = instructor.split("\n")
+                        instructor = instructor[0]
+                    row = [day, start_time, end_time, class_info[0], class_info[1], class_info[2], classNumber, class_info[3], room, instructor, class_info[5]]
+                    writer.writerow(row)
+        
+
 
 # filename = "Spring 2023 Schedule.csv"
 # # filename = "Spring 2023 Schedule (no lectures).csv"
 # filenameStudents = "Spring 2023 student enrollment.csv"
-# populationSize = 1
+# populationSize = 30
 # mutationRate = 0.2
 # offspringsNumber = 10
 # generations = 100
@@ -473,6 +494,9 @@ class TimeTable(SelectionSchemes):
 
 # T1 = TimeTable(filename, populationSize, offspringsNumber, mutationRate, filenameStudents)
 # T1.initializePopulation()
+# chromosome = T1.population[0]
+# classDetails = chromosome[2]
+# T1.getTimeTable(classDetails)
 # print(len(T1.population))
 # chromosome = T1.population[0]
 # print(chromosome[2].Class_Dict)

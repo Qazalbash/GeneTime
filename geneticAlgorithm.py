@@ -37,9 +37,17 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
         # timetable.rbsSelection(1)
         # timetable.binarySelection(1)
 
+        timetable.population = sorted(timetable.population, key=lambda x: x[0])
+        timetable.population.reverse()
+        optimalChromosome = timetable.population[0]
+        print("Fitness:" + str(optimalChromosome[0]))
+
     timetable.population = sorted(timetable.population, key=lambda x: x[0])
     timetable.population.reverse()
-    print(timetable.population[0][0])
+    optimalChromosome = timetable.population[0]
+    print("Fitness:" + str(optimalChromosome[0]))
+    classDetails = optimalChromosome[2]
+    timetable.getTimeTable(classDetails)
 
     # print(offspringOne)
     # print("---------------------------------------------------")
@@ -51,8 +59,9 @@ filenameStudents = "Spring 2023 student enrollment.csv"
 populationSize = 20
 mutationRate = 0.2
 offspringsNumber = 10
-generations = 100
+generations = 1000
 
 evolutionaryAlgorithm(
     filename, populationSize, mutationRate, offspringsNumber, generations, filenameStudents
 )
+
