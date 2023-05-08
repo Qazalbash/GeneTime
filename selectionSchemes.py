@@ -1,13 +1,9 @@
 import random
-from typing import Any
 
 
 class SelectionSchemes:
-    def __init__(self) -> None:
-        self.population = None
-        self.populationSize = 100
 
-    def randomSelection(self, flag: int) -> list[Any]:
+    def randomSelection(self, flag):
         if flag == 0:
             p1Index = random.randint(0, self.populationSize - 1)
             p2Index = random.randint(0, self.populationSize - 1)
@@ -20,16 +16,20 @@ class SelectionSchemes:
         elif flag == 1:
             randomlist = random.sample(range(len(self.population)), self.populationSize)
             temp_population = [self.population[index] for index in randomlist]
-            self.population = temp_population
+            # for index in randomlist:
+            #     temp_population.append(self.population[index])
+            self.population = temp_population  # self.population.sort()  # self.population.reverse()
 
     def fpsSelection(self, flag):
         sumFitness = 0
+        normalizedFitness = []
         ranges = []
 
         for chromosome in self.population:
             sumFitness += chromosome[0]
 
-        normalizedFitness = [chromosome[0] / sumFitness for chromosome in self.population]
+        for chromosome in self.population:
+            normalizedFitness.append(chromosome[0] / sumFitness)
 
         pointer = 0
 
@@ -37,8 +37,6 @@ class SelectionSchemes:
             limits = [pointer, pointer + normalizedFitness[i]]
             ranges.append(limits)
             pointer += normalizedFitness[i]
-
-        p1Index = None
 
         if flag == 0:
             randomIndex = random.uniform(0, 1)
@@ -60,7 +58,7 @@ class SelectionSchemes:
             while len(selectedIndexes) < self.populationSize:
                 randomIndex = random.uniform(0, 1)
                 for index in range(len(ranges)):
-                    if ranges[index][0] <= randomIndex <= ranges[index][1] and index not in selectedIndexes:
+                    if (ranges[index][0] <= randomIndex <= ranges[index][1] and index not in selectedIndexes):
                         selectedIndexes.append(index)
 
             tempPopulation = []
@@ -70,26 +68,27 @@ class SelectionSchemes:
             self.population = tempPopulation  # self.population.sort()  # self.population.reverse()
 
     def rbsSelection(self, flag):
-        ranks = list(range(len(self.population), 0, -1))
-
+        self.population = sorted(self.population, key=lambda x: x[0])
+        ranks = []
+        normalizedRanks = []
         sumRanks = 0
-        for rank in range(1, len(self.population) + 1):
-            sumRanks += rank
-
-        self.population = sorted(self.population, key=lambda x: x[0], reverse=True)
-
-        normalizedRanks = [i / sumRanks for i in ranks]
-
-        pointer = 0
         ranges = []
 
+        for rank in range(1, len(self.population) + 1):
+            ranks.append(rank)
+            sumRanks += rank
+        self.population.reverse()
+        ranks.reverse()
+        for i in ranks:
+            normalizedRanks.append(i / sumRanks)
+
+        pointer = 0
         for i in range(len(normalizedRanks)):
             limits = [pointer, pointer + normalizedRanks[i]]
             ranges.append(limits)
             pointer += normalizedRanks[i]
 
         if flag == 0:
-            p1Index = None
             randomIndex = random.uniform(0, 1)
             for index in range(len(ranges)):
                 if ranges[index][0] <= randomIndex <= ranges[index][1]:
@@ -109,15 +108,19 @@ class SelectionSchemes:
             while len(selectedIndexes) < self.populationSize:
                 randomIndex = random.uniform(0, 1)
                 for index in range(len(ranges)):
-                    if ranges[index][0] <= randomIndex <= ranges[index][1] and index not in selectedIndexes:
+                    if (ranges[index][0] <= randomIndex <= ranges[index][1] and index not in selectedIndexes):
                         selectedIndexes.append(index)
 
-            tempPopulation = [self.population[index] for index in selectedIndexes]
+            tempPopulation = []
+            for i in selectedIndexes:
+                tempPopulation.append(self.population[i])
 
-            self.population = tempPopulation
+            self.population = tempPopulation  # self.population.sort()  # self.population.reverse()
 
     def truncation(self, flag):
-        self.population = sorted(self.population, key=lambda x: x[0], reverse=True)
+        # self.population.sort()
+        self.population = sorted(self.population, key=lambda x: x[0])
+        self.population.reverse()
 
         if flag == 0:
             return [self.population[0], self.population[1]]
@@ -128,15 +131,15 @@ class SelectionSchemes:
     def binarySelection(self, flag):
         if flag == 0:
             contestant1 = random.randint(0, self.populationSize - 1)
-            contestant2 = random.choice(list(set(range(self.populationSize)) - {contestant1}))
+            contestant2 = random.choice(list(set(range(self.populationSize)) - set([contestant1])))
 
             if self.population[contestant1][0] >= self.population[contestant2][0]:
                 p1Index = contestant1
             else:
                 p1Index = contestant2
 
-            contestant1 = random.choice(list(set(range(self.populationSize)) - {p1Index}))
-            contestant2 = random.choice(list(set(range(self.populationSize)) - {p1Index, contestant1}))
+            contestant1 = random.choice(list(set(range(self.populationSize)) - set([p1Index])))
+            contestant2 = random.choice(list(set(range(self.populationSize)) - set([p1Index, contestant1])))
 
             if self.population[contestant1][0] >= self.population[contestant2][0]:
                 p2Index = contestant1
@@ -158,6 +161,8 @@ class SelectionSchemes:
                 else:
                     selectedIndexes.append(contestant2)
 
-            tempPopulation = [self.population[index] for index in selectedIndexes]
+            tempPopulation = []
+            for index in selectedIndexes:
+                tempPopulation.append(self.population[index])
 
             self.population = tempPopulation  # self.population.sort()  # self.population.reverse()

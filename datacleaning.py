@@ -3,22 +3,17 @@ import pandas as pd
 
 class DataCleaning:
     def __init__(self, filename, filenameStudents) -> None:
-        self.studentList = None
-        self.classToStudentDict = None
-        self.studentToClassesDict = None
-        self.instructor_list = None
-        self.room_list = None
         self.filename = filename
         self.class_nbr_dict = {}
         self.df = pd.read_csv(self.filename)
         self.numclasses_multipleinstances = 0
         self.extractingFromDataset()
-        self.getNumClasses()
+        self.getnumclasses()
 
         self.filenameStudents = filenameStudents
         self.dfStudents = pd.read_csv(filenameStudents)
         self.createStudentToClassesDict()
-        self.createClassToStudentsDict()
+        self.createClasstoStudentsDict()
 
     def extractingFromDataset(self):
         # Extract the unique values of "Class nbr" and "Instructor and store them in a list
@@ -26,8 +21,8 @@ class DataCleaning:
         self.instructor_list = self.df["Instructor"].unique().tolist()
         for instructorName in self.instructor_list:
             if "\n" in instructorName:
-                splitInstructorName = instructorName.split("\n")
-                firstInstructorName = splitInstructorName[0]
+                splittedInstructorName = instructorName.split("\n")
+                firstInstructorName = splittedInstructorName[0]
                 self.instructor_list.remove(instructorName)
                 if firstInstructorName not in self.instructor_list:
                     self.instructor_list.append(firstInstructorName)
@@ -42,11 +37,12 @@ class DataCleaning:
             duration = row["Actual Class Duration"]
             instructor = row["Instructor"]
             if "\n" in instructor:
-                instructor = instructor.split("\n")[0]
+                instructor = instructor.split("\n")
+                instructor = instructor[0]
             self.class_nbr_dict[class_nbr] = {"Course title": title, "Instructor": instructor,
                                               "Actual Class Duration": duration, "Frequency": class_nbr_freq[class_nbr]}
 
-    def getNumClasses(self):
+    def getnumclasses(self):
         for class_number, info in self.class_nbr_dict.items():
             freq = info["Frequency"]
             if freq > 1:
@@ -57,12 +53,38 @@ class DataCleaning:
         for index, row in self.dfStudents.iterrows():
             name = row['Name (anonymized)']
             class_nbr = row['Class Nbr']
-            self.studentToClassesDict[name] = self.studentToClassesDict.get(name, []) + [class_nbr]
+            if name in self.studentToClassesDict:
+                self.studentToClassesDict[name].append(class_nbr)
+            else:
+                self.studentToClassesDict[name] = [class_nbr]
 
-    def createClassToStudentsDict(self):
+    def createClasstoStudentsDict(self):
         self.studentList = self.dfStudents["Name (anonymized)"].unique().tolist()
         self.classToStudentDict = {}
         for index, row in self.dfStudents.iterrows():
             classNbr = row['Class Nbr']
             name = row['Name (anonymized)']
-            self.classToStudentDict[classNbr] = self.classToStudentDict.get(classNbr, []) + [name]
+            if classNbr in self.classToStudentDict:
+                self.classToStudentDict[classNbr].append(name)
+            else:
+                self.classToStudentDict[classNbr] = [name]
+
+
+
+# dc = DataCleaning("Spring 2023 Schedule.csv", "Spring 2023 student enrollment.csv")
+# # print(dc.df)
+# class_nbr = 1033
+# class_info = dc.df.loc[dc.df['Class nbr'] == class_nbr, ['Program', 'Course code', 'Course title', 'Section', 'Instructor', 'Actual Class Duration']].iloc[0].tolist()
+# print(class_info)
+# print(dc.studentToClassesDict)
+# print(dc.classToStudentDict)
+# print(dc.studentList)
+
+# print("-------- Statistics--------")
+# print("Number of classrooms: ",len(dc.room_list))
+# print("Number of Classes (no. of unique class br) at Habib: ",len(dc.class_nbr_dict))
+# print("Dictionary storing all data")
+# print(len(dc.class_nbr_dict))
+
+
+# print(dc.room_list)
