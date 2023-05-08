@@ -1,5 +1,3 @@
-from matplotlib import pyplot as plt
-
 from timeTable import TimeTable
 
 
@@ -15,9 +13,9 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
     #     timetable.population[i] = [fitness, chromosome]
 
     # parents = timetable.truncation(0)
-    fitness = []
+
     for generation in range(generations):
-        print(f'-------------------- Generation Number = {generation + 1} --------------------')
+        print('-------------------- Generation Number = ' + str(generation + 1) + ' --------------------')
         totalOffsprings = []
         for i in range(offspringsNumber // 2):
             parents = timetable.truncation(0)
@@ -34,25 +32,22 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
             timetable.population.append(offspringTwo)
 
         # timetable.truncation(1)
-        # timetable.randomSelection(1)
+        timetable.randomSelection(1)
         # timetable.fpsSelection(1)
-        timetable.rbsSelection(1)
+        # timetable.rbsSelection(1)
         # timetable.binarySelection(1)
 
-        timetable.population = sorted(timetable.population, key=lambda x: x[0], reverse=True)
+        timetable.population = sorted(timetable.population, key=lambda x: x[0])
+        timetable.population.reverse()
         optimalChromosome = timetable.population[0]
-        fitness.append(optimalChromosome[0])
         print("Fitness:" + str(optimalChromosome[0]))
 
-    timetable.population = sorted(timetable.population, key=lambda x: x[0], reverse=True)
+    timetable.population = sorted(timetable.population, key=lambda x: x[0])
+    timetable.population.reverse()
     optimalChromosome = timetable.population[0]
     print("Fitness:" + str(optimalChromosome[0]))
     classDetails = optimalChromosome[2]
     timetable.getTimeTable(classDetails)
-    plt.plot(range(len(fitness)), fitness)
-    plt.xlabel("Generations")
-    plt.ylabel("Fitness")
-    plt.savefig("fitness-linear.png")
 
     # print(offspringOne)
     # print("---------------------------------------------------")
@@ -69,3 +64,4 @@ generations = 1000
 evolutionaryAlgorithm(
     filename, populationSize, mutationRate, offspringsNumber, generations, filenameStudents
 )
+
