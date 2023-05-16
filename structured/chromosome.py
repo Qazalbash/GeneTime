@@ -9,7 +9,12 @@ class Chromosome:
         self.fitness = None
         self.schedule = {day: {room: [] for room in classrooms} for day in
                          [Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.FRIDAY]}
-        self.instructors_schedule = {instructor: [] for instructor in instructors}
+        self.instructors_schedule = {instructor.id: [] for instructor in instructors}
+
+    def sort(self) -> None:
+        for day in self.schedule.keys():
+            for room in self.schedule[day]:
+                self.schedule[day][room] = sorted(self.schedule[day][room], key=lambda x: x.start_time)
 
     def __str__(self) -> str:
         return str(self.schedule)

@@ -1,0 +1,808 @@
+Day,Start Time,End Time,Course title,Room,Instructor,Actual Class Duration
+M,8:30 AM,9:45 AM,Data Science,FF-W242,Zeehasham Rasheed,75
+M,12:20 PM,1:10 PM,Electric Circuits-II,FF-W242,Saad Baig,50
+M,8:30 AM,9:45 AM,Computer Architecture,GF-E101,Tariq Kamal,75
+M,11:30 AM,12:45 PM,What is Modernity?,GF-E101,Muhammad Salman,75
+M,1:0 PM,2:15 PM,What is Modernity?,GF-E101,Abdullah Mirza,75
+M,2:30 PM,5:20 PM,Designing For & w/h People Lab,GF-E101,Barira Yousuf,170
+M,8:30 AM,11:20 AM,Computer Architecture Lab,SFCL,Farhan Khan,170
+M,10:0 AM,11:15 AM,Ethics of AI,SFCL,Aeyaz Jamil Kayani,75
+M,11:35 AM,12:50 PM,Hikma I,SFCL,Abdullah Mirza,75
+M,1:5 PM,2:20 PM,Complex Analysis,SFCL,Sajal Rana,75
+M,2:35 PM,3:50 PM,Philosophical Hermeneutics,SFCL,Irfan Muhammad,75
+M,4:5 PM,5:20 PM,Quantum Mechanics,SFCL,Syed Muntazir Mehdi Abidi,75
+M,8:30 AM,9:45 AM,Discrete Mathematics,E-012,Huma abid,75
+M,8:30 AM,9:45 AM,Introduction to Political Sci,E-012,Ana Tawfiq Hussain,75
+M,10:0 AM,12:30 PM,"Engineering, Design, & Innov.",E-012,Munzir Zafar,150
+M,12:45 PM,2:25 PM,Ghazal Gayeki,E-012,Shahid Hamid,100
+M,2:40 PM,3:55 PM,Social Theory II,E-012,Noman Baig,75
+M,8:30 AM,9:45 AM,Digital System Design,W-121,Muhammad Farhan,75
+M,8:30 AM,9:45 AM,Intro to HCI,W-121,Neelma Bhatti,75
+M,10:0 AM,11:15 AM,What is Modernity?,W-121,Mahso Gichki,75
+M,11:30 AM,12:45 PM,Education Planning,W-121,Muhammad Aatir Khan,75
+M,1:0 PM,3:50 PM,Digital Signal Processing Lab,W-121,Saad Baig,170
+M,4:5 PM,5:20 PM,Intro to Punjabi Sufi Lit,W-121,Naila Pervaiz,75
+M,8:30 AM,9:45 AM,Scientific Methods,FF-E220,Hassaan Furqan Khan,75
+M,8:30 AM,9:45 AM,OOP & Design Methodologies,FF-E220,Nadia Nasir,75
+M,10:0 AM,11:15 AM,Principles of Macroeconomics,FF-E220,Mohammad Moeini Feizabadi,75
+M,11:30 AM,2:0 PM,"Engineering, Design, & Innov.",FF-E220,Muhammad Umer Tariq,150
+M,2:15 PM,3:5 PM,Electromagnetic Theory,FF-E220,Shafayat Abrar,50
+M,3:20 PM,4:35 PM,History of SA music,FF-E220,Daniyal Ahmed,75
+M,4:50 PM,6:5 PM,Petrocultures,FF-E220,Tajreen Jafri,75
+M,8:30 AM,12:15 PM,Performing Narrative,GF-E121,Muneera Batool,225
+M,8:30 AM,9:45 AM,What is Modernity?,GF-E121,Aqdas Afzal,75
+M,10:0 AM,11:15 AM,Introduction to Reinforcement,GF-E121,Mohammad Shaikh,75
+M,12:30 PM,1:45 PM,Capstone (Kaavish) II,GF-E121,Abdul Samad,75
+M,2:0 PM,3:15 PM,Intro to HCI,GF-E121,Neelma Bhatti,75
+M,3:30 PM,4:45 PM,Discrete Mathematics,GF-E121,Rameez Ragheb,75
+M,8:30 AM,9:45 AM,Understanding the Human Body,FF-W243,Humaira Jamshed,75
+M,1:5 PM,2:20 PM,Capstone (Kaavish) I,FF-W243,Waqar Saleem,75
+M,2:35 PM,3:50 PM,Data Science,FF-W243,Zeehasham Rasheed,75
+M,8:30 AM,9:45 AM,Elements of Aesthetics 1,W-234,Sheikh Taha Ahmed Munir,75
+M,10:0 AM,11:15 AM,Jehan-e-Urdu,W-234,Syed Afzal Ahmed,75
+M,11:30 AM,12:45 PM,Algorithms: Design & Analysis,W-234,Waqar Saleem,75
+M,1:0 PM,2:15 PM,Power Electronics,W-234,Ishtiyaq Makda,75
+M,2:30 PM,3:45 PM,Digital Logic and Design,W-234,Areeba Rajput,75
+M,4:0 PM,4:50 PM,Understanding Histories,W-234,Abdullah Mirza,50
+M,8:30 AM,9:45 AM,Computer Architecture,E-010,Munzir Zafar,75
+M,8:30 AM,9:45 AM,The Ethnographic Eye/I,E-010,Aaron Mulvany,75
+M,10:0 AM,11:15 AM,Computer Architecture,E-010,Sorath Hansrajani,75
+M,11:30 AM,12:45 PM,What is Modernity?,E-010,Nauman Naqvi,75
+M,1:0 PM,2:15 PM,Education Planning,E-010,Muhammad Aatir Khan,75
+M,2:30 PM,4:10 PM,Qualitative Research Methods,E-010,Aaron Mulvany,100
+M,4:25 PM,6:5 PM,Data Analytics,E-010,Mohammad Moeini Feizabadi,100
+M,8:30 AM,9:45 AM,Introduction to Biochemistry,C-015,Humaira Jamshed,75
+M,10:0 AM,11:15 AM,Calculus I,C-015,Sara Ashraf,75
+M,11:30 AM,12:45 PM,What is Power?,C-015,Najeeb Jan,75
+M,2:55 PM,4:10 PM,Understanding the Human Body,C-015,Humaira Jamshed,75
+M,4:25 PM,6:5 PM,Data Analytics,C-015,Sahaab Bader Sheikh,100
+M,8:30 AM,10:10 AM,Let's Get Talking,GF-C109,Haya Fatima Iqbal,100
+M,8:30 AM,9:45 AM,Linear Algebra,GF-C109,Aeyaz Jamil Kayani,75
+M,10:25 AM,11:40 AM,Calculus I,GF-C109,Sara Ashraf,75
+M,11:55 AM,1:10 PM,Complex Analysis,GF-C109,Sajal Rana,75
+M,1:25 PM,2:40 PM,Data Structures II,GF-C109,Fahad Javed,75
+M,2:55 PM,4:10 PM,Petrocultures,GF-C109,Tajreen Jafri,75
+M,4:25 PM,6:5 PM,Public Policy II,GF-C109,Muhammad Aatir Khan,100
+M,10:0 AM,10:50 AM,Intro to Probability & Stats,W-110,Zareen Tabassum,50
+M,11:5 AM,12:20 PM,Intro to Punjabi Sufi Lit,W-110,Naila Pervaiz,75
+M,12:35 PM,1:50 PM,Introduction to Western Philos,W-110,Irfan Muhammad,75
+M,2:5 PM,3:20 PM,Politics of Conflict,W-110,Ana Tawfiq Hussain,75
+M,3:35 PM,4:50 PM,Software Engineering,W-110,Mohsin Nagaria,75
+M,5:5 PM,6:20 PM,Gender and Human Rights,W-110,Mahso Gichki,75
+M,8:30 AM,9:45 AM,Jehan-e-Urdu,E-100,Inam Ullah,75
+M,10:0 AM,11:15 AM,Scientific Methods,E-100,Hassaan Furqan Khan,75
+M,8:30 AM,11:0 AM,"Engineering, Design, & Innov.",FF-C200,Muhammad Umer Tariq,150
+M,11:35 AM,12:50 PM,Algorithms: Design & Analysis,FF-C200,Faisal Alvi,75
+M,2:35 PM,3:50 PM,Linear Algebra,FF-C200,Sajal Rana,75
+M,8:30 AM,11:0 AM,Intro to Design and Media,FF-W244,Momin Zafar,150
+M,8:30 AM,9:45 AM,What is Power?,FF-W244,Najeeb Jan,75
+M,11:15 AM,12:55 PM,Heidegger,FF-W244,Najeeb Jan,100
+M,1:10 PM,2:25 PM,Calculus II,FF-W244,Yousuf Kerai,75
+M,2:40 PM,4:20 PM,Data Analytics,FF-W244,Sahaab Bader Sheikh,100
+M,8:30 AM,9:20 AM,Algorithms: Design & Analysis,CPE HALL,TBD .,50
+M,9:35 AM,10:50 AM,Introduction to Bioinformatics,CPE HALL,Arshan Nasir,75
+M,11:30 AM,12:45 PM,Data Structures II,CPE HALL,Syeda Saleha Raza,75
+M,8:30 AM,9:45 AM,What is Modernity?,LG09,Marcelo Alves de Paula Lima,75
+M,10:0 AM,11:15 AM,What is Modernity?,LG09,Abdullah Mirza,75
+M,11:30 AM,12:45 PM,Discrete Mathematics,LG09,Rameez Ragheb,75
+M,1:0 PM,2:15 PM,Development & Environmentalism,LG09,Tajreen Jafri,75
+M,2:30 PM,3:45 PM,Computer Vision,LG09,Muhammad Farhan,75
+M,4:0 PM,5:15 PM,Intro Enviro Engineering,LG09,Hassaan Furqan Khan,75
+M,8:30 AM,9:45 AM,Intro to Cultural Anthropology,FF-N219,Basharat Issa,75
+M,10:0 AM,11:15 AM,Jehan-e-Urdu,FF-N219,Tanveer Anjum,75
+M,11:30 AM,12:20 PM,Programming Fundamentals,FF-N219,Adeel Soomro,50
+M,12:35 PM,1:50 PM,Data Structures II,FF-N219,Muhammad Qasim Pasta,75
+M,2:5 PM,3:20 PM,GPU Accelerated Computing,FF-N219,Muhammad Mobeen Movania,75
+M,3:35 PM,6:5 PM,Digital Aestetics,FF-N219,Mishal Khattak,150
+M,8:30 AM,9:45 AM,Musicking: Anthropology of Mus,W-321,Daniyal Ahmed,75
+M,10:0 AM,11:15 AM,Music and Mathematics,W-321,Yousuf Kerai,75
+M,11:30 AM,12:45 PM,History of SA music,W-321,Daniyal Ahmed,75
+M,1:5 PM,2:20 PM,Computational Intelligence,W-321,Syeda Saleha Raza,75
+M,2:35 PM,5:25 PM,Data Structures & Algo Lab,W-321,Nadia Nasir,170
+M,8:30 AM,9:45 AM,Calculus II,E-215,Muhammad Sami Siddiqui,75
+M,10:0 AM,11:15 AM,Discrete Mathematics,E-215,Rameez Ragheb,75
+M,11:30 AM,12:45 PM,Introduction to Biochemistry,E-215,Humaira Jamshed,75
+M,1:0 PM,2:40 PM,Intro to Probability & Stats,E-215,Muhammad Umer Tariq,100
+M,2:55 PM,4:10 PM,Introduction to Western Philos,E-215,Irfan Muhammad,75
+M,8:30 AM,9:45 AM,Intro to Cultural Anthropology,E-011,Basharat Issa,75
+M,8:30 AM,9:45 AM,Introduction to Nanotechnology,E-011,Ahmad Usman,75
+M,8:30 AM,11:20 AM,Introduction to Robotics Lab,E-011,Abdul Basit Memon,170
+M,10:0 AM,11:15 AM,Interactive Storytelling,E-011,Christie Lauder,75
+M,11:30 AM,12:45 PM,What is Modernity?,E-011,Nimra Farooq,75
+M,1:0 PM,2:15 PM,Jehan-e-Urdu,E-011,Inam Ullah,75
+M,2:30 PM,5:0 PM,"Engineering, Design, & Innov.",E-011,Munzir Zafar,150
+M,8:30 AM,11:20 AM,Intro to Design and Media LAB,FF-N220,Luluwa Murtaza,170
+M,11:35 AM,12:50 PM,Social Theory I,FF-N220,Coline Ferrant,75
+M,2:20 PM,3:35 PM,The World of Quratul Ain Hyder,FF-N220,Syed Afzal Ahmed,75
+M,3:50 PM,5:5 PM,Calculus II,FF-N220,Aatyka Fatima,75
+M,8:30 AM,9:45 AM,Hikma I,E-003,Abdullah Mirza,75
+M,10:0 AM,11:15 AM,Data Structures II,E-003,Fahad Javed,75
+M,1:5 PM,2:20 PM,Software Security,E-003,Muhammad Nadeem,75
+M,3:30 PM,4:45 PM,History of SA music,E-003,Daniyal Ahmed,75
+M,8:30 AM,11:0 AM,Assembly of the Weird,PG-1,Zain Saeed,150
+M,9:35 AM,10:50 AM,Linear Algebra,PG-1,Sajal Rana,75
+M,11:15 AM,12:30 PM,Jehan-e-Urdu,PG-1,Tanveer Anjum,75
+M,12:45 PM,3:35 PM,Data Structures & Algo Lab,PG-1,Faiza Azhar,170
+M,3:50 PM,5:5 PM,Analog & Digital Communication,PG-1,Tariq Mumtaz,75
+M,5:20 PM,6:10 PM,Intro to Probability & Stats,PG-1,Zareen Tabassum,50
+M,8:30 AM,9:45 AM,Hikma I,W-114,Hamza Bin Sajjad,75
+M,11:30 AM,12:45 PM,What is Gender?,W-114,Haniya Habib,75
+M,2:30 PM,3:45 PM,Social Theory II,W-114,Mahso Gichki,75
+M,4:0 PM,5:15 PM,SRS: Karachi,W-114,Coline Ferrant,75
+M,8:30 AM,9:45 AM,The Secret World of Microbes,W-111,Javeria Samad,75
+M,10:0 AM,11:15 AM,Data Structures & Algorithms,W-111,Faiza Azhar,75
+M,11:55 AM,1:10 PM,Hikma I,W-111,Hamza Bin Sajjad,75
+M,1:25 PM,2:15 PM,Discrete Mathematics,W-111,Muhammad Munawwar Anwar,50
+M,2:55 PM,4:10 PM,Comparative Empires,W-111,Mariam Sabri,75
+M,8:30 AM,9:45 AM,Computer Architecture,LG-C001,Farhan Khan,75
+M,11:30 AM,12:45 PM,Urban Sustainability,LG-C001,Farhan Anwar,75
+M,1:0 PM,2:15 PM,Calculus II,LG-C001,Aatyka Fatima,75
+M,2:30 PM,3:45 PM,Natural Language Processing,LG-C001,Faisal Alvi,75
+M,4:0 PM,5:15 PM,Politics of Conflict,LG-C001,Ana Tawfiq Hussain,75
+M,8:30 AM,11:50 AM,Production Fundamentals II,LG26,Syed Ali,200
+M,8:30 AM,9:45 AM,Calculus II,LG26,Aatyka Fatima,75
+M,10:0 AM,11:15 AM,Hikma I,LG26,Zainab Saleem,75
+M,12:5 PM,1:20 PM,What is Modernity?,LG26,Muzammil Patel,75
+M,1:35 PM,2:50 PM,Hikma I,LG26,Basharat Issa,75
+M,3:5 PM,4:20 PM,Introduction to Reinforcement,LG26,Mohammad Shaikh,75
+M,4:35 PM,5:50 PM,OOP & Design Methodologies,LG26,Nadia Nasir,75
+M,8:30 AM,9:45 AM,Capstone (Kaavish) II,LG-C025,Waqar Saleem,75
+M,8:30 AM,10:10 AM,Illustration and Protest,LG-C025,Isma Hasan,100
+M,10:0 AM,11:15 AM,Operations Management,LG-C025,Muhammad Wamiq,75
+M,11:30 AM,12:45 PM,Social Theory I,LG-C025,Ana Tawfiq Hussain,75
+M,1:0 PM,2:40 PM,Quantitative Research Methods,LG-C025,Zaineb Aftab Hussain Makati,100
+T,8:30 AM,11:20 AM,Cinematography in Pak Cinema,FF-W242,Syed Ali,170
+T,8:30 AM,10:10 AM,Let's Get Talking,FF-W242,Haya Fatima Iqbal,100
+T,10:0 AM,11:15 AM,Data Structures & Algorithms,FF-W242,Mohammad Salman,75
+T,11:35 AM,12:50 PM,Discrete Mathematics,FF-W242,Huma abid,75
+T,1:5 PM,3:35 PM,"Engineering, Design, & Innov.",FF-W242,Muhammad Umer Tariq,150
+T,3:50 PM,5:30 PM,Conceptual Genealogies,FF-W242,Marcelo Alves de Paula Lima,100
+T,8:30 AM,9:45 AM,Wireless and Mobile Comm.,GF-E101,Tariq Mumtaz,75
+T,10:0 AM,11:40 AM,Conceptual Genealogies,GF-E101,Marcelo Alves de Paula Lima,100
+T,11:55 AM,1:10 PM,Reading the Partition,GF-E101,Inam Ullah,75
+T,1:25 PM,2:40 PM,Calculus II,GF-E101,Muhammad Sami Siddiqui,75
+T,2:55 PM,4:10 PM,Philosophical Hermeneutics,GF-E101,Irfan Muhammad,75
+T,8:30 AM,9:45 AM,After Digital: The Creative In,SFCL,Abdul Rafay Mahmood,75
+T,10:0 AM,11:15 AM,What is Modernity?,SFCL,Haniya Habib,75
+T,12:35 PM,1:50 PM,Mechanics & Thermodynamics,SFCL,Syed Muntazir Mehdi Abidi,75
+T,2:5 PM,5:25 PM,Design Your Habib Experience,SFCL,Sameena Shahzaman,200
+T,8:30 AM,9:45 AM,Data Structures & Algorithms,E-012,Muhammad Mobeen Movania,75
+T,10:0 AM,1:45 PM,Performing Narrative,E-012,Muneera Batool,225
+T,3:5 PM,4:20 PM,Intro to Punjabi Sufi Lit,E-012,Naila Pervaiz,75
+T,4:35 PM,5:50 PM,Calculus II,E-012,Aatyka Fatima,75
+T,8:30 AM,9:45 AM,Computer Architecture,W-121,Sorath Hansrajani,75
+T,8:30 AM,10:10 AM,Data Analytics,W-121,Sahaab Bader Sheikh,100
+T,10:0 AM,11:15 AM,Interactive Storytelling,W-121,Christie Lauder,75
+T,11:30 AM,12:45 PM,What is Modernity?,W-121,Marcelo Alves de Paula Lima,75
+T,1:0 PM,2:15 PM,Hikma I,W-121,Nauman Naqvi,75
+T,2:30 PM,3:45 PM,History of SA music,W-121,Daniyal Ahmed,75
+T,4:0 PM,5:15 PM,Mechanics & Thermodynamics,W-121,Syed Muntazir Mehdi Abidi,75
+T,8:30 AM,9:45 AM,Elements of Aesthetics 1,FF-E220,Sheikh Taha Ahmed Munir,75
+T,10:0 AM,11:15 AM,Hikma I,FF-E220,Zainab Saleem,75
+T,11:55 AM,1:10 PM,Calculus I,FF-E220,Sara Ashraf,75
+T,4:25 PM,5:40 PM,Calculus II,FF-E220,Sajal Rana,75
+T,8:30 AM,9:45 AM,Algorithms: Design & Analysis,GF-E121,Waqar Saleem,75
+T,10:0 AM,10:50 AM,Discrete Mathematics,GF-E121,Muhammad Munawwar Anwar,50
+T,11:5 AM,11:55 AM,Intro to Probability & Stats,GF-E121,Muhammad Umer Tariq,50
+T,12:10 PM,1:50 PM,Heidegger,GF-E121,Najeeb Jan,100
+T,2:5 PM,3:20 PM,Calculus I,GF-E121,Sara Ashraf,75
+T,3:35 PM,5:15 PM,Quantitative Research Methods,GF-E121,Zaineb Aftab Hussain Makati,100
+T,8:30 AM,10:10 AM,Public Intellectuals,FF-W243,Muhammad Haris,100
+T,8:30 AM,9:45 AM,Social Theory I,FF-W243,Coline Ferrant,75
+T,10:25 AM,12:5 PM,Quantitative Research Methods,FF-W243,Zaineb Aftab Hussain Makati,100
+T,8:30 AM,9:45 AM,What is Modernity?,W-234,Muzammil Patel,75
+T,8:30 AM,9:45 AM,Scientific Methods,W-234,Hassaan Furqan Khan,75
+T,10:0 AM,11:15 AM,What is Modernity?,W-234,Muhammad Salman,75
+T,11:30 AM,12:45 PM,Hikma I,W-234,Noman Baig,75
+T,1:0 PM,2:15 PM,Intro to Probability & Stats,W-234,Muhammad Umer Tariq,75
+T,2:30 PM,4:10 PM,World Historical Figures,W-234,Marcelo Alves de Paula Lima,100
+T,4:25 PM,5:40 PM,Philosophical Hermeneutics,W-234,Irfan Muhammad,75
+T,8:30 AM,9:45 AM,What is Modernity?,E-010,Abdullah Mirza,75
+T,8:30 AM,9:45 AM,Data Structures & Algorithms,E-010,Faiza Azhar,75
+T,10:0 AM,11:15 AM,Hikma I,E-010,Noman Baig,75
+T,11:30 AM,12:45 PM,Web and Mobile Development,E-010,Muhammad Qasim Pasta,75
+T,1:0 PM,2:15 PM,Discrete Mathematics,E-010,Rameez Ragheb,75
+T,2:30 PM,3:45 PM,What is Power?,E-010,Najeeb Jan,75
+T,4:0 PM,5:40 PM,Intro to Probability & Stats,E-010,Muhammad Umer Tariq,100
+T,8:30 AM,9:45 AM,Introduction to Bioinformatics,C-015,Arshan Nasir,75
+T,10:0 AM,12:30 PM,Intro to Design and Media,C-015,Rakhshaan Qazi,150
+T,12:45 PM,2:0 PM,Social Theory I,C-015,Ana Tawfiq Hussain,75
+T,2:40 PM,3:55 PM,What is Modernity?,C-015,Nauman Naqvi,75
+T,4:10 PM,5:25 PM,What is Modernity?,C-015,Nimra Farooq,75
+T,8:30 AM,9:45 AM,Hikma I,GF-C109,Nauman Naqvi,75
+T,10:0 AM,11:15 AM,Calculus II,GF-C109,Yousuf Kerai,75
+T,11:30 AM,12:45 PM,Calculus II,GF-C109,Muhammad Sami Siddiqui,75
+T,1:0 PM,2:15 PM,Principles of Management,GF-C109,Muhammad Wamiq,75
+T,2:30 PM,3:45 PM,Petrocultures,GF-C109,Tajreen Jafri,75
+T,8:30 AM,9:45 AM,Computer Architecture,W-110,Sorath Hansrajani,75
+T,10:0 AM,11:15 AM,Jehan-e-Urdu,W-110,Inam Ullah,75
+T,11:30 AM,12:45 PM,Hikma I,W-110,Zainab Saleem,75
+T,1:0 PM,2:15 PM,Natural Language Processing,W-110,Faisal Alvi,75
+T,2:30 PM,3:45 PM,Digital Signal Processing,W-110,Saad Baig,75
+T,4:0 PM,5:0 PM,GSCP Research S II,W-110,Mohammad Moeini Feizabadi,60
+T,5:15 PM,6:30 PM,Comparative Empires,W-110,Mariam Sabri,75
+T,8:30 AM,9:45 AM,Software Security,E-100,Muhammad Nadeem,75
+T,10:0 AM,10:50 AM,Signals and Systems,E-100,Shafayat Abrar,50
+T,11:5 AM,12:45 PM,World Historical Figures,E-100,Marcelo Alves de Paula Lima,100
+T,1:0 PM,4:20 PM,Design Your Habib Experience,E-100,Anzar Khaliq,200
+T,4:35 PM,5:50 PM,Introduction to Political Sci,E-100,Ana Tawfiq Hussain,75
+T,8:30 AM,9:45 AM,Capstone (Kaavish) II,FF-C200,Syeda Saleha Raza,75
+T,8:30 AM,9:45 AM,Software Engineering,FF-C200,Ahsan Jawed,75
+T,10:0 AM,11:40 AM,Creating Comics,FF-C200,Rohama Malik,100
+T,11:55 AM,12:45 PM,Electric Circuits-II,FF-C200,Saad Baig,50
+T,1:0 PM,2:15 PM,Understanding Histories,FF-C200,Abdullah Mirza,75
+T,2:30 PM,3:45 PM,Mechanics & Thermodynamics,FF-C200,Syed Muntazir Mehdi Abidi,75
+T,8:30 AM,9:45 AM,Power Electronics,FF-W244,Ishtiyaq Makda,75
+T,8:30 AM,9:45 AM,Discrete Mathematics,FF-W244,Rameez Ragheb,75
+T,10:0 AM,11:15 AM,Digital Signal Processing,FF-W244,Saad Baig,75
+T,8:30 AM,9:45 AM,Software Engineering,CPE HALL,Mohsin Nagaria,75
+T,8:30 AM,11:50 AM,Design Your Habib Experience,CPE HALL,Sana Rizwan,200
+T,10:0 AM,11:15 AM,Ethics of AI,CPE HALL,Aeyaz Jamil Kayani,75
+T,11:30 AM,12:45 PM,Ethics of AI,CPE HALL,Aeyaz Jamil Kayani,75
+T,1:0 PM,2:15 PM,Petrocultures,CPE HALL,Tajreen Jafri,75
+T,2:30 PM,3:45 PM,Politics of Conflict,CPE HALL,Ana Tawfiq Hussain,75
+T,4:0 PM,5:15 PM,Rumi,CPE HALL,Noman Baig,75
+T,8:30 AM,9:20 AM,Discrete Mathematics,LG09,Shams Arfeen,50
+T,10:40 AM,11:55 AM,Data Science,LG09,Zeehasham Rasheed,75
+T,1:25 PM,2:40 PM,SRS: Karachi,LG09,Coline Ferrant,75
+T,8:30 AM,9:45 AM,Digital System Design,FF-N219,Muhammad Farhan,75
+T,8:30 AM,9:45 AM,Scientific Methods,FF-N219,Huma abid,75
+T,10:0 AM,11:15 AM,Scientific Methods,FF-N219,Huma abid,75
+T,11:30 AM,12:45 PM,GPU Accelerated Computing,FF-N219,Muhammad Mobeen Movania,75
+T,1:0 PM,2:15 PM,Data Structures & Algorithms,FF-N219,Saba Saeed,75
+T,2:30 PM,5:20 PM,Data Structures & Algo Lab,FF-N219,Maria Samad,170
+T,8:30 AM,9:45 AM,Interactive Storytelling,W-321,Christie Lauder,75
+T,8:30 AM,10:10 AM,Heidegger,W-321,Najeeb Jan,100
+T,10:0 AM,11:15 AM,Algorithms: Design & Analysis,W-321,Waqar Saleem,75
+T,11:30 AM,12:45 PM,Computer Vision,W-321,Muhammad Farhan,75
+T,1:0 PM,2:40 PM,Data Analytics,W-321,Sahaab Bader Sheikh,100
+T,2:55 PM,4:10 PM,Gender and Human Rights,W-321,Mahso Gichki,75
+T,4:25 PM,5:40 PM,SRS: Karachi,W-321,Coline Ferrant,75
+T,8:30 AM,9:45 AM,The Ethnographic Eye/I,E-215,Aaron Mulvany,75
+T,8:30 AM,9:45 AM,Rumi,E-215,Noman Baig,75
+T,10:0 AM,11:15 AM,Musicking: Anthropology of Mus,E-215,Daniyal Ahmed,75
+T,11:30 AM,2:20 PM,Data Structures & Algo Lab,E-215,Maria Samad,170
+T,2:35 PM,3:50 PM,Calculus II,E-215,Aatyka Fatima,75
+T,4:5 PM,5:45 PM,Ghazal Gayeki,E-215,Shahid Hamid,100
+T,8:30 AM,9:45 AM,What is Modernity?,E-011,Nahrain Al-Mousawi,75
+T,8:30 AM,9:20 AM,Signals and Systems,E-011,Shafayat Abrar,50
+T,10:0 AM,10:50 AM,Algorithms: Design & Analysis,E-011,TBD .,50
+T,11:5 AM,12:20 PM,Principles of Macroeconomics,E-011,Mohammad Moeini Feizabadi,75
+T,12:35 PM,1:50 PM,Intro to Punjabi Sufi Lit,E-011,Naila Pervaiz,75
+T,8:30 AM,9:20 AM,Programming Fundamentals,FF-N220,Adeel Soomro,50
+T,8:30 AM,11:20 AM,Computer Architecture Lab,FF-N220,Ahmad Usman,170
+T,9:35 AM,10:50 AM,Data Structures II,FF-N220,Muhammad Qasim Pasta,75
+T,11:5 AM,12:20 PM,Natural Language Processing,FF-N220,Faisal Alvi,75
+T,8:30 AM,9:45 AM,Introduction to Biochemistry,E-003,Humaira Jamshed,75
+T,8:30 AM,11:20 AM,Design Fictions & Provoca Lab,E-003,Luluwa Murtaza,170
+T,10:0 AM,12:50 PM,Computer Architecture Lab,E-003,Haseeb Khan,170
+T,1:5 PM,1:55 PM,Programming Fundamentals,E-003,Adeel Soomro,50
+T,2:10 PM,3:25 PM,Urban Sustainability,E-003,Farhan Anwar,75
+T,3:40 PM,4:55 PM,Signals and Systems,E-003,Adnan Aslam Chaudhry,75
+T,5:10 PM,6:25 PM,Digital Logic and Design,E-003,Areeba Rajput,75
+T,8:30 AM,9:45 AM,Hikma I,PG-1,Muzammil Patel,75
+T,1:0 PM,1:50 PM,Discrete Mathematics,PG-1,Shams Arfeen,50
+T,2:5 PM,3:20 PM,Data Structures II,PG-1,Syeda Saleha Raza,75
+T,5:30 PM,6:20 PM,Social Theory I,PG-1,Ana Tawfiq Hussain,50
+T,8:30 AM,9:45 AM,Musicking: Anthropology of Mus,W-114,Daniyal Ahmed,75
+T,8:30 AM,10:10 AM,Illustration and Protest,W-114,Isma Hasan,100
+T,10:0 AM,11:15 AM,Understanding the Human Body,W-114,Humaira Jamshed,75
+T,11:30 AM,12:45 PM,Hikma I,W-114,Hamza Bin Sajjad,75
+T,1:0 PM,2:15 PM,Discrete Mathematics,W-114,Muhammad Zafar,75
+T,2:30 PM,3:45 PM,Analog & Digital Communication,W-114,Tariq Mumtaz,75
+T,4:0 PM,5:15 PM,Comparative Empires,W-114,Mariam Sabri,75
+T,5:30 PM,6:20 PM,Understanding Histories,W-114,Abdullah Mirza,50
+T,10:0 AM,12:30 PM,Intro to Design and Media,W-111,Rakhshaan Qazi,150
+T,2:15 PM,3:30 PM,Hikma I,W-111,Hamza Bin Sajjad,75
+T,4:50 PM,6:5 PM,Discrete Mathematics,W-111,Waqar Saleem,75
+T,10:0 AM,11:15 AM,Algorithms: Design & Analysis,LG-C001,Faisal Alvi,75
+T,11:30 AM,12:45 PM,Data Structures & Algorithms,LG-C001,Faiza Azhar,75
+T,1:0 PM,2:15 PM,Digital Signal Processing,LG-C001,Saad Baig,75
+T,2:30 PM,3:20 PM,Electromagnetic Theory,LG-C001,Shafayat Abrar,50
+T,3:35 PM,5:15 PM,Public Intellectuals,LG-C001,Muhammad Haris,100
+T,8:30 AM,9:45 AM,What is Modernity?,LG26,Nimra Farooq,75
+T,8:30 AM,9:45 AM,Natural Language Processing,LG26,Faisal Alvi,75
+T,8:30 AM,9:45 AM,Jehan-e-Urdu,LG26,Inam Ullah,75
+T,10:0 AM,11:15 AM,Data Structures II,LG26,Fahad Javed,75
+T,11:30 AM,12:45 PM,Algorithms: Design & Analysis,LG26,Waqar Saleem,75
+T,1:0 PM,2:15 PM,GPU Accelerated Computing,LG26,Muhammad Mobeen Movania,75
+T,2:30 PM,3:45 PM,Development & Environmentalism,LG26,Tajreen Jafri,75
+T,4:0 PM,5:15 PM,Power Electronics,LG26,Ishtiyaq Makda,75
+T,5:30 PM,6:20 PM,Electromagnetic Theory,LG26,Shafayat Abrar,50
+T,8:30 AM,9:45 AM,Computer Architecture,LG-C025,Sorath Hansrajani,75
+T,10:0 AM,11:15 AM,Computer Architecture,LG-C025,Farhan Khan,75
+T,11:30 AM,12:45 PM,Discrete Mathematics,LG-C025,Muhammad Zafar,75
+T,1:0 PM,3:50 PM,Power Electronics (Lab),LG-C025,Haleema Qamar,170
+T,4:5 PM,5:20 PM,Renewable Energy,LG-C025,Mohamed Elsayed Orabi Mustafa,75
+W,8:30 AM,9:45 AM,Intro to Cultural Anthropology,FF-W242,Basharat Issa,75
+W,10:0 AM,11:15 AM,Understanding the Human Body,FF-W242,Humaira Jamshed,75
+W,11:30 AM,12:45 PM,Computer Architecture,FF-W242,Munzir Zafar,75
+W,1:0 PM,2:15 PM,What is Modernity?,FF-W242,Marcelo Alves de Paula Lima,75
+W,2:30 PM,3:45 PM,Data Structures & Algorithms,FF-W242,Maria Samad,75
+W,8:30 AM,10:10 AM,Quantitative Research Methods,GF-E101,Zaineb Aftab Hussain Makati,100
+W,11:30 AM,12:20 PM,Signals and Systems,GF-E101,Shafayat Abrar,50
+W,12:35 PM,1:50 PM,Reading the Partition,GF-E101,Inam Ullah,75
+W,3:35 PM,6:5 PM,Urban Design and Public Space,GF-E101,Sana Rizwan,150
+W,8:30 AM,12:15 PM,Performing Narrative,SFCL,Nighat Sultana Chaudhry,225
+W,8:30 AM,9:45 AM,Social Theory II,SFCL,Noman Baig,75
+W,12:30 PM,1:45 PM,What is Modernity?,SFCL,Muhammad Salman,75
+W,2:0 PM,3:15 PM,Scientific Methods,SFCL,Huma abid,75
+W,3:30 PM,4:45 PM,Hikma I,SFCL,Basharat Issa,75
+W,5:0 PM,6:15 PM,Institutional Economics,SFCL,Aqdas Afzal,75
+W,8:30 AM,9:45 AM,What is Modernity?,E-012,Nimra Farooq,75
+W,11:30 AM,2:20 PM,Designing For & w/h People Lab,E-012,Barira Yousuf,170
+W,2:35 PM,3:50 PM,Digital Logic and Design,E-012,Areeba Rajput,75
+W,4:5 PM,5:20 PM,Reading the Partition,E-012,Inam Ullah,75
+W,8:30 AM,9:45 AM,What is Modernity?,W-121,Marcelo Alves de Paula Lima,75
+W,8:30 AM,9:45 AM,Hikma I,W-121,Muzammil Patel,75
+W,10:0 AM,11:15 AM,Data Structures II,W-121,Syeda Saleha Raza,75
+W,11:30 AM,12:45 PM,Education Planning,W-121,Muhammad Aatir Khan,75
+W,1:0 PM,1:50 PM,Electric Circuits-II,W-121,Saad Baig,50
+W,2:5 PM,3:20 PM,Calculus II,W-121,Yousuf Kerai,75
+W,3:35 PM,4:50 PM,Mechanics & Thermodynamics,W-121,Syed Muntazir Mehdi Abidi,75
+W,8:30 AM,9:45 AM,Jehan-e-Urdu,FF-E220,Syed Afzal Ahmed,75
+W,10:0 AM,11:15 AM,Hikma I,FF-E220,Zainab Saleem,75
+W,11:30 AM,12:45 PM,Discrete Mathematics,FF-E220,Muhammad Zafar,75
+W,1:0 PM,2:15 PM,What is Modernity?,FF-E220,Nimra Farooq,75
+W,2:30 PM,3:45 PM,Linear Algebra,FF-E220,Sajal Rana,75
+W,4:0 PM,5:15 PM,Quantum Mechanics,FF-E220,Syed Muntazir Mehdi Abidi,75
+W,8:30 AM,9:45 AM,Hikma I,GF-E121,Nauman Naqvi,75
+W,8:30 AM,9:45 AM,Urban Sustainability,GF-E121,Farhan Anwar,75
+W,10:0 AM,11:15 AM,Intro to HCI,GF-E121,Neelma Bhatti,75
+W,11:30 AM,12:45 PM,Intro to Probability & Stats,GF-E121,Muhammad Umer Tariq,75
+W,1:0 PM,1:50 PM,Electromagnetic Theory,GF-E121,Shafayat Abrar,50
+W,2:5 PM,3:20 PM,Principles of Management,GF-E121,Muhammad Wamiq,75
+W,8:30 AM,10:10 AM,Creating Comics,FF-W243,Rohama Malik,100
+W,8:30 AM,9:45 AM,Engineering Project Management,FF-W243,Muhammad Wamiq,75
+W,10:25 AM,11:15 AM,Electromagnetic Theory,FF-W243,Shafayat Abrar,50
+W,11:30 AM,12:45 PM,Literary Theory and Criticism,FF-W243,Nahrain Al-Mousawi,75
+W,1:0 PM,1:50 PM,Calculus I,FF-W243,Sara Ashraf,50
+W,2:5 PM,3:20 PM,Operations Management,FF-W243,Muhammad Wamiq,75
+W,3:35 PM,5:15 PM,Ghazal Gayeki,FF-W243,Shahid Hamid,100
+W,5:30 PM,6:20 PM,Social Theory II,FF-W243,Noman Baig,50
+W,8:30 AM,9:20 AM,What is Modernity?,W-234,Nauman Naqvi,50
+W,8:30 AM,9:45 AM,Discrete Mathematics,W-234,Muhammad Zafar,75
+W,8:30 AM,11:50 AM,Design Research II,W-234,Christie Lauder,200
+W,9:35 AM,10:50 AM,Jehan-e-Urdu,W-234,Syed Afzal Ahmed,75
+W,11:5 AM,12:20 PM,Data Structures & Algorithms,W-234,Nadia Nasir,75
+W,12:35 PM,1:50 PM,Intro Enviro Engineering,W-234,Hassaan Furqan Khan,75
+W,2:5 PM,3:20 PM,Introduction to Nanotechnology,W-234,Ahmad Usman,75
+W,3:35 PM,5:15 PM,Quantitative Research Methods,W-234,Zaineb Aftab Hussain Makati,100
+W,8:30 AM,9:45 AM,Calculus II,E-010,Yousuf Kerai,75
+W,10:0 AM,11:40 AM,Data Analytics,E-010,Mohammad Moeini Feizabadi,100
+W,8:30 AM,9:45 AM,The Secret World of Microbes,C-015,Javeria Samad,75
+W,8:30 AM,11:20 AM,Engineering Workshop,C-015,Haseeb Shaikh,170
+W,10:0 AM,11:15 AM,Jehan-e-Urdu,C-015,Tanveer Anjum,75
+W,11:30 AM,12:45 PM,Introduction to Political Sci,C-015,Ana Tawfiq Hussain,75
+W,1:0 PM,2:40 PM,Qualitative Research Methods,C-015,Aaron Mulvany,100
+W,2:55 PM,3:45 PM,Calculus I,C-015,Sara Ashraf,50
+W,4:25 PM,6:5 PM,Data Analytics,C-015,Mohammad Moeini Feizabadi,100
+W,8:30 AM,9:45 AM,Capstone (Kaavish) II,GF-C109,Nadia Nasir,75
+W,8:30 AM,9:45 AM,Data Structures II,GF-C109,Muhammad Qasim Pasta,75
+W,10:0 AM,11:15 AM,Electric Network Analysis,GF-C109,Haleema Qamar,75
+W,12:35 PM,1:50 PM,The World of Quratul Ain Hyder,GF-C109,Syed Afzal Ahmed,75
+W,2:5 PM,3:20 PM,Calculus II,GF-C109,Yousuf Kerai,75
+W,3:35 PM,4:50 PM,Discrete Mathematics,GF-C109,Rameez Ragheb,75
+W,5:5 PM,6:20 PM,Quantum Mechanics,GF-C109,Syed Muntazir Mehdi Abidi,75
+W,8:30 AM,11:20 AM,Understanding the Human Lab,W-110,Humaira Jamshed,170
+W,10:0 AM,11:15 AM,Power Electronics,W-110,Ishtiyaq Makda,75
+W,11:35 AM,12:50 PM,After Digital: The Creative In,W-110,Abdul Rafay Mahmood,75
+W,1:5 PM,2:20 PM,Intro to HCI,W-110,Neelma Bhatti,75
+W,2:35 PM,3:50 PM,Discrete Mathematics,W-110,Waqar Saleem,75
+W,4:5 PM,5:20 PM,Signals and Systems,W-110,Adnan Aslam Chaudhry,75
+W,5:35 PM,6:25 PM,Electromagnetic Theory,W-110,Shafayat Abrar,50
+W,8:30 AM,9:45 AM,What is Modernity?,E-100,Haniya Habib,75
+W,10:0 AM,11:15 AM,GPU Accelerated Computing,E-100,Muhammad Mobeen Movania,75
+W,11:30 AM,2:20 PM,Engineering Workshop,E-100,Haseeb Shaikh,170
+W,2:35 PM,4:15 PM,Conceptual Genealogies,E-100,Marcelo Alves de Paula Lima,100
+W,4:30 PM,5:45 PM,Social Theory II,E-100,Noman Baig,75
+W,8:30 AM,9:45 AM,Understanding the Human Body,FF-C200,Humaira Jamshed,75
+W,10:0 AM,12:50 PM,Post Production (Lab),FF-C200,Syed Ali,170
+W,1:5 PM,2:20 PM,Introduction to Reinforcement,FF-C200,Mohammad Shaikh,75
+W,2:35 PM,3:50 PM,Algorithms: Design & Analysis,FF-C200,Faisal Alvi,75
+W,4:5 PM,5:20 PM,Institutional Economics,FF-C200,Aqdas Afzal,75
+W,8:30 AM,11:0 AM,Intro to Design and Media,FF-W244,Rakhshaan Qazi,150
+W,11:15 AM,1:45 PM,Intro to Design and Media,FF-W244,Momin Zafar,150
+W,3:30 PM,5:10 PM,Creating Comics,FF-W244,Rohama Malik,100
+W,5:25 PM,6:15 PM,Intro to Probability & Stats,FF-W244,Zareen Tabassum,50
+W,8:30 AM,11:0 AM,Intro to Design and Media,CPE HALL,Rohama Malik,150
+W,8:30 AM,9:20 AM,Signals and Systems,CPE HALL,Shafayat Abrar,50
+W,11:15 AM,12:30 PM,What is Modernity?,CPE HALL,Haniya Habib,75
+W,12:45 PM,2:0 PM,Computer Architecture,CPE HALL,Tariq Kamal,75
+W,2:15 PM,3:30 PM,Hikma I,CPE HALL,Muzammil Patel,75
+W,3:45 PM,5:0 PM,Wireless and Mobile Comm.,CPE HALL,Tariq Mumtaz,75
+W,5:15 PM,6:30 PM,Literary Theory and Criticism,CPE HALL,Nahrain Al-Mousawi,75
+W,8:30 AM,10:10 AM,Illustration and Protest,LG09,Isma Hasan,100
+W,10:0 AM,11:15 AM,Discrete Mathematics,LG09,Waqar Saleem,75
+W,11:30 AM,1:10 PM,Public Intellectuals,LG09,Muhammad Haris,100
+W,1:25 PM,2:40 PM,Linear Algebra,LG09,Aeyaz Jamil Kayani,75
+W,2:55 PM,4:10 PM,Introduction to Western Philos,LG09,Irfan Muhammad,75
+W,4:25 PM,5:40 PM,Social Theory II,LG09,Mahso Gichki,75
+W,8:30 AM,9:45 AM,Hikma I,FF-N219,Hamza Bin Sajjad,75
+W,10:0 AM,11:15 AM,The Ethnographic Eye/I,FF-N219,Aaron Mulvany,75
+W,11:30 AM,12:45 PM,Algorithms: Design & Analysis,FF-N219,Faisal Alvi,75
+W,1:0 PM,2:15 PM,Data Structures & Algorithms,FF-N219,Maria Samad,75
+W,2:30 PM,5:0 PM,"Engineering, Design, & Innov.",FF-N219,Munzir Zafar,150
+W,5:15 PM,6:30 PM,Tech. Mgmnt & Entrepreneurship,FF-N219,Abid Butt,75
+W,8:30 AM,11:20 AM,Production Fundamentals II Lab,W-321,Mariam Aziz,170
+W,8:30 AM,9:45 AM,Jehan-e-Urdu,W-321,Tanveer Anjum,75
+W,11:35 AM,12:50 PM,Digital Logic and Design,W-321,Areeba Rajput,75
+W,1:5 PM,2:20 PM,Analog & Digital Communication,W-321,Tariq Mumtaz,75
+W,2:35 PM,5:55 PM,Design Your Habib Experience,W-321,Abdul Basit Memon,200
+W,8:30 AM,9:45 AM,"Journalism, History, Novel",E-215,Zuha Asif Siddiqui,75
+W,8:30 AM,9:20 AM,Electric Circuits-II,E-215,Saad Baig,50
+W,10:0 AM,11:15 AM,What is Modernity?,E-215,Muzammil Patel,75
+W,11:30 AM,12:45 PM,Computational Intelligence,E-215,Syeda Saleha Raza,75
+W,1:0 PM,2:15 PM,Software Engineering,E-215,Abbas Akhtar,75
+W,2:30 PM,3:45 PM,Principles of Macroeconomics,E-215,Mohammad Moeini Feizabadi,75
+W,4:0 PM,5:15 PM,Engineering Project Management,E-215,Muhammad Wamiq,75
+W,8:30 AM,9:45 AM,Introduction to Bioinformatics,E-011,Arshan Nasir,75
+W,10:0 AM,10:50 AM,Discrete Mathematics,E-011,Shams Arfeen,50
+W,11:5 AM,11:55 AM,Signals and Systems,E-011,Shafayat Abrar,50
+W,12:10 PM,1:25 PM,Digital Signal Processing,E-011,Saad Baig,75
+W,1:40 PM,2:55 PM,Introduction to Robotics,E-011,Abdul Basit Memon,75
+W,3:10 PM,6:0 PM,Engineering Workshop,E-011,Haseeb Shaikh,170
+W,8:30 AM,9:45 AM,Electric Network Analysis,FF-N220,Haleema Qamar,75
+W,8:30 AM,9:45 AM,Scientific Methods,E-003,Sameena Shahzaman,75
+W,8:30 AM,9:45 AM,Intro to Probability & Stats,E-003,Muhammad Umer Tariq,75
+W,10:0 AM,11:15 AM,Calculus II,E-003,Sajal Rana,75
+W,11:30 AM,12:45 PM,Engineering Project Management,E-003,Muhammad Wamiq,75
+W,1:0 PM,2:15 PM,What is Power?,E-003,Najeeb Jan,75
+W,2:30 PM,3:45 PM,SRS: Karachi,E-003,Coline Ferrant,75
+W,8:30 AM,9:45 AM,What is Modernity?,PG-1,Mahso Gichki,75
+W,11:5 AM,12:20 PM,Tech. Mgmnt & Entrepreneurship,PG-1,Abid Butt,75
+W,1:0 PM,2:15 PM,Digital Logic and Design,PG-1,Areeba Rajput,75
+W,4:0 PM,5:40 PM,Data Analytics,PG-1,Sahaab Bader Sheikh,100
+W,8:30 AM,9:45 AM,What is Modernity?,W-114,Marcelo Alves de Paula Lima,75
+W,10:0 AM,11:15 AM,Scientific Methods,W-114,Huma abid,75
+W,11:30 AM,12:45 PM,Hikma I,W-114,Abdullah Mirza,75
+W,1:0 PM,2:15 PM,Calculus II,W-114,Muhammad Sami Siddiqui,75
+W,2:30 PM,3:45 PM,Social Theory II,W-114,Noman Baig,75
+W,5:5 PM,6:20 PM,Complex Analysis,W-114,Sajal Rana,75
+W,8:30 AM,9:45 AM,"Journalism, History, Novel",W-111,Zuha Asif Siddiqui,75
+W,8:30 AM,11:20 AM,Programming Fundamentals Lab,W-111,Adeel Soomro,170
+W,10:0 AM,11:15 AM,Algorithms: Design & Analysis,W-111,Faisal Alvi,75
+W,11:30 AM,12:45 PM,Discrete Mathematics,W-111,Rameez Ragheb,75
+W,2:30 PM,5:50 PM,Design Your Habib Experience,W-111,Neelma Bhatti,200
+W,8:30 AM,9:20 AM,Discrete Mathematics,LG-C001,Muhammad Munawwar Anwar,50
+W,10:0 AM,11:15 AM,Software Security,LG-C001,Muhammad Nadeem,75
+W,11:30 AM,12:45 PM,Algorithms: Design & Analysis,LG-C001,Waqar Saleem,75
+W,1:0 PM,2:15 PM,Jehan-e-Urdu,LG-C001,Tanveer Anjum,75
+W,2:30 PM,3:45 PM,Comparative Empires,LG-C001,Mariam Sabri,75
+W,4:0 PM,5:15 PM,Calculus II,LG-C001,Aatyka Fatima,75
+W,8:30 AM,9:45 AM,What is Modernity?,LG26,Nahrain Al-Mousawi,75
+W,8:30 AM,9:20 AM,Discrete Mathematics,LG26,Shams Arfeen,50
+W,10:0 AM,11:15 AM,Analog & Digital Communication,LG26,Tariq Mumtaz,75
+W,11:30 AM,12:45 PM,Data Structures & Algorithms,LG26,Muhammad Mobeen Movania,75
+W,1:0 PM,2:15 PM,Data Structures & Algorithms,LG26,Nadia Nasir,75
+W,2:30 PM,3:20 PM,Electric Circuits-II,LG26,Saad Baig,50
+W,3:35 PM,4:50 PM,Introduction to Nanotechnology,LG26,Ahmad Usman,75
+W,5:5 PM,6:20 PM,Social Theory I,LG26,Coline Ferrant,75
+W,8:30 AM,9:45 AM,The Secret World of Microbes,LG-C025,Javeria Samad,75
+W,8:30 AM,9:45 AM,What is Power?,LG-C025,Najeeb Jan,75
+W,10:0 AM,11:40 AM,Forms of Inquiry,LG-C025,Mehwish Abid,100
+W,11:55 AM,1:35 PM,Let's Get Talking,LG-C025,Haya Fatima Iqbal,100
+W,1:50 PM,3:5 PM,Capstone (Kaavish) II,LG-C025,Muhammad Mobeen Movania,75
+W,4:25 PM,5:40 PM,Music and Mathematics,LG-C025,Yousuf Kerai,75
+R,8:30 AM,9:45 AM,Bollywood Masculinity,FF-W242,Sheikh Taha Ahmed Munir,75
+R,10:0 AM,12:30 PM,Creative Writing,FF-W242,Anum Asi,150
+R,12:45 PM,2:0 PM,Data Structures & Algorithms,FF-W242,Mohammad Salman,75
+R,2:15 PM,3:30 PM,Signals and Systems,FF-W242,Adnan Aslam Chaudhry,75
+R,5:15 PM,6:30 PM,Operations Management,FF-W242,Muhammad Wamiq,75
+R,8:30 AM,9:45 AM,Computer Architecture,GF-E101,Sorath Hansrajani,75
+R,10:0 AM,11:15 AM,Scientific Methods,GF-E101,Huma abid,75
+R,11:30 AM,12:20 PM,Understanding Histories,GF-E101,Abdullah Mirza,50
+R,1:5 PM,2:20 PM,Calculus II,GF-E101,Aatyka Fatima,75
+R,2:35 PM,3:50 PM,Quantum Mechanics,GF-E101,Syed Muntazir Mehdi Abidi,75
+R,10:0 AM,11:15 AM,Bollywood Masculinity,SFCL,Sheikh Taha Ahmed Munir,75
+R,11:30 AM,12:45 PM,What is Modernity?,SFCL,Nauman Naqvi,75
+R,1:0 PM,2:15 PM,Jehan-e-Urdu,SFCL,Tanveer Anjum,75
+R,2:30 PM,3:45 PM,Computational Intelligence,SFCL,Syeda Saleha Raza,75
+R,4:0 PM,5:15 PM,Data Structures & Algorithms,SFCL,Maria Samad,75
+R,8:30 AM,9:45 AM,Introduction to Biochemistry,E-012,Humaira Jamshed,75
+R,8:30 AM,11:0 AM,Intro to Program Planning,E-012,Shama Dossa,150
+R,10:0 AM,11:15 AM,Algorithms: Design & Analysis,E-012,Faisal Alvi,75
+R,11:30 AM,2:20 PM,OOP & Design Methodologies Lab,E-012,Nadia Nasir,170
+R,2:35 PM,3:50 PM,Understanding the Human Body,E-012,Humaira Jamshed,75
+R,4:30 PM,6:10 PM,Creating Comics,E-012,Rohama Malik,100
+R,8:30 AM,9:45 AM,Computer Architecture,W-121,Sorath Hansrajani,75
+R,10:0 AM,11:15 AM,After Digital: The Creative In,W-121,Abdul Rafay Mahmood,75
+R,11:30 AM,12:45 PM,What is Modernity?,W-121,Nahrain Al-Mousawi,75
+R,1:0 PM,3:50 PM,Electric Network Analysis Lab,W-121,Haleema Qamar,170
+R,8:30 AM,9:45 AM,Computer Architecture,FF-E220,Munzir Zafar,75
+R,8:30 AM,9:45 AM,Engineering Project Management,FF-E220,Muhammad Wamiq,75
+R,8:30 AM,9:45 AM,Social Theory II,FF-E220,Mahso Gichki,75
+R,10:0 AM,11:15 AM,What is Modernity?,FF-E220,Aqdas Afzal,75
+R,11:30 AM,12:45 PM,Hikma I,FF-E220,Nauman Naqvi,75
+R,1:0 PM,2:15 PM,Web and Mobile Development,FF-E220,Muhammad Qasim Pasta,75
+R,2:30 PM,3:45 PM,Discrete Mathematics,FF-E220,Muhammad Zafar,75
+R,4:0 PM,5:15 PM,Intro Enviro Engineering,FF-E220,Hassaan Furqan Khan,75
+R,8:30 AM,9:45 AM,What is Modernity?,GF-E121,Nahrain Al-Mousawi,75
+R,10:0 AM,11:15 AM,Scientific Methods,GF-E121,Hassaan Furqan Khan,75
+R,1:0 PM,3:50 PM,Digital Logic and Design Lab,GF-E121,Areeba Rajput,170
+R,4:5 PM,5:20 PM,Principles of Management,GF-E121,Muhammad Wamiq,75
+R,10:0 AM,11:15 AM,What is Modernity?,FF-W243,Nimra Farooq,75
+R,1:0 PM,2:15 PM,OOP & Design Methodologies,FF-W243,Nadia Nasir,75
+R,2:30 PM,3:45 PM,Reading the Partition,FF-W243,Inam Ullah,75
+R,4:0 PM,5:15 PM,Calculus II,FF-W243,Aatyka Fatima,75
+R,8:30 AM,9:45 AM,Computer Architecture,W-234,Farhan Khan,75
+R,11:30 AM,12:45 PM,Data Structures & Algorithms,W-234,Maria Samad,75
+R,5:15 PM,6:30 PM,Music and Mathematics,W-234,Yousuf Kerai,75
+R,8:30 AM,9:45 AM,The Ethnographic Eye/I,E-010,Aaron Mulvany,75
+R,10:0 AM,12:50 PM,Computer Architecture Lab,E-010,Tariq Kamal,170
+R,2:35 PM,3:50 PM,Hikma I,E-010,Nauman Naqvi,75
+R,4:5 PM,5:20 PM,Hikma I,E-010,Zainab Saleem,75
+R,8:30 AM,9:45 AM,Digital System Design,C-015,Muhammad Farhan,75
+R,8:30 AM,10:10 AM,Let's Get Talking,C-015,Haya Fatima Iqbal,100
+R,11:30 AM,12:45 PM,Algorithms: Design & Analysis,C-015,Faisal Alvi,75
+R,1:0 PM,2:15 PM,Discrete Mathematics,C-015,Huma abid,75
+R,2:30 PM,3:45 PM,Gender and Human Rights,C-015,Mahso Gichki,75
+R,8:30 AM,9:45 AM,What is Modernity?,GF-C109,Nauman Naqvi,75
+R,11:30 AM,1:10 PM,Research in Design,GF-C109,Mishal Khattak,100
+R,1:25 PM,3:55 PM,"Engineering, Design, & Innov.",GF-C109,Munzir Zafar,150
+R,4:10 PM,5:25 PM,Complex Analysis,GF-C109,Sajal Rana,75
+R,8:30 AM,11:0 AM,Intro to Design and Media,W-110,Rohama Malik,150
+R,11:15 AM,12:5 PM,Electromagnetic Theory,W-110,Shafayat Abrar,50
+R,12:20 PM,1:35 PM,Institutional Economics,W-110,Aqdas Afzal,75
+R,2:15 PM,3:30 PM,Data Structures & Algorithms,W-110,Saba Saeed,75
+R,3:45 PM,5:0 PM,Software Engineering,W-110,Mohsin Nagaria,75
+R,5:15 PM,6:30 PM,Development & Environmentalism,W-110,Tajreen Jafri,75
+R,8:30 AM,9:45 AM,"Journalism, History, Novel",E-100,Zuha Asif Siddiqui,75
+R,8:30 AM,9:45 AM,Scientific Methods,E-100,Sameena Shahzaman,75
+R,10:0 AM,11:15 AM,What is Modernity?,E-100,Marcelo Alves de Paula Lima,75
+R,11:30 AM,2:0 PM,"Engineering, Design, & Innov.",E-100,Muhammad Umer Tariq,150
+R,2:15 PM,3:30 PM,Calculus II,E-100,Sajal Rana,75
+R,3:45 PM,6:15 PM,Many faces of the Sufi tradi,E-100,Muzammil Patel,150
+R,8:30 AM,9:45 AM,Introduction to Political Sci,FF-C200,Ana Tawfiq Hussain,75
+R,10:0 AM,11:15 AM,Understanding the Human Body,FF-C200,Humaira Jamshed,75
+R,11:30 AM,12:45 PM,Calculus II,FF-C200,Yousuf Kerai,75
+R,1:0 PM,2:15 PM,Software Engineering,FF-C200,Ahsan Jawed,75
+R,3:5 PM,4:20 PM,Principles of Macroeconomics,FF-C200,Mohammad Moeini Feizabadi,75
+R,8:30 AM,11:0 AM,Intro to Design and Media,FF-W244,Rohama Malik,150
+R,8:30 AM,10:10 AM,Public Intellectuals,FF-W244,Muhammad Haris,100
+R,11:15 AM,12:30 PM,Jehan-e-Urdu,FF-W244,Inam Ullah,75
+R,12:45 PM,2:0 PM,Introduction to Reinforcement,FF-W244,Mohammad Shaikh,75
+R,2:15 PM,3:30 PM,Algorithms: Design & Analysis,FF-W244,Waqar Saleem,75
+R,3:45 PM,4:35 PM,Signals and Systems,FF-W244,Shafayat Abrar,50
+R,4:50 PM,6:5 PM,Literary Theory and Criticism,FF-W244,Nahrain Al-Mousawi,75
+R,8:30 AM,9:45 AM,What is Modernity?,CPE HALL,Nimra Farooq,75
+R,8:30 AM,9:20 AM,Signals and Systems,CPE HALL,Shafayat Abrar,50
+R,10:0 AM,11:15 AM,What is Modernity?,CPE HALL,Marcelo Alves de Paula Lima,75
+R,11:30 AM,12:45 PM,Scientific Methods,CPE HALL,Sameena Shahzaman,75
+R,1:0 PM,2:15 PM,Hikma I,CPE HALL,Noman Baig,75
+R,2:30 PM,3:45 PM,Hikma I,CPE HALL,Abdullah Mirza,75
+R,8:30 AM,9:45 AM,Elements of Aesthetics 1,LG09,Sheikh Taha Ahmed Munir,75
+R,8:30 AM,11:20 AM,Intro to Design and Media LAB,LG09,Barira Yousuf,170
+R,10:0 AM,11:15 AM,What is Modernity?,LG09,Mahso Gichki,75
+R,11:30 AM,12:45 PM,Data Structures II,LG09,Fahad Javed,75
+R,1:0 PM,2:15 PM,Principles of Management,LG09,Muhammad Wamiq,75
+R,3:5 PM,4:20 PM,Renewable Energy,LG09,Mohamed Elsayed Orabi Mustafa,75
+R,4:35 PM,5:50 PM,Understanding Histories,LG09,Abdullah Mirza,75
+R,8:30 AM,9:45 AM,Jehan-e-Urdu,FF-N219,Inam Ullah,75
+R,8:30 AM,10:10 AM,Data Analytics,FF-N219,Sahaab Bader Sheikh,100
+R,10:0 AM,11:15 AM,Scientific Methods,FF-N219,Sameena Shahzaman,75
+R,11:30 AM,12:45 PM,Hikma I,FF-N219,Basharat Issa,75
+R,1:0 PM,2:15 PM,Data Structures & Algorithms,FF-N219,Mohammad Salman,75
+R,2:30 PM,3:45 PM,Discrete Mathematics,FF-N219,Muhammad Zafar,75
+R,4:0 PM,5:15 PM,Introduction to Robotics,FF-N219,Abdul Basit Memon,75
+R,8:30 AM,11:0 AM,Intro to Design and Media,W-321,Momin Zafar,150
+R,11:15 AM,12:30 PM,What is Modernity?,W-321,Muzammil Patel,75
+R,12:45 PM,2:0 PM,Scientific Methods,W-321,Hassaan Furqan Khan,75
+R,2:15 PM,3:5 PM,Algorithms: Design & Analysis,W-321,TBD .,50
+R,4:50 PM,5:40 PM,Electric Circuits-II,W-321,Saad Baig,50
+R,8:30 AM,9:45 AM,Data Structures & Algorithms,E-215,Saba Saeed,75
+R,8:30 AM,9:45 AM,Renewable Energy,E-215,Mohamed Elsayed Orabi Mustafa,75
+R,10:0 AM,11:15 AM,Discrete Mathematics,E-215,Rameez Ragheb,75
+R,11:30 AM,1:10 PM,Conceptual Genealogies,E-215,Marcelo Alves de Paula Lima,100
+R,1:25 PM,2:40 PM,Literary Theory and Criticism,E-215,Nahrain Al-Mousawi,75
+R,8:30 AM,9:45 AM,Data Structures & Algorithms,E-011,Muhammad Mobeen Movania,75
+R,8:30 AM,9:45 AM,Data Structures II,E-011,Muhammad Qasim Pasta,75
+R,10:0 AM,11:15 AM,Software Engineering,E-011,Ahsan Jawed,75
+R,11:30 AM,12:45 PM,What is Gender?,E-011,Haniya Habib,75
+R,1:0 PM,2:15 PM,Understanding Histories,E-011,Abdullah Mirza,75
+R,2:30 PM,3:45 PM,Calculus I,E-011,Sara Ashraf,75
+R,8:30 AM,11:20 AM,Biochemistry Lab,FF-N220,Amber Talat,170
+R,1:5 PM,2:20 PM,Data Structures II,FF-N220,Muhammad Qasim Pasta,75
+R,4:5 PM,5:20 PM,Calculus II,FF-N220,Aatyka Fatima,75
+R,8:30 AM,9:45 AM,Elements of Aesthetics 1,E-003,Sheikh Taha Ahmed Munir,75
+R,8:30 AM,9:20 AM,Electric Circuits-II,E-003,Saad Baig,50
+R,10:0 AM,10:50 AM,Jehan-e-Urdu,E-003,Inam Ullah,50
+R,11:5 AM,12:20 PM,Hikma I,E-003,Noman Baig,75
+R,12:35 PM,1:50 PM,Discrete Mathematics,E-003,Rameez Ragheb,75
+R,2:5 PM,3:20 PM,Discrete Mathematics,E-003,Huma abid,75
+R,3:35 PM,4:50 PM,Wireless and Mobile Comm.,E-003,Tariq Mumtaz,75
+R,5:5 PM,6:20 PM,Intro to Probability & Stats,E-003,Muhammad Umer Tariq,75
+R,8:30 AM,9:45 AM,Jehan-e-Urdu,PG-1,Inam Ullah,75
+R,10:0 AM,10:50 AM,Signals and Systems,PG-1,Shafayat Abrar,50
+R,11:5 AM,12:20 PM,Electric Network Analysis,PG-1,Haleema Qamar,75
+R,12:35 PM,2:15 PM,Public Policy II,PG-1,Tajreen Jafri,100
+R,8:30 AM,9:45 AM,Software Engineering,W-114,Abbas Akhtar,75
+R,8:30 AM,9:45 AM,Hikma I,W-114,Muzammil Patel,75
+R,10:0 AM,11:40 AM,Quantitative Research Methods,W-114,Zaineb Aftab Hussain Makati,100
+R,11:55 AM,1:35 PM,Data Analytics,W-114,Mohammad Moeini Feizabadi,100
+R,8:30 AM,9:45 AM,Jehan-e-Urdu,W-111,Tanveer Anjum,75
+R,8:30 AM,9:45 AM,Discrete Mathematics,W-111,Rameez Ragheb,75
+R,10:0 AM,11:15 AM,Data Structures & Algorithms,W-111,Faiza Azhar,75
+R,11:30 AM,2:20 PM,Analog and Digital Comm (Lab),W-111,Tariq Mumtaz,170
+R,2:35 PM,3:50 PM,Social Theory I,W-111,Ana Tawfiq Hussain,75
+R,8:30 AM,9:45 AM,Algorithms: Design & Analysis,LG-C001,Waqar Saleem,75
+R,11:30 AM,12:45 PM,Digital Logic and Design,LG-C001,Areeba Rajput,75
+R,4:35 PM,5:50 PM,Social Theory II,LG-C001,Mahso Gichki,75
+R,8:30 AM,9:45 AM,The Secret World of Microbes,LG26,Javeria Samad,75
+R,10:0 AM,1:20 PM,Design Research II,LG26,Mariam Aziz,200
+R,3:5 PM,4:20 PM,Hikma I,LG26,Nauman Naqvi,75
+R,4:35 PM,5:50 PM,Data Structures & Algorithms,LG26,Muhammad Mobeen Movania,75
+R,8:30 AM,11:20 AM,Computer Architecture Lab,LG-C025,Saima Shaheen,170
+R,8:30 AM,9:45 AM,Scientific Methods,LG-C025,Huma abid,75
+R,10:0 AM,11:15 AM,Data Structures & Algorithms,LG-C025,Nadia Nasir,75
+R,11:35 AM,1:15 PM,Forms of Inquiry,LG-C025,Mehwish Abid,100
+R,1:30 PM,4:50 PM,Design Fictions and Provocatio,LG-C025,Isma Hasan,200
+R,5:5 PM,6:20 PM,Social Theory I,LG-C025,Coline Ferrant,75
+F,8:30 AM,11:20 AM,Computer Architecture Lab,FF-W242,Farhan Khan,170
+F,10:0 AM,11:15 AM,Calculus II,FF-W242,Yousuf Kerai,75
+F,11:35 AM,12:50 PM,After Digital: The Creative In,FF-W242,Abdul Rafay Mahmood,75
+F,1:5 PM,2:20 PM,Hikma I,FF-W242,Hamza Bin Sajjad,75
+F,2:35 PM,3:50 PM,Data Structures & Algorithms,FF-W242,Maria Samad,75
+F,8:30 AM,9:45 AM,Computer Architecture,GF-E101,Munzir Zafar,75
+F,8:30 AM,10:10 AM,Ghazal Gayeki,GF-E101,Shahid Hamid,100
+F,10:0 AM,11:15 AM,What is Modernity?,GF-E101,Muhammad Salman,75
+F,11:30 AM,12:45 PM,Algorithms: Design & Analysis,GF-E101,Waqar Saleem,75
+F,1:0 PM,2:15 PM,Data Structures & Algorithms,GF-E101,Maria Samad,75
+F,2:30 PM,3:45 PM,Software Engineering,GF-E101,Abbas Akhtar,75
+F,4:0 PM,5:15 PM,Urban Sustainability,GF-E101,Farhan Anwar,75
+F,8:30 AM,9:45 AM,What is Modernity?,SFCL,Mahso Gichki,75
+F,8:30 AM,9:45 AM,Discrete Mathematics,SFCL,Muhammad Zafar,75
+F,10:0 AM,12:50 PM,Digital Logic and Design Lab,SFCL,Areeba Rajput,170
+F,1:5 PM,1:55 PM,Calculus I,SFCL,Sara Ashraf,50
+F,2:10 PM,3:25 PM,What is Gender?,SFCL,Haniya Habib,75
+F,3:40 PM,5:20 PM,Qualitative Research Methods,SFCL,Aaron Mulvany,100
+F,8:30 AM,11:20 AM,The Secret World of Microbes,E-012,Humaira Qureshi,170
+F,1:5 PM,1:55 PM,Intro to Probability & Stats,E-012,Muhammad Umer Tariq,50
+F,2:35 PM,3:25 PM,Signals and Systems,E-012,Shafayat Abrar,50
+F,3:40 PM,4:55 PM,Calculus II,E-012,Yousuf Kerai,75
+F,5:10 PM,6:25 PM,Calculus II,E-012,Aatyka Fatima,75
+F,8:30 AM,9:45 AM,Hikma I,W-121,Zainab Saleem,75
+F,10:0 AM,11:15 AM,Discrete Mathematics,W-121,Rameez Ragheb,75
+F,2:35 PM,4:15 PM,Quantitative Research Methods,W-121,Zaineb Aftab Hussain Makati,100
+F,4:30 PM,5:45 PM,Gender and Human Rights,W-121,Mahso Gichki,75
+F,8:30 AM,9:45 AM,Scientific Methods,FF-E220,Huma abid,75
+F,10:0 AM,11:15 AM,Scientific Methods,FF-E220,Sameena Shahzaman,75
+F,11:30 AM,1:10 PM,Forms of Inquiry,FF-E220,Mehwish Abid,100
+F,1:25 PM,4:15 PM,Signals and Systems Lab,FF-E220,Shafayat Abrar,170
+F,4:30 PM,5:45 PM,Digital Logic and Design,FF-E220,Areeba Rajput,75
+F,8:30 AM,9:45 AM,Musicking: Anthropology of Mus,GF-E121,Daniyal Ahmed,75
+F,10:0 AM,12:30 PM,Intro to Design and Media,GF-E121,Momin Zafar,150
+F,12:45 PM,2:0 PM,Social Theory I,GF-E121,Ana Tawfiq Hussain,75
+F,2:15 PM,3:30 PM,Institutional Economics,GF-E121,Aqdas Afzal,75
+F,3:45 PM,5:0 PM,Computer Vision,GF-E121,Muhammad Farhan,75
+F,5:15 PM,6:30 PM,The World of Quratul Ain Hyder,GF-E121,Syed Afzal Ahmed,75
+F,8:30 AM,9:45 AM,Data Structures II,FF-W243,Syeda Saleha Raza,75
+F,10:0 AM,11:15 AM,Hikma I,FF-W243,Zainab Saleem,75
+F,11:30 AM,2:20 PM,Data Structures & Algo Lab,FF-W243,Saba Saeed,170
+F,2:35 PM,3:50 PM,Discrete Mathematics,FF-W243,Muhammad Zafar,75
+F,5:10 PM,6:25 PM,Linear Algebra,FF-W243,Aeyaz Jamil Kayani,75
+F,8:30 AM,9:45 AM,Hikma I,W-234,Nauman Naqvi,75
+F,10:0 AM,11:15 AM,Data Structures & Algorithms,W-234,Nadia Nasir,75
+F,11:30 AM,12:45 PM,Music and Mathematics,W-234,Yousuf Kerai,75
+F,1:0 PM,2:15 PM,Tech. Mgmnt & Entrepreneurship,W-234,Abid Butt,75
+F,2:30 PM,3:45 PM,Introduction to Western Philos,W-234,Irfan Muhammad,75
+F,4:0 PM,5:40 PM,Public Policy II,W-234,Farhan Anwar,100
+F,8:30 AM,9:45 AM,Computer Architecture,E-010,Tariq Kamal,75
+F,10:0 AM,11:40 AM,Data Analytics,E-010,Sahaab Bader Sheikh,100
+F,1:5 PM,2:20 PM,Bollywood Masculinity,E-010,Sheikh Taha Ahmed Munir,75
+F,2:35 PM,3:50 PM,Data Science,E-010,Zeehasham Rasheed,75
+F,4:5 PM,5:20 PM,Software Engineering,E-010,Abbas Akhtar,75
+F,8:30 AM,11:50 AM,Post Production,C-015,Syed Ali,200
+F,10:0 AM,11:15 AM,Data Structures & Algorithms,C-015,Maria Samad,75
+F,12:5 PM,1:20 PM,Scientific Methods,C-015,Sameena Shahzaman,75
+F,1:35 PM,2:50 PM,Understanding Histories,C-015,Abdullah Mirza,75
+F,3:5 PM,4:20 PM,What is Power?,C-015,Najeeb Jan,75
+F,4:35 PM,5:50 PM,Rumi,C-015,Noman Baig,75
+F,8:30 AM,9:45 AM,What is Modernity?,GF-C109,Aqdas Afzal,75
+F,10:0 AM,11:15 AM,Scientific Methods,GF-C109,Hassaan Furqan Khan,75
+F,11:30 AM,12:45 PM,Hikma I,GF-C109,Basharat Issa,75
+F,2:5 PM,3:20 PM,Operations Management,GF-C109,Muhammad Wamiq,75
+F,3:35 PM,4:50 PM,Rumi,GF-C109,Noman Baig,75
+F,11:30 AM,12:20 PM,Algorithms: Design & Analysis,W-110,TBD .,50
+F,1:5 PM,2:20 PM,Calculus I,W-110,Sara Ashraf,75
+F,4:5 PM,5:45 PM,Data Analytics,W-110,Sahaab Bader Sheikh,100
+F,8:30 AM,9:20 AM,Hikma I,E-100,Nauman Naqvi,50
+F,8:30 AM,9:45 AM,Jehan-e-Urdu,E-100,Tanveer Anjum,75
+F,9:35 AM,10:50 AM,Data Structures II,E-100,Muhammad Qasim Pasta,75
+F,11:5 AM,12:20 PM,Understanding Histories,E-100,Abdullah Mirza,75
+F,12:35 PM,1:50 PM,Hikma I,E-100,Zainab Saleem,75
+F,2:30 PM,3:45 PM,What is Power?,E-100,Najeeb Jan,75
+F,4:0 PM,5:40 PM,Public Policy II,E-100,Tajreen Jafri,100
+F,8:30 AM,11:20 AM,Computer Architecture Lab,FF-C200,Haseeb Khan,170
+F,8:30 AM,10:10 AM,Contexualising Media,FF-C200,Abdul Rafay Mahmood,100
+F,1:5 PM,2:20 PM,Software Engineering,FF-C200,Ahsan Jawed,75
+F,2:35 PM,3:50 PM,Discrete Mathematics,FF-C200,Rameez Ragheb,75
+F,8:30 AM,11:0 AM,Intro to Design and Media,FF-W244,Rohama Malik,150
+F,8:30 AM,9:45 AM,Wireless and Mobile Comm.,FF-W244,Tariq Mumtaz,75
+F,11:15 AM,1:45 PM,Intro to QGIS with GIS,FF-W244,Zaineb Aftab Hussain Makati,150
+F,2:15 PM,3:30 PM,Computer Vision,FF-W244,Muhammad Farhan,75
+F,3:45 PM,5:0 PM,Intro Enviro Engineering,FF-W244,Hassaan Furqan Khan,75
+F,5:15 PM,6:30 PM,Linear Algebra,FF-W244,Sajal Rana,75
+F,8:30 AM,9:45 AM,Intro to Cultural Anthropology,CPE HALL,Basharat Issa,75
+F,8:30 AM,11:50 AM,Designing For & With People,CPE HALL,Fatin Nawaz,200
+F,10:0 AM,11:15 AM,Interactive Storytelling,CPE HALL,Christie Lauder,75
+F,11:30 AM,12:45 PM,Web and Mobile Development,CPE HALL,Muhammad Qasim Pasta,75
+F,2:30 PM,3:20 PM,Electric Circuits-II,CPE HALL,Saad Baig,50
+F,3:35 PM,4:50 PM,Renewable Energy,CPE HALL,Mohamed Elsayed Orabi Mustafa,75
+F,5:5 PM,6:20 PM,Ethics of AI,CPE HALL,Aeyaz Jamil Kayani,75
+F,8:30 AM,9:45 AM,Understanding the Human Body,LG09,Humaira Jamshed,75
+F,8:30 AM,11:20 AM,Data Structures & Algo Lab,LG09,Muhammad Mobeen Movania,170
+F,10:0 AM,11:15 AM,Hikma I,LG09,Nauman Naqvi,75
+F,1:0 PM,3:50 PM,Intro to Design and Media LAB,LG09,Luluwa Murtaza,170
+F,5:10 PM,6:25 PM,Development & Environmentalism,LG09,Tajreen Jafri,75
+F,8:30 AM,9:45 AM,Hikma I,FF-N219,Hamza Bin Sajjad,75
+F,10:0 AM,12:50 PM,Engineering Workshop,FF-N219,Haseeb Shaikh,170
+F,1:5 PM,2:20 PM,Linear Algebra,FF-N219,Aeyaz Jamil Kayani,75
+F,2:35 PM,3:50 PM,What is Power?,FF-N219,Najeeb Jan,75
+F,8:30 AM,9:45 AM,Bollywood Masculinity,W-321,Sheikh Taha Ahmed Munir,75
+F,11:30 AM,12:45 PM,Data Structures II,W-321,Muhammad Qasim Pasta,75
+F,1:0 PM,2:15 PM,Software Security,W-321,Muhammad Nadeem,75
+F,2:30 PM,3:45 PM,OOP & Design Methodologies,W-321,Nadia Nasir,75
+F,8:30 AM,9:45 AM,Computer Architecture,E-215,Sorath Hansrajani,75
+F,8:30 AM,9:20 AM,Electric Circuits-II,E-215,Saad Baig,50
+F,10:0 AM,11:15 AM,Computer Architecture,E-215,Tariq Kamal,75
+F,11:30 AM,12:45 PM,"Journalism, History, Novel",E-215,Zuha Asif Siddiqui,75
+F,1:0 PM,2:15 PM,What is Modernity?,E-215,Marcelo Alves de Paula Lima,75
+F,2:30 PM,3:45 PM,Scientific Methods,E-215,Hassaan Furqan Khan,75
+F,4:0 PM,5:15 PM,Hikma I,E-215,Hamza Bin Sajjad,75
+F,8:30 AM,11:20 AM,Understanding the Human Lab,E-011,Humaira Jamshed,170
+F,8:30 AM,9:45 AM,Jehan-e-Urdu,E-011,Inam Ullah,75
+F,10:0 AM,11:15 AM,Introduction to Robotics,E-011,Abdul Basit Memon,75
+F,11:35 AM,12:50 PM,What is Modernity?,E-011,Aqdas Afzal,75
+F,1:5 PM,3:55 PM,Data Structures & Algo Lab,E-011,Mohammad Salman,170
+F,4:10 PM,5:25 PM,Understanding Histories,E-011,Abdullah Mirza,75
+F,8:30 AM,9:45 AM,Introduction to Bioinformatics,FF-N220,Arshan Nasir,75
+F,11:30 AM,12:45 PM,Scientific Methods,FF-N220,Hassaan Furqan Khan,75
+F,1:0 PM,2:15 PM,Discrete Mathematics,FF-N220,Waqar Saleem,75
+F,5:5 PM,6:20 PM,Calculus II,FF-N220,Aatyka Fatima,75
+F,8:30 AM,9:45 AM,Computer Architecture,E-003,Sorath Hansrajani,75
+F,8:30 AM,11:50 AM,Designing For & With People,E-003,Hasan Habib,200
+F,10:0 AM,11:15 AM,What is Modernity?,E-003,Abdullah Mirza,75
+F,11:30 AM,12:20 PM,Programming Fundamentals,E-003,Adeel Soomro,50
+F,12:35 PM,1:50 PM,Algorithms: Design & Analysis,E-003,Faisal Alvi,75
+F,2:5 PM,3:20 PM,Calculus II,E-003,Sajal Rana,75
+F,3:35 PM,4:50 PM,Calculus II,E-003,Aatyka Fatima,75
+F,5:5 PM,6:20 PM,Tech. Mgmnt & Entrepreneurship,E-003,Abid Butt,75
+F,8:30 AM,9:45 AM,Web and Mobile Development,PG-1,Muhammad Qasim Pasta,75
+F,8:30 AM,9:45 AM,Data Structures & Algorithms,PG-1,Mohammad Salman,75
+F,10:0 AM,11:15 AM,Data Structures & Algorithms,PG-1,Saba Saeed,75
+F,11:30 AM,12:20 PM,Electromagnetic Theory,PG-1,Shafayat Abrar,50
+F,12:35 PM,1:50 PM,The World of Quratul Ain Hyder,PG-1,Syed Afzal Ahmed,75
+F,2:5 PM,3:20 PM,Introduction to Nanotechnology,PG-1,Ahmad Usman,75
+F,3:35 PM,4:50 PM,Politics of Conflict,PG-1,Ana Tawfiq Hussain,75
+F,8:30 AM,9:45 AM,Computer Architecture,W-114,Farhan Khan,75
+F,8:30 AM,9:45 AM,Scientific Methods,W-114,Sameena Shahzaman,75
+F,10:0 AM,11:15 AM,What is Modernity?,W-114,Haniya Habib,75
+F,11:30 AM,12:45 PM,Computational Intelligence,W-114,Syeda Saleha Raza,75
+F,1:0 PM,2:15 PM,Data Structures & Algorithms,W-114,Maria Samad,75
+F,2:30 PM,3:45 PM,Electric Network Analysis,W-114,Haleema Qamar,75
+F,4:0 PM,5:40 PM,World Historical Figures,W-114,Marcelo Alves de Paula Lima,100
+F,8:30 AM,9:45 AM,Jehan-e-Urdu,W-111,Syed Afzal Ahmed,75
+F,10:0 AM,11:40 AM,Qualitative Research Methods,W-111,Aaron Mulvany,100
+F,1:0 PM,2:15 PM,Education Planning,W-111,Muhammad Aatir Khan,75
+F,2:30 PM,3:45 PM,Digital Logic and Design,W-111,Areeba Rajput,75
+F,4:0 PM,5:15 PM,Introduction to Robotics,W-111,Abdul Basit Memon,75
+F,8:30 AM,11:50 AM,Design Research II,LG-C001,Muneera Batool,200
+F,8:30 AM,9:45 AM,Signals and Systems,LG-C001,Adnan Aslam Chaudhry,75
+F,8:30 AM,9:45 AM,Software Engineering,LG-C001,Mohsin Nagaria,75
+F,10:0 AM,11:15 AM,What is Modernity?,LG-C001,Nimra Farooq,75
+F,12:5 PM,1:20 PM,Scientific Methods,LG-C001,Huma abid,75
+F,1:35 PM,2:50 PM,Scientific Methods,LG-C001,Sameena Shahzaman,75
+F,3:5 PM,4:20 PM,Data Structures II,LG-C001,Muhammad Qasim Pasta,75
+F,4:35 PM,6:15 PM,Quantitative Research Methods,LG-C001,Zaineb Aftab Hussain Makati,100
+F,8:30 AM,10:10 AM,Research in Design,LG26,Mishal Khattak,100
+F,10:0 AM,12:30 PM,Intro to Design and Media,LG26,Rakhshaan Qazi,150
+F,2:15 PM,5:5 PM,Signals and Systems Lab,LG26,Shafayat Abrar,170
+F,8:30 AM,9:45 AM,Digital System Design,LG-C025,Muhammad Farhan,75
+F,8:30 AM,10:10 AM,World Historical Figures,LG-C025,Marcelo Alves de Paula Lima,100
+F,8:30 AM,9:45 AM,What is Gender?,LG-C025,Haniya Habib,75
+F,10:0 AM,11:40 AM,Illustration and Protest,LG-C025,Isma Hasan,100
+F,11:55 AM,1:35 PM,Electrical Engineering Junior,LG-C025,Saad Baig,100
+F,1:50 PM,2:40 PM,Electromagnetic Theory,LG-C025,Shafayat Abrar,50
+F,2:55 PM,4:35 PM,Heidegger,LG-C025,Najeeb Jan,100
+F,4:50 PM,6:5 PM,Philosophical Hermeneutics,LG-C025,Irfan Muhammad,75

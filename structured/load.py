@@ -12,6 +12,7 @@ class Data:
         self.classrooms = []
         self.instructors = []
         self.df = pd.read_csv(filename)
+        self.TOTAL_CLASSES = 0
 
     def extraction(self) -> None:
         class_number_freq = self.df["Class nbr"].value_counts().to_dict()
@@ -41,3 +42,4 @@ class Data:
 
             for _ in range(class_number_freq[classNumber]):
                 self.classes.append(Class(title, instructor, duration))
+                self.TOTAL_CLASSES += 1

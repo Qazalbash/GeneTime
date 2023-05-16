@@ -16,6 +16,12 @@ def convertTime(minutes: int) -> tuple[int, int, bool]:
     return hours, minute, AM
 
 
+def getTimeString(minutes: int) -> str:
+    hour, minute, AM = convertTime(minutes)
+    AM = "A" * AM + "P" * (not AM) + "M"
+    return f"{hour}:{minute} {AM}"
+
+
 DAY_START = 510  # 08:30 AM
 DAY_END = 1110  # 06:30 PM
 
@@ -93,9 +99,7 @@ class Class:
     def __str__(self) -> str:
         representation = f"Class<<<{self.name}, {self.instructor}"
         if self.start_time:
-            hours, minute, AM = convertTime(self.start_time)
-            AM = "A" * AM + "P" * (not AM) + "M"
-            representation += f", {hours}:{minute} {AM}"
+            representation += f", {getTimeString(self.start_time)}"
         representation += f", {self.duration}"
         if self.day:
             representation += f", {self.day}"

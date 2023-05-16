@@ -1,6 +1,6 @@
+import csv
 import random
 from copy import deepcopy
-from pprint import pprint
 
 from matplotlib import pyplot as plt
 
@@ -30,7 +30,6 @@ class Schedule:
         self.mutation_rate = mutation_rate
         self.population = []
         self.NUM_ROOMS_WEEKLY = 150
-        self.chromosome = Chromosome(self.data.classrooms, self.data.instructors)
         self.available_days = [Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.FRIDAY]
 
     def initializePopulation(self) -> None:
@@ -49,8 +48,6 @@ class Schedule:
                 while faculty_clash(class_, instructor, chromosome.schedule[day][classroom]):
                     classroom = self.data.classrooms[random.randrange(0, total_classrooms)]
 
-                # class_.start_time = random.randrange(DAY_START, DAY_END - class_.duration, self.TIME_GAP)
-
                 if len(chromosome.schedule[day][classroom]) == 0:
                     class_.start_time = DAY_START
                 else:
@@ -60,6 +57,8 @@ class Schedule:
                         continue
                     class_.start_time = possible_start_time
 
+                chromosome.instructors_schedule[instructor.id].append(
+                    (class_.id, day, class_.start_time, class_.duration))
                 chromosome.schedule[day][classroom].append(deepcopy(class_))
                 class_index += 1
 
@@ -84,87 +83,110 @@ class Schedule:
             return self.mutation(chromosome, iteration - 1)
 
         class_index = random.randrange(0, len(class1))
+        for index in range(len(class1) - 1):
+            if class1[index].start_time + class1[index].duration + Schedule.TIME_GAP > class1[index + 1].start_time:
+                class_index = index + 1
+                break
         class_ = class1[class_index]
-
+        start_time = class_.start_time
         duration = class_.duration
-        number = class_.id
+        class_id = class_.id
 
-        for room2 in mutated_chromosome.schedule[day2].keys():
+        for room2 in self.data.classrooms:
             class2 = mutated_chromosome.schedule[day2][room2]
-            if any(number == c.id for c in class2):
+            if any(class_id == c.id for c in class2):
                 return self.mutation(chromosome, iteration - 1)
 
-        room2 = random.choice(list(mutated_chromosome.schedule[day2].keys()))
+        room2 = random.choice(self.data.classrooms)
         class2 = mutated_chromosome.schedule[day2][room2]
 
-        if any(number == c.id for c in class2):
+        if any(class_id == c.id for c in class2):
             return self.mutation(chromosome, iteration - 1)
 
         if len(class2) == 0:
             class_.start_time = DAY_START
         else:
-            last_class = class2[-1]
-            possible_start_time = last_class.start_time + last_class.duration + self.TIME_GAP
-            if not is_end_time_within_limit(possible_start_time, duration):
-                return self.mutation(chromosome, iteration - 1)
+            possible_start_time = DAY_START
+            for i in range(len(class2) - 1):
+                if class2[i].start_time + class2[i].duration + 2 * self.TIME_GAP + duration <= class2[i + 1].start_time:
+                    if not is_end_time_within_limit(class2[i].start_time + class2[i].duration + self.TIME_GAP,
+                                                    duration):
+                        continue
+                    possible_start_time = class2[i].start_time + class2[i].duration + self.TIME_GAP
+                    break
             class_.start_time = possible_start_time
 
+        if self.faculty_clash(mutated_chromosome.instructors_schedule[class_.instructor.id], day2, class_.start_time,
+                              duration):
+            return self.mutation(chromosome, iteration - 1)
+
+        mutated_chromosome.instructors_schedule[class_.instructor.id].remove((class_id, day1, start_time, duration))
+        mutated_chromosome.instructors_schedule[class_.instructor.id].append(
+            (class_id, day2, class_.start_time, duration))
         mutated_chromosome.schedule[day2][room2].append(class_)
         mutated_chromosome.schedule[day1][room1].remove(class_)
         return mutated_chromosome
 
     @staticmethod
-    def classes_in_same_room(classroom: list[Class]) -> int:
-        same_classes = 0
-        N = len(classroom)
+    @njit(nopython=True)
+    def faculty_clash(faculty_schedule: list[tuple], day: int, start_time: int, duration: int) -> bool:
+        N = len(faculty_schedule)
         for i in range(N):
-            for j in range(i + 1, N):
-                if classroom[i].name == classroom[j].name and classroom[i].instructor == classroom[j].instructor:
-                    same_classes += 1
-        return same_classes
-
-    @staticmethod
-    def classes_in_same_time(classroom: list[Class]) -> int:
-        same_classes = 0
-        N = len(classroom)
-        for i in range(N):
-            for j in range(i + 1, N):
-                if classroom[i].start_time == classroom[j].start_time:
-                    same_classes += 1
-        return same_classes
-
-    def time_limit_violations(self, chromosome) -> int:
-        violations = 0
-        for day in chromosome.schedule.keys():
-            for classroom in chromosome.schedule[day].keys():
-                if len(chromosome.schedule[day][classroom]) == 0:
-                    continue
-                last_class = chromosome.schedule[day][classroom][-1]
-                if not is_end_time_within_limit(last_class.start_time, last_class.duration):
-                    violations += 1
-        return self.NUM_ROOMS_WEEKLY - violations
-
-    @staticmethod
-    def is_free_slot_available(chromosome: Chromosome) -> bool:
-        for day in chromosome.schedule.keys():
-            for classroom in chromosome.schedule[day].keys():
-                for i in range(len(chromosome.schedule[day][classroom]) - 1):
-                    class_ = chromosome.schedule[day][classroom][i]
-                    next_class = chromosome.schedule[day][classroom][i + 1]
-                    if class_.start_time + class_.duration + Schedule.TIME_GAP != next_class.start_time:
-                        return True
+            id_i, day_i, start_i, duration_i = faculty_schedule[i]
+            if day_i == day and not (start_i + duration_i < start_time or start_time + duration < start_i):
+                return True
         return False
 
+    @staticmethod
+    def faculty_clashes(instructors_schedule: dict) -> int:
+        clashes = 0
+        for instructor_id in instructors_schedule.keys():
+            classes = instructors_schedule[instructor_id]
+            N = len(classes)
+            for i in range(N):
+                id_i, day_i, start_i, duration_i = classes[i]
+                for j in range(i + 1, N):
+                    id_j, day_j, start_j, duration_j = classes[j]
+                    if day_i == day_j and not (start_i + duration_i < start_j or start_j + duration_j < start_i):
+                        clashes += 1
+        return clashes
+
+    @staticmethod
+    def classes_in_same_room_time(classroom: list[Class]) -> tuple[int, int]:
+        same_room_classes = 0
+        same_time_classes = 0
+        N = len(classroom)
+        for i in range(N):
+            for j in range(i + 1, N):
+                if classroom[i].name == classroom[j].name and classroom[i].instructor.id == classroom[j].instructor.id:
+                    same_room_classes += 1
+                if classroom[i].start_time == classroom[j].start_time:
+                    same_time_classes += 1
+        return same_room_classes, same_time_classes
+
+    def violations_check(self, schedule: dict) -> tuple[int, int, int, int]:
+        same_room_classes = 0
+        same_time_classes = 0
+        free_slot = 0
+        class_overlap = 0
+        for day in schedule.keys():
+            for classroom in schedule[day].keys():
+                for i in range(len(schedule[day][classroom]) - 1):
+                    class_ = schedule[day][classroom][i]
+                    next_class = schedule[day][classroom][i + 1]
+                    if class_.start_time + class_.duration + Schedule.TIME_GAP != next_class.start_time:
+                        free_slot += 1
+                    if class_.start_time + class_.duration + Schedule.TIME_GAP > next_class.start_time:
+                        class_overlap += 1
+                room_classes, time_classes = self.classes_in_same_room_time(schedule[day][classroom])
+                same_room_classes += room_classes
+                same_time_classes += time_classes
+        return same_room_classes, same_time_classes, free_slot, class_overlap
+
     def fitness(self, chromosome: Chromosome) -> float:
-        same_classes = 0
-        same_time = 0
-        violations = self.time_limit_violations(chromosome)
-        free_slot_available = self.is_free_slot_available(chromosome) * 100
-        for day in chromosome.schedule.keys():
-            for classroom in chromosome.schedule[day].keys():
-                same_classes += self.classes_in_same_room(chromosome.schedule[day][classroom])
-                same_time += self.classes_in_same_time(chromosome.schedule[day][classroom])
-        return same_classes + same_time + violations + free_slot_available
+        room_clash, time_clash, free_slot, overlapping_classes = self.violations_check(chromosome.schedule)
+        faculty_clash = self.faculty_clashes(chromosome.instructors_schedule)
+        return self.data.TOTAL_CLASSES + free_slot - room_clash - time_clash - faculty_clash - overlapping_classes
 
     def crossover(self, p1: Chromosome, p2: Chromosome, num_of_mutation: int) -> tuple[Chromosome, Chromosome]:
         p1 = deepcopy(p1)
@@ -173,6 +195,9 @@ class Schedule:
         for _ in range(num_of_mutation):
             p1 = self.mutation(p1)
             p2 = self.mutation(p2)
+
+        p1.sort()
+        p2.sort()
 
         p1.fitness = self.fitness(p1)
         p2.fitness = self.fitness(p2)
@@ -320,20 +345,55 @@ class Schedule:
 
         return selected_population
 
+    def to_csv(self, file_name: str, chromosome: Chromosome) -> None:
+        days = ["M", "T", "W", "R", "F"]
+        schedule = chromosome.schedule
+        with open(file_name, "w", newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(
+                ["Day", "Start Time", "End Time", "Course title", "Room", "Instructor", "Actual Class Duration"])
+            for day in schedule.keys():
+                for classroom in schedule[day]:
+                    for course in schedule[day][classroom]:
+                        writer.writerow([days[day], getTimeString(course.start_time),
+                                         getTimeString(course.start_time + course.duration), course.name,
+                                         classroom.name, course.instructor.name,
+                                         course.duration])
+
 
 population_size = 20
 mutation_rate = 0.2
-number_of_offspring = 10
+number_of_offspring = 5
 generations = 100
-schedule = Schedule("Spring 2023 Schedule.csv", population_size, number_of_offspring, mutation_rate)
+num_of_mutations = 3
+schedule = Schedule("../Spring 2023 Schedule.csv", population_size, number_of_offspring, mutation_rate)
 schedule.initializePopulation()
 
-num_of_mutations = 1
+
+def faculty_clashes(instructors_schedule: dict) -> int:
+    clashes = 0
+    for instructor_id in instructors_schedule.keys():
+        classes = instructors_schedule[instructor_id]
+        N = len(classes)
+        for i in range(N):
+            id_i, day_i, start_i, duration_i = classes[i]
+            for j in range(i + 1, N):
+                id_j, day_j, start_j, duration_j = classes[j]
+                if day_i == day_j and not (start_i + duration_i < start_j or start_j + duration_j < start_i):
+                    clashes += 1
+    return clashes
+
 
 fitness = []
+clashes = []
+classes_in_same_room = []
+classes_in_same_time = []
+free_slots = []
+overlapping_classes = []
+optimal_chromosome = None
 
 for generation in range(generations):
-    for i in range(number_of_offspring // 2):
+    for i in range(number_of_offspring):
         parents = schedule.truncation_selection(True)
         # parents = schedule.binary_selection(True)
         children = schedule.crossover(parents[0], parents[1], num_of_mutations)
@@ -342,26 +402,36 @@ for generation in range(generations):
     schedule.population = schedule.random_selection(False)
     # schedule.population = schedule.truncation_selection(False)
 
-    optimal_chromosome = None
     optimal_fitness = -float("inf")
     for chromosome in schedule.population:
         if chromosome.fitness > optimal_fitness:
             optimal_chromosome = chromosome
             optimal_fitness = chromosome.fitness
     fitness.append(optimal_chromosome.fitness)
-    print(f"{generation + 1} : {optimal_chromosome.fitness}")
+    clash = faculty_clashes(optimal_chromosome.instructors_schedule)
+    room_clash, time_clash, free_slot, overlapping_class = schedule.violations_check(optimal_chromosome.schedule)
+    clashes.append(clash)
+    classes_in_same_room.append(room_clash)
+    classes_in_same_time.append(time_clash)
+    free_slots.append(free_slot)
+    overlapping_classes.append(overlapping_class)
+    print(
+        f"{generation + 1} : {optimal_chromosome.fitness} {clash} {room_clash} {time_clash} {free_slot} {overlapping_class}")
 
-optimal_chromosome = None
-optimal_fitness = -float("inf")
-for chromosome in schedule.population:
-    if chromosome.fitness > optimal_fitness:
-        optimal_chromosome = chromosome
-        optimal_fitness = chromosome.fitness
-fitness.append(optimal_chromosome.fitness)
-pprint(optimal_chromosome.schedule)
+schedule.to_csv("schedule.csv", optimal_chromosome)
 
-plt.plot(fitness)
-plt.xlabel("Generation")
-plt.ylabel("Fitness")
-plt.title("Structured Fitness Truncation Random Selection")
-plt.savefig("structured-fitness-truncation-random-selection.png")
+fig, axs = plt.subplots()
+
+axs.plot(range(1, generations + 1), fitness, label="Fitness")
+axs2 = axs.twinx()
+axs2.plot(range(1, generations + 1), clashes, label="Clashes", color="orange")
+axs2.plot(range(1, generations + 1), classes_in_same_room, label="same room", color="red")
+axs2.plot(range(1, generations + 1), classes_in_same_time, label="same time", color="purple")
+axs2.plot(range(1, generations + 1), free_slots, label="Free slots", color="green")
+axs2.plot(range(1, generations + 1), overlapping_classes, label="overlapping classes", color="brown")
+axs.set_xlabel("Generation")
+axs.set_ylabel("Fitness")
+axs2.set_ylabel("Clashes")
+axs.legend(loc="best")
+axs2.legend(loc="best")
+plt.savefig("test7.png")
