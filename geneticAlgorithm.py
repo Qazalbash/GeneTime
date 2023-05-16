@@ -1,9 +1,11 @@
 from timeTable import TimeTable
 
 
-def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumber, generations, filenameStudents):
+def evolutionaryAlgorithm(filename, populationSize, mutationRate,
+                          offspringsNumber, generations, filenameStudents):
     numMutations = 1
-    timetable = TimeTable(filename, populationSize, mutationRate, offspringsNumber, filenameStudents)
+    timetable = TimeTable(filename, populationSize, mutationRate,
+                          offspringsNumber, filenameStudents)
 
     timetable.initializePopulation()
 
@@ -15,7 +17,8 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
     # parents = timetable.truncation(0)
 
     for generation in range(generations):
-        print('-------------------- Generation Number = ' + str(generation + 1) + ' --------------------')
+        print('-------------------- Generation Number = ' +
+              str(generation + 1) + ' --------------------')
         totalOffsprings = []
         for i in range(offspringsNumber // 2):
             parents = timetable.truncation(0)
@@ -27,7 +30,8 @@ def evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumb
             p1 = parents[0]
             p2 = parents[1]
 
-            offspringOne, offspringTwo = timetable.crossover(p1, p2, numMutations)
+            offspringOne, offspringTwo = timetable.crossover(
+                p1, p2, numMutations)
             timetable.population.append(offspringOne)
             timetable.population.append(offspringTwo)
 
@@ -59,9 +63,7 @@ filenameStudents = "Spring 2023 student enrollment.csv"
 populationSize = 20
 mutationRate = 0.2
 offspringsNumber = 10
-generations = 1000
+generations = 100
 
-evolutionaryAlgorithm(
-    filename, populationSize, mutationRate, offspringsNumber, generations, filenameStudents
-)
-
+evolutionaryAlgorithm(filename, populationSize, mutationRate, offspringsNumber,
+                      generations, filenameStudents)

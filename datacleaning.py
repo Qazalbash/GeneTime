@@ -69,8 +69,6 @@ class DataCleaning:
             else:
                 self.classToStudentDict[classNbr] = [name]
 
-
-
 # dc = DataCleaning("Spring 2023 Schedule.csv", "Spring 2023 student enrollment.csv")
 # # print(dc.df)
 # class_nbr = 1033

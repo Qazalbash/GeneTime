@@ -2,8 +2,6 @@ import random
 
 
 class SelectionSchemes:
-    def __init__(self) -> None:
-        pass
 
     def randomSelection(self, flag):
         if flag == 0:
